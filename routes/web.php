@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-        return view('welcome');
-});
+// Page d'accueil
+Route::get('/', 'FrontController@index');
+
+// Page d'un post
+Route::get('post/{id}', 'FrontController@show') -> where(['id' => '[0-9]+']);
+
+
+
 // Route::get('accueil', function () {
 //         return "Page d'accueil";
 //         // return App\Post::all();
