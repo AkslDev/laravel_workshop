@@ -9,8 +9,7 @@ class UserTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        //
-    }
+        public function run(){
+                factory(\App\User::class, 30) -> create();
+        }
 }

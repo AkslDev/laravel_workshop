@@ -13,19 +13,19 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('category_id');
-            $table->enum('post_type',['formation','stage']);
-            $table->string('titre');
-            $table->text('description')->nullable();
-            $table->dateTime('created_at');
-            $table->dateTime('finished_at');
-            $table->float('price', 7, 2);
-            $table->integer('max_users');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('CASCADE');
-            $table->timestamps();
-        });
+	Schema::create('posts', function (Blueprint $table) {
+	    $table->increments('id');
+	    $table->unsignedInteger('category_id')->nullable();
+	    $table->enum('post_type',['formation','stage']);
+	    $table->string('titre');
+	    $table->text('description')->nullable();
+	    $table->dateTime('start');
+	    $table->dateTime('end');
+	    $table->float('price', 7, 2);
+	    $table->integer('max_users');
+	    $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
+	    $table->timestamps();
+	});
     }
 
     /**
@@ -35,6 +35,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+	Schema::dropIfExists('posts');
     }
 }
