@@ -1,20 +1,64 @@
+/* ******************************* VARIABLES ******************************* */
 
-// Body
-$body-bg: #f8fafc;
+// Fonts
+$Roboto: 'Roboto', sans-serif;
+
+// Gradient 
+// background:linear-gradient(#E50B29, #700512);
+@mixin linear-gradient() {
+	background: #E50B29; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #E50B29 0%, #700512 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #E50B29 0%,#700512 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #E50B29 0%,#700512 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$textbold:bold;
+$textitalic:italic;
+$textup:uppercase;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+// Element position:
+$left:left;
+$top:top;
+$right:right;
+$center:center;
+
+// Display
+$block: block;
+$inline-block: inline-block;
+$flex:flex;
+
+// Position:
+$initial:initial;
+$inherit:inherit;
+$absolute:absolute;
+$relative:relative;
+
+// Size
+
+$width100:100%;
+$height100:100%;
+$width100vw:100vw;
+$height100vh:100vh;
+
+$width75:75%;
+$height75:75%;
+$width75vw:75vw;
+$height75vh:75vh;
+
+$width50:50%;
+$height50:50%;
+$width50vw:50vw;
+$height50vh:50vh;
+
+$width25:25%;
+$height25:25%;
+$width25vw:25vw;
+$height25vh:25vh;
+
+
+
+
+
+
+

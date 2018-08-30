@@ -1,0 +1,31 @@
+/* ********** RESET ELEMENTS ********** */
+	table {
+	    	border-spacing: 0;
+	}
+	fieldset,img {
+	    	border: 0;
+	}
+	address,caption,cite,code,dfn,em,strong,th,var {
+	    	font-weight: normal;
+	    	font-style: normal;
+	}
+	strong{
+		font-weight: bold;
+	}
+	ol,ul {
+	   	list-style: none;
+	    	margin:0;
+	    	padding:0;
+	}
+	caption,th {
+	    	text-align: left;
+	}
+	q:before,q:after {
+	    	content:'';
+	}
+	abbr,acronym {
+		border: 0;
+	}
+	body:-webkit-full-page-media {
+    		background-color:none!important;
+    	}
