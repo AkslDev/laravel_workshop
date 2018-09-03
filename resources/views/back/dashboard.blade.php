@@ -21,7 +21,7 @@
 						<span><i class="fas fa-plus"></i></span>
 						Ajouter un(e) stage / formation
 					</button>
-					<button class="btn-remove">
+					<button class="btn-remove-multiple">
 						<span><i class="fas fa-trash-alt"></i></span>
 
 						Supression multiple
@@ -31,15 +31,17 @@
 			</div>
 			<table class="table table-bordered table-hover">
 				<thead>
+					<th><i class="fas fa-trash-alt"></i></th>
 					<th>Titre</th>
 					<th>Type</th>
-					<th>Date</th>
+					<th>Crée le</th>
 					<th>Statut</th>
 					<th>Action(s)</th>
 				</thead>
 				<tbody>
 					@foreach ($posts as $posts)
 						<tr>
+							<td> <input type="checkbox"> </td>
 							<td>{{ $posts->titre }}</td>
 							<td>{{ $posts->post_type }}</td>
 							<td>{{ $posts->created_at }}</td>
@@ -53,6 +55,83 @@
 					@endforeach
 				</tbody>
 			</table>
+		</div>
+		<div class="popup_add">
+			<a href="javascript:;" class="btn-close">
+				<i class="far fa-times-circle"></i>
+			</a>
+			<div class="popup_content">
+				<div class="top_popup">
+					<h2>Ajout d'un(e) stage ou d'une formation</h2>	
+				</div>
+				<form action="#">
+					<div class="form-group row">
+						<label for="new_titre">{{ __('Titre') }}</label>
+						<input id="new_titre" type="text" class="form-control" name="new_titre" placeholder="Titre de votre stage ou formation"required autofocus>
+					</div>
+					<div class="form-group row">
+						<label for="new_description">{{ __('Description') }}</label>
+						<textarea id="new_description" name="new_description" class="form-control" placeholder="Description de votre stage ou formation" required></textarea>
+					</div>
+					<div class="form-group row">
+						<div class="date_start">
+							<label for="new_start">{{ __('Démarre le') }}</label>
+   							<input id="new_start" name="new_start" class="form-control" type="date" placeholder="01/01/2018" required>
+						</div>
+						<div class="date_end">
+							<label for="new_end">{{ __('Termine le') }}</label>
+   							<input id="new_end" name="new_end" class="form-control" type="date" placeholder="01/01/2018"  required>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="price">
+							<label for="new_price">{{ __('Prix') }}</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+          								<span class="input-group-text" id="inputGroupPrepend">€</span>
+       			 					</div>
+								<input id="new_price" type="number" class="form-control" name="new_price" placeholder="500"required>
+							</div>
+						</div>
+						<div class="maxuser">
+							<label for="new_maxuser">{{ __('Nombre d\'utilisateurs') }}</label>
+							<input id="new_maxuser" type="number" class="form-control" name="new_maxuser" placeholder="5" required>
+						</div>
+					</div>
+					<div class="form-group row mb-0">
+						<button type="submit" class="btn-add">
+							<span><i class="fas fa-plus"></i></span>
+							{{ __('Ajouter') }}
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="popup_remove">
+			<a href="javascript:;" class="btn-close">
+				<i class="far fa-times-circle"></i>
+			</a>
+			<div class="popup_content">
+				<div class="top_popup">
+					<h2>Supression d'un(e) stage ou d'une formation</h2>		
+				</div>
+				
+				<div class="body_popup">
+					<p>	
+						Êtes-vous sûr de vouloir supprimer ce stage / cette formation ? 
+					</p>
+					<div class="btn_action">
+						<button type="submit" class="btn-remove">
+							<span><i class="fas fa-trash-alt"></i></span>
+							{{ __('Supprimer') }}
+						</button>
+						<button type="submit" class="btn-cancel">
+							<span><i class="fas fa-ban"></i></span>
+							{{ __('Annuler') }}
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

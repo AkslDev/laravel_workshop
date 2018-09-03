@@ -23,13 +23,13 @@
     							<a href="{{ url('/') }}">Accueil</a>
     						</li>
     						<li>
-    							<a href="javascript:;">Stage</a>
+    							<a href="/stage">Stage</a>
     						</li>
     						<li>
-    							<a href="javascript:;">Formation</a>
+    							<a href="/formation">Formation</a>
     						</li>
     						<li>
-    							<a href="javascript:;">Contact</a>
+    							<a href="/contact">Contact</a>
     						</li>
     					</ul>
     					<ul>
