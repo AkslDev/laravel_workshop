@@ -193,6 +193,9 @@
 	.content{
 		// Page d'accueil
 			.home{
+				display:flex;
+				align-items:center;
+				justify-content:space-between;
 				background: #39F; /* Old browsers */
 				background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
 				background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
@@ -200,21 +203,30 @@
 				.left-content{
 					padding:75px 25px 25px;
 					.item{
-						width:50vw;
+						width:calc(50vw - 50px);
 						background:#F8F8FA;
 						margin:25px 0;
 						padding:25px;
 						border-radius:5px;
-						.top-item{
+						display:flex;
+						align-items:center;
+						justify-content:space-between;
+						transition:all ease 0.25s;
+						.left-item{
+							img{
+
+							}
+						}
+						.right-item{
 							display:flex;
-							align-items:center;
-							justify-content:left;
-							margin-bottom:15px;
+							flex-direction:column;
+							margin-left:25px;
 							.title{
 								color:#39F;
-								font-size:16px;
+								font-size:18px;
 								font-weight:500;
 								text-align:left;
+								margin-bottom: 15px;
 								transition:all ease 0.2s;
 								transform:scale(1);
 								&:hover,
@@ -229,22 +241,73 @@
 								font-size:12px;
 								font-weight:500;
 								letter-spacing:1px;
-								text-align:right;
+								text-align:left;
+								margin-bottom: 15px;
 								text-transform:uppercase;
-								margin-left: auto;
 							}
-						}
-						.bottom-item{
 							.description{
 								color:#333;
 								font-size:14px;
 								font-weight:300;
 								letter-spacing:0.5px;
+								margin: 0;
 							}
+						}
+						&:hover{
+							-webkit-transform: translateX(10px);
+    							transform: translateX(10px);
 						}
 					}
 				}
 				.right-content{	
+					padding: 75px 25px 25px;
+					.search{
+						width:40vw;
+						background:#F8F8FA;
+						margin:25px 0;
+						padding:25px;
+						border-radius:5px;
+						display:flex;
+						align-items:center;
+						flex-direction:column;
+						justify-content:space-between;
+						transition:all ease 0.25s;
+						h1{
+							font-size:24px;
+							font-weight:600;
+							color:#39F;
+							margin-bottom:25px;
+						}
+						.input-search{
+							width:50%;
+							input{
+								transition: all ease 0.2s;
+								&:focus{
+									outline:none;
+									border-color:#39F;
+									box-shadow:none!important;
+								}
+							}
+							.input-group-append{
+
+								button{
+									display:block;
+									color:#FFF;
+									background: #39F; /* Old browsers */
+									background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
+									background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
+									background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+									border-radius:0px 5px 5px 0;
+									border: 1px solid #ced4da;
+									padding: 1px 25px 2px;
+									transition: all ease 0.2s;
+									&:hover{
+										background:#39F;
+									}
+								}	
+							}
+						}
+					}
 				}
 			}				
 		// Affichage d'un Post

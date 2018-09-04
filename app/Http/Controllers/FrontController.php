@@ -12,33 +12,33 @@ class FrontController extends Controller{
 	private $paginate = 5;
 
 
-	// PAGE ACCUEIL 
+	// Page d'accueil
 	public function index(){
-		// Retourne tout les posts de l'application
-		$post = Post::all();
-
+		// Retourne tout les posts
+		$post = Post::orderBy('created_at', 'asc')->take(2)->get();
 		return view('front.index', ['posts' => $post]);
 	}
 
-	// PAGE POST OUVERT
+	// Page d'un Post
 	public function show(int $id){
-
+		// Retourne le post demandé
         	$post = Post::find($id);
-        	
         	return view('front.post', ['posts' => $post]);
    	}
 
-
+	// Page Stage
    	public function stage(){
-		// Retourne tout les posts de l'application
+   		// Retourne les posts ayant pour 'post_type' -> 'stage'
 		$posts = Post::where('post_type', 'stage')->paginate($this->paginate);
 		return view('front.stage', ['posts' => $posts]);
 	}
+	// Page Formation
 	public function formation(){
-		// Retourne tout les posts de l'application
+   		// Retourne les posts ayant pour 'post_type' -> 'formation'
 		$posts = Post::where('post_type', 'formation')->paginate($this->paginate);
 		return view('front.formation', ['posts' => $posts]);
 	}
+	// Page Contact
    	public function contact(){
         	return view('front.contact');
    	} 

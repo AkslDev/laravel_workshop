@@ -40,12 +40,12 @@
 								{{ __('Connexion') }}
 							</a>
 						</li>
-						<li class="btn-register">
+						<!-- <li class="btn-register">
 							<a href="{{ route('register') }}">
 								<span><i class="fas fa-user-plus"></i></span>
 								{{ __('Inscription') }}
 							</a>
-						</li>
+						</li> -->
 						@else
 						<li class="user-connected">
 							<a class="user" href="javascript:;">

@@ -87,10 +87,10 @@
 						<div class="price">
 							<label for="new_price">{{ __('Prix') }}</label>
 							<div class="input-group">
-								<div class="input-group-prepend">
+								<input id="new_price" type="number" class="form-control" name="new_price" placeholder="500"required>
+								<div class="input-group-append">
           								<span class="input-group-text" id="inputGroupPrepend">€</span>
        			 					</div>
-								<input id="new_price" type="number" class="form-control" name="new_price" placeholder="500"required>
 							</div>
 						</div>
 						<div class="maxuser">
