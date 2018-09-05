@@ -1,21 +1,13 @@
-/* ******************************* VARIABLES ******************************* */
 
-// Fonts
-$Roboto: 'Roboto', sans-serif;
+// Colors / Couleurs /
 
-// Gradient 
-// background:linear-gradient(#39F, #0d2742);
-@mixin linear-gradient() {
+$blue: #39F;
+
+// Gradient / Dégradé
+.gradient{
 	background: #39F; /* Old browsers */
 	background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
-
-
-
-
-
-
-
 

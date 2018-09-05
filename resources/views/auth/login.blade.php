@@ -39,11 +39,13 @@
 					</div>
 				</div>
 				<div class="form-group row mb-0">
-					<button type="submit" class="btn-connect">
+					<button type="submit" class="btn btn-blue btn-normal btn-connect">
 						<span><i class="fas fa-sign-in-alt"></i></span>
 						{{ __('Connexion') }}
 					</button>
-					<a class="btn btn-link forget-password" href="{{ route('password.request') }}">{{ __('J\'ai oublié mon mot de passe') }}</a>
+					<a class="btn btn-grey btn-normal" href="{{ route('password.request') }}">
+						<span><i class="fas fa-question"></i></span>
+						{{ __('J\'ai oublié mon mot de passe') }}</a>
 				</div>
 			</form>
 		</div>

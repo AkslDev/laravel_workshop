@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="post">
+<section class="post gradient">
 	<article class="item-open">
 		@if(count($posts)>0)
-			<div class="top-post">
+			<div class="top-post gradient">
 				<h1 class='title'>{{$posts->titre}}</h1>	
 			</div>
 			<div class="post-content">

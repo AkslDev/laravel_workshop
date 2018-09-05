@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="home">
+<section class="home gradient">
 	<div class="left-content">
 		@foreach ($posts as $posts)
 		<div class="item">

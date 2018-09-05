@@ -32,44 +32,37 @@
     							<a href="/contact">Contact</a>
     						</li>
     					</ul>
-    					<ul>
 						@guest
-						<li class="btn-connect">
-							<a href="{{ route('login') }}">
+							<a class="btn btn-blue btn-normal" href="{{ route('login') }}">
 								<span><i class="fas fa-sign-in-alt"></i></span>
 								{{ __('Connexion') }}
 							</a>
-						</li>
-						<!-- <li class="btn-register">
-							<a href="{{ route('register') }}">
-								<span><i class="fas fa-user-plus"></i></span>
-								{{ __('Inscription') }}
-							</a>
-						</li> -->
 						@else
-						<li class="user-connected">
-							<a class="user" href="javascript:;">
-								<span><i class="far fa-user"></i></span>
-								{{ Auth::user()->name }}
-							</a>
-							<div class="dropdown">
-								<a 	class="link-dashboard" 
-									href="{{ url('dashboard') }}">
-									<span><i class="fas fa-table"></i></span>
-									{{ __('Dashboard') }}
-								</a>	
-								<hr>
-								<a 	class="link-logout" 
-									href="{{ route('logout') }}"
-									onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-									<span><i class="fas fa-sign-out-alt"></i></span>
-									{{ __('Déconnexion') }}
+						<ul>
+							<li class="user-connected">
+								<a class="user" href="javascript:;">
+									<span><i class="far fa-user"></i></span>
+									{{ Auth::user()->name }}
 								</a>
-								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-									@csrf
-								</form>
-							</div>
-						</li>
+								<div class="dropdown">
+									<a 	class="link-dashboard" 
+										href="{{ url('dashboard') }}">
+										<span><i class="fas fa-table"></i></span>
+										{{ __('Dashboard') }}
+									</a>	
+									<hr>
+									<a 	class="link-logout" 
+										href="{{ route('logout') }}"
+										onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+										<span><i class="fas fa-sign-out-alt"></i></span>
+										{{ __('Déconnexion') }}
+									</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										@csrf
+									</form>
+								</div>
+							</li>
+						</ul>		
 						@endguest
 					</ul>
     				</div>

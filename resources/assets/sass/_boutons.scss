@@ -1,0 +1,81 @@
+// Boutons
+	.btn{
+		display: inline-block;
+		line-height: 1;
+		white-space: nowrap;
+		cursor: pointer;
+		border: 1px solid;
+		-webkit-appearance: none;
+		text-align: center;
+		box-sizing: border-box;
+		outline: none;
+		margin: 0 5px;
+		transition: .1s;
+		font-weight: 400;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		font-size: 12px;
+		border-radius: 3px;
+		transition:all ease 0.2s;
+		p{
+			margin-left:5px;
+		}
+		&:focus{
+			outline: none;
+		}
+	}
+	.btn-icon{
+		padding: 7px 8px;
+	}
+	.btn-normal{
+		border-radius:50px;
+		padding: 10px 25px 10px 20px;
+		span{
+			margin-right:5px;
+		}
+	}
+	.btn-grey{
+		color: #909399;
+		background: #f4f4f5;
+		border-color: #d3d4d6;
+		&:hover,
+		&:focus{
+    			background-color: #909399;
+    			border-color: #909399;
+			color: #fff;
+		}
+	}
+	.btn-yellow{
+		color: #e6a23c;
+		background: #fdf6ec;
+		border-color: #f5dab1;
+		&:hover,
+		&:focus{
+			background: #e6a23c;
+			border-color: #e6a23c;
+			color: #fff;
+		}
+	}
+	.btn-blue{
+		color:#39F;
+		background: #ecf5ff;
+		border-color:#b3d8ff;
+		&:hover,
+		&:focus{
+			color:#FFF;
+			background:#39F;
+			border-color:#39F;
+		}
+	}
+	.btn-red{
+		color: #f56c6c;
+		background: #fef0f0;
+		border-color: #fbc4c4;
+		&:hover,
+		&:focus{
+			background: #f56c6c;
+			border-color: #f56c6c;
+			color: #fff;
+		}
+	}
