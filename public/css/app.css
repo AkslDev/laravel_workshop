@@ -10838,9 +10838,6 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -10853,7 +10850,7 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
 }
 
 .content .home .left-content {
-  padding: 75px 25px 25px;
+  padding: 80px 25px 25px;
 }
 
 .content .home .left-content .item {
@@ -10921,7 +10918,23 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.5px;
-  margin: 0;
+  margin: 0 0 15px;
+}
+
+.content .home .left-content .item .right-item .date-start {
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.content .home .left-content .item .right-item .date-start i {
+  font-size: 14px;
+  color: #39F;
+  margin-right: 5px;
 }
 
 .content .home .left-content .item:hover {
@@ -10930,10 +10943,13 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
 }
 
 .content .home .right-content {
-  padding: 75px 25px 25px;
+  padding: 80px 25px 25px;
 }
 
 .content .home .right-content .search {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 105px;
   width: 40vw;
   background: #F8F8FA;
   margin: 25px 0;
@@ -10964,7 +10980,7 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
 }
 
 .content .home .right-content .search .input-search {
-  width: 50%;
+  width: 400px;
 }
 
 .content .home .right-content .search .input-search input {
@@ -10982,12 +10998,7 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
 .content .home .right-content .search .input-search .input-group-append button {
   display: block;
   color: #FFF;
-  background: #39F;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #39F 0%, #0d2742 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #ced4da;
   border-radius: 0px 5px 5px 0;
   border: 1px solid #ced4da;
   padding: 1px 25px 2px;
@@ -11024,34 +11035,326 @@ nav .nav-content ul:nth-of-type(2) .user-connected .dropdown a.link-logout:hover
 }
 
 .content .post .item-open {
-  width: 50vw;
+  width: 75vw;
   height: auto;
-  padding: 50px 25px;
+  padding: 25px;
   margin: 25px auto;
+  border-radius: 5px;
   background: #F8F8FA;
 }
 
-.content .post .item-open .image {
+.content .post .item-open .top-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px;
+  background: #39F;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #39F 0%, #0d2742 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border-radius: 5px 5px 0 0;
+}
+
+.content .post .item-open .top-post h1 {
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.content .post .item-open .post-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px;
+  border: 1px solid #dee2e6;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.content .post .item-open .post-content .left-post .image {
   display: block;
-  margin: 0 auto 25px;
+  margin: 0 0 25px;
+  border-radius: 5px;
 }
 
-.content .post .item-open .title {
+.content .post .item-open .post-content .left-post .post-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 25px;
+  background: #efefef;
+  border-radius: 5px;
+}
+
+.content .post .item-open .post-content .left-post .post-info .dates .date-start,
+.content .post .item-open .post-content .left-post .post-info .dates .date-end,
+.content .post .item-open .post-content .left-post .post-info .dates .price,
+.content .post .item-open .post-content .left-post .post-info .dates .user,
+.content .post .item-open .post-content .left-post .post-info .price-user .date-start,
+.content .post .item-open .post-content .left-post .post-info .price-user .date-end,
+.content .post .item-open .post-content .left-post .post-info .price-user .price,
+.content .post .item-open .post-content .left-post .post-info .price-user .user {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.content .post .item-open .post-content .left-post .post-info .dates .date-start i,
+.content .post .item-open .post-content .left-post .post-info .dates .date-end i,
+.content .post .item-open .post-content .left-post .post-info .dates .price i,
+.content .post .item-open .post-content .left-post .post-info .dates .user i,
+.content .post .item-open .post-content .left-post .post-info .price-user .date-start i,
+.content .post .item-open .post-content .left-post .post-info .price-user .date-end i,
+.content .post .item-open .post-content .left-post .post-info .price-user .price i,
+.content .post .item-open .post-content .left-post .post-info .price-user .user i {
   color: #39F;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 35px;
+  font-size: 16px;
+  width: 21px;
+  margin-right: 5px;
 }
 
-.content .post .item-open .description {
+.content .post .item-open .post-content .left-post .post-info .dates .user,
+.content .post .item-open .post-content .left-post .post-info .price-user .user {
+  margin: 0;
+}
+
+.content .post .item-open .post-content .right-post {
+  margin-left: 25px;
+}
+
+.content .post .item-open .post-content .right-post .description {
   color: #333;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.5px;
   text-align: left;
-  width: 75%;
-  margin: 0 auto;
+}
+
+.content .stage,
+.content .formation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #39F;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #39F 0%, #0d2742 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.content .stage .left-content,
+.content .formation .left-content {
+  padding: 80px 25px 25px;
+}
+
+.content .stage .left-content .pagination,
+.content .formation .left-content .pagination {
+  margin-top: 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content .stage .left-content .pagination .page-link,
+.content .formation .left-content .pagination .page-link {
+  font-size: 16px;
+  color: #39F;
+  -webkit-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+}
+
+.content .stage .left-content .pagination .page-link:hover,
+.content .formation .left-content .pagination .page-link:hover {
+  color: #39F;
+}
+
+.content .stage .left-content .pagination li.page-item.active .page-link,
+.content .formation .left-content .pagination li.page-item.active .page-link {
+  color: #FFF;
+  background: #39F;
+  border-color: #39F;
+}
+
+.content .stage .left-content .item,
+.content .formation .left-content .item {
+  width: calc(50vw - 50px);
+  background: #F8F8FA;
+  margin: 25px 0;
+  padding: 25px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+}
+
+.content .stage .left-content .item .right-item,
+.content .formation .left-content .item .right-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 25px;
+}
+
+.content .stage .left-content .item .right-item .title,
+.content .formation .left-content .item .right-item .title {
+  color: #39F;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 15px;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.content .stage .left-content .item .right-item .title:hover,
+.content .stage .left-content .item .right-item .title:focus,
+.content .formation .left-content .item .right-item .title:hover,
+.content .formation .left-content .item .right-item .title:focus {
+  outline: none;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  text-decoration: underline;
+}
+
+.content .stage .left-content .item .right-item .type,
+.content .formation .left-content .item .right-item .type {
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.content .stage .left-content .item .right-item .description,
+.content .formation .left-content .item .right-item .description {
+  color: #333;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.content .stage .left-content .item:hover,
+.content .formation .left-content .item:hover {
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.content .stage .right-content,
+.content .formation .right-content {
+  padding: 80px 25px 25px;
+}
+
+.content .stage .right-content .search,
+.content .formation .right-content .search {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 105px;
+  width: 40vw;
+  background: #F8F8FA;
+  margin: 88px 0 0;
+  padding: 25px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+}
+
+.content .stage .right-content .search h1,
+.content .formation .right-content .search h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #39F;
+  margin-bottom: 25px;
+}
+
+.content .stage .right-content .search .input-search,
+.content .formation .right-content .search .input-search {
+  width: 400px;
+}
+
+.content .stage .right-content .search .input-search input,
+.content .formation .right-content .search .input-search input {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.content .stage .right-content .search .input-search input:focus,
+.content .formation .right-content .search .input-search input:focus {
+  outline: none;
+  border-color: #39F;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.content .stage .right-content .search .input-search .input-group-append button,
+.content .formation .right-content .search .input-search .input-group-append button {
+  display: block;
+  color: #FFF;
+  background: #ced4da;
+  border-radius: 0px 5px 5px 0;
+  border: 1px solid #ced4da;
+  padding: 1px 25px 2px;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.content .stage .right-content .search .input-search .input-group-append button:hover,
+.content .formation .right-content .search .input-search .input-group-append button:hover {
+  background: #39F;
 }
 
 .content .contact {

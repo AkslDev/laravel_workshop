@@ -23,7 +23,6 @@
 					</button>
 					<button class="btn-remove-multiple">
 						<span><i class="fas fa-trash-alt"></i></span>
-
 						Supression multiple
 					</button>
 				</div>

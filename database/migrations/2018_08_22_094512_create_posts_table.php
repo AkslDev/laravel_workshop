@@ -17,8 +17,8 @@ class CreatePostsTable extends Migration{
 			$table->enum('post_type',['formation','stage']);
 			$table->string('titre');
 			$table->text('description')->nullable();
-			$table->dateTime('start');
-			$table->dateTime('end');
+			$table->date('start');
+			$table->date('end');
 			$table->float('price', 7, 2);
 			$table->integer('max_users');
 			$table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');

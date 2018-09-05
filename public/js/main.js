@@ -30,11 +30,13 @@ $( document ).ready(function() {
 		notification.fadeOut(600);
 	});
 
-	var popup_add 		= $('.popup_add');
-	var btn_add 			= $('.btn-add');
-	var popup_remove 	= $('.popup_remove');
-	var btn_remove		= $('.btn-remove');
-	var btn_close 		= $('.btn-close');
+	var 	popup_add 		= $('.popup_add'),
+		btn_add 			= $('.btn-add'),
+		popup_remove 	= $('.popup_remove'),
+		btn_remove		= $('.btn-remove'),
+		btn_close 		= $('.btn-close'),
+		btn_cancel		= $('.btn-cancel')
+
 	
 	$(btn_add).on('click', function(){
 		$('body').css('overflow','hidden');
@@ -64,5 +66,12 @@ $( document ).ready(function() {
 		popup_remove.fadeOut(600);
 		popup_remove.toggleClass('popup_open');
 		$('body').css('overflow','scroll');
-	})
+	});
+	$(btn_cancel).on('click',function(){
+		$('.tableau').css('filter','blur(0px)');
+		$('.notification').css('filter','blur(0px)');
+		popup_remove.fadeOut(600);
+		popup_remove.toggleClass('popup_open');
+		$('body').css('overflow','scroll');
+	});
 });
