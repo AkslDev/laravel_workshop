@@ -37,8 +37,6 @@
 					<p class="description">{{$posts->description}}</p> 
 				</div>
 			</div>
-			
-			
 		@endif 
 	</article>
 </section>

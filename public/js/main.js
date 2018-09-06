@@ -1,6 +1,10 @@
 $( document ).ready(function() {	
 
-	 $('[data-toggle="tooltip"]').tooltip()
+    	$(".delete").on("click", function(){
+      		return confirm("Are you sure?");
+   	});
+	
+	$('[data-toggle="tooltip"]').tooltip()
 
 	// Dropdown du Menu
 	var 	btn_user = $('.user');
@@ -75,6 +79,7 @@ $( document ).ready(function() {
 	});
 
 	$(btn_cancel).on('click',function(){
+		$('nav').css('filter','blur(0px)');
 		$('.tableau').css('filter','blur(0px)');
 		$('.notification').css('filter','blur(0px)');
 		popup_remove.fadeOut(600);

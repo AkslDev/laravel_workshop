@@ -455,38 +455,55 @@
 				align-items:center;
 				justify-content:center;
 				width:100vw;
-				height:100vh;
-				padding:100px 25px 0;
-				background: #39F; /* Old browsers */
-				background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-				.card{
-					width:auto;
-					height:auto;
-					.card-header{
-						color: #39F;
-						font-size: 20px;
-						font-weight: 300;
-						text-align: center;
+				min-height: 100vh;
+    				padding: 100px 25px 25px;
+				.login-content{
+					width: 40vw;
+    					height: auto;
+					padding: 25px;
+					background:#F8F8FA;
+					border-radius:5px;
+					.top-login{
+						display:flex;
+						align-items:center;
+						justify-content:space-between;
+						padding:25px;
+						border-radius: 5px 5px 0 0;
+						h1{
+							color:#FFF;
+							font-size:28px;
+							font-weight:400;
+							letter-spacing:0.5px;
+						}
 					}
-					.card-body{
-						padding:5vh 10vw;
-						.form-group{
-							label[for="email"],
-							label[for="password"],
-							label[for="remember"],
-							.forget-password{
-								color:#39F;
-								font-size: 16px;
-								font-weight: 300;
-							}
-							input{
-								transition: all ease 0.2s;
-								&:focus{
-									outline:none;
-									border-color:#39F;
-									box-shadow:none!important;
+					.form-login{
+						padding: 25px;
+						height: calc(100% - 83px);
+						border: 1px solid #dee2e6;
+						form{
+							display:flex;
+							flex-direction:column;
+							align-items:center;
+							justify-content:center;
+							width: 70%;
+							height: 100%;
+							margin: 0 auto;
+							.form-group{
+								label[for="email"],
+								label[for="password"],
+								label[for="remember"],
+								.forget-password{
+									color:#39F;
+									font-size: 16px;
+									font-weight: 300;
+								}
+								input{
+									transition: all ease 0.2s;
+									&:focus{
+										outline:none;
+										border-color:#39F;
+										box-shadow:none!important;
+									}
 								}
 							}
 						}
@@ -498,13 +515,10 @@
 				display:flex;
 				align-items:center;
 				justify-content:center;
+				overflow-x:hidden;
 				width:100vw;
 				min-height: 100vh;
     				padding: 125px 25px 25px;
-				background: #39F; /* Old browsers */
-				background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				.dashboard-content{
 					position:relative;
 					width:100%;
@@ -559,10 +573,6 @@
 							align-items:center;
 							justify-content:space-between;
 							padding:25px;
-							background: #39F; /* Old browsers */
-							background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
-							background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
-							background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 							border-radius: 5px 5px 0 0;
 							.top-table-title{
 								h1{
@@ -590,61 +600,6 @@
 										padding: 15px;
 										color: #4a4a4a;
 										vertical-align:middle;
-										// .btn-edit{
-										// 	color:#909399;
-										// 	font-size: 12px;
-										// 	font-weight:400;
-										// 	background: #f4f4f5;
-										// 	border-radius: 5px;
-										// 	border: 1px solid #d3d4d6;
-										// 	padding: 5px 8.5px;
-										// 	transition:all ease 0.2s;
-										// 	&:hover,
-										// 	&:focus{
-										// 		outline:none;
-										// 		color:#FFF;
-										// 		background:#909399;
-										// 		border-color:#909399;
-										// 		text-decoration:none;
-										// 	}
-										// }
-										// .btn-preview{
-										// 	color:#EB9E05;
-										// 	font-size: 12px;
-										// 	font-weight:400;
-										// 	background: #f5edde;
-										// 	border-radius: 5px;
-										// 	border: 1px solid #EB9E05b5;
-										// 	padding: 5px 8.5px;
-										// 	transition:all ease 0.2s;
-										// 	&:hover,
-										// 	&:focus{
-										// 		outline:none;
-										// 		color:#FFF;
-										// 		background:#EB9E05;
-										// 		border-color:#EB9E05;
-										// 		text-decoration:none;
-										// 	}
-										// }
-										// .btn-remove{
-										// 	color:#F56C6C;
-										// 	font-size: 12px;
-										// 	font-weight:400;
-										// 	background: #ffe8e8;
-										// 	border-radius: 5px;
-										// 	border: 1px solid #F56C6Cb5;
-										// 	padding: 5px 10px;
-										// 	transition:all ease 0.2s;
-										// 	&:hover,
-										// 	&:focus{
-										// 		outline:none;
-										// 		color:#FFF;
-										// 		background:#F56C6C;
-										// 		border-color:#F56C6C;
-										// 		text-decoration:none;
-										// 	}
-										// }
-
 									}
 									td:nth-of-type(3){
 										text-transform:capitalize;
@@ -688,10 +643,6 @@
 								align-items:center;
 								justify-content:space-between;
 								padding:25px;
-								background: #39F; /* Old browsers */
-								background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
-								background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
-								background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 								border-radius: 5px 5px 0 0;
 								h2{
 									color:#FFF;
@@ -843,10 +794,6 @@
 								align-items:center;
 								justify-content:space-between;
 								padding:25px;
-								background: #39F; /* Old browsers */
-								background: -moz-linear-gradient(-45deg, #39F 0%, #0d2742 100%); /* FF3.6-15 */
-								background: -webkit-linear-gradient(-45deg, #39F 0%,#0d2742 100%); /* Chrome10-25,Safari5.1-6 */
-								background: linear-gradient(135deg, #39F 0%,#0d2742 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 								border-radius: 5px 5px 0 0;
 								h2{
 									color:#FFF;
@@ -869,51 +816,6 @@
 									align-items:center;
 									justify-content:center;
 									margin-top:35px;
-									.btn-remove{
-										color:#F56C6C;
-										font-size: 12px;
-										font-weight:400;
-										background: #ffe8e8;
-										border: 1px solid #F56C6Cb5;
-										margin-right:25px;
-										transition:all ease 0.2s;
-										border-radius: 15px;
-										padding: 6px 25px 6px 20px;
-										height: fit-content;
-										&:hover,
-										&:focus{
-											outline:none;
-											color:#FFF;
-											background:#F56C6C;
-											border-color:#F56C6C;
-											text-decoration:none;
-										}
-										span{
-											margin-right:5px;
-										}
-									}
-									.btn-cancel{
-										color:#EB9E05;
-										font-size: 12px;
-										font-weight:400;
-										background: #f5edde;
-										border: 1px solid #EB9E05b5;
-										transition:all ease 0.2s;
-										border-radius: 15px;
-										padding: 6px 25px 6px 20px;
-										height: fit-content;
-										&:hover,
-										&:focus{
-											outline:none;
-											color:#FFF;
-											background:#EB9E05;
-											border-color:#EB9E05;
-											text-decoration:none;
-										}
-										span{
-											margin-right:5px;
-										}
-									}
 								}
 							}
 						}

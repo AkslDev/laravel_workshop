@@ -1,16 +1,16 @@
 @extends('layouts.master')
 @section('content')
-<div class="login">
-	<div class="card">
-		<div class="card-header">
-			{{ __('Connexion') }}
+<div class="login gradient">
+	<div class="login-content">
+		<div class="top-login gradient">
+			<h1>Connexion</h1>
 		</div>
-		<div class="card-body">
+		<div class="form-login">
 			<form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
 				@csrf
 				<div class="form-group row">
 					<label for="email">{{ __('Adresse email') }}</label>
-					<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+					<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus autocomplete="off" >
 					@if ($errors->has('email'))
 						<span class="invalid-feedback" role="alert">
 							<strong>
@@ -21,7 +21,7 @@
 				</div>
 				<div class="form-group row">
 					<label for="password">{{ __('Mot de passe') }}</label>
-					<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+					<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required autocomplete="off" >
 					@if ($errors->has('password'))
 						<span class="invalid-feedback" role="alert">
 							<strong>

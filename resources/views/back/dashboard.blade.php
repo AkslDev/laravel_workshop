@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('content')
-<div class="dashboard">
+<div class="dashboard gradient">
 	<!-- {{ Auth::user()->name }} -->
 	<div class="dashboard-content">
-		<div class="notification">
+		<!-- <div class="notification">
 			<div class="notification-hello">
 				<div class="notification-close">
 					<i class="icon-close"></i>
@@ -11,11 +11,10 @@
 				<div class="notification-text">
 					<p>Bonjour <span>{{ Auth::user()->name }}</span> !</p>	
 				</div>
-			</div>
-			
-		</div>
+			</div>			
+		</div> -->
 		<div class="tableau">
-			<div class="top-table">
+			<div class="top-table gradient">
 				<div class="top-table-title">
 					<h1>Administration</h1>
 				</div>
@@ -56,9 +55,10 @@
 									data-toggle="tooltip" title="Prévisualiser">
 									<span><i class="far fa-eye"></i></span>
 								</button>
-								<button class="btn btn-red btn-icon btn-remove" id="remove_post-{{$posts->id}}" data-toggle="tooltip" title="Supprimer">
+								<a href="{{route('post.destroy',$posts->id)}}" class="btn btn-red btn-icon" id="remove_post-{{$posts->id}}" data-toggle="tooltip" title="Supprimer">
 									<span><i class="far fa-trash-alt"></i></span>
-								</button>
+								</a>
+								
 							</td>
 						</tr>
 					@endforeach
@@ -70,7 +70,7 @@
 				<i class="far fa-times-circle"></i>
 			</a>
 			<div class="popup_content">
-				<div class="top_popup">
+				<div class="top_popup gradient">
 					<h2>Ajout d'un(e) stage ou d'une formation</h2>	
 				</div>
 				<form class="needs-validation" novalidate>
@@ -155,24 +155,25 @@
 			</div>
 		</div>
 		<div class="popup_remove">
+			{{ csrf_token() }}
 			<a href="javascript:;" class="btn-close-remove">
 				<i class="far fa-times-circle"></i>
 			</a>
 			<div class="popup_content">
-				<div class="top_popup">
+				<div class="top_popup gradient">
 					<h2>Supression d'un(e) stage ou d'une formation</h2>		
 				</div>
-				
 				<div class="body_popup">
 					<p>	
 						Êtes-vous sûr de vouloir supprimer ce stage / cette formation ? 
 					</p>
+					<p>{{$posts->name}}</p>
 					<div class="btn_action">
-						<button type="submit" class="btn-remove">
+						<a href="{{route('post.destroy', ['id' => $posts->id])}}" type="submit" class="btn btn-red btn-normal btn-remove">
 							<span><i class="fas fa-trash-alt"></i></span>
 							{{ __('Supprimer') }}
-						</button>
-						<button type="submit" class="btn-cancel">
+						</a>
+						<button type="submit" class="btn btn-yellow btn-normal btn-cancel">
 							<span><i class="fas fa-ban"></i></span>
 							{{ __('Annuler') }}
 						</button>

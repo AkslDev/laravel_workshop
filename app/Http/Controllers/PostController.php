@@ -26,7 +26,8 @@ class PostController extends Controller
 	 */
 	public function create()
 	{
-	    //
+	    	$posts =newPost();
+   		return view('post-edit', compact('post'));
 	}
 
 	/**
@@ -59,7 +60,7 @@ class PostController extends Controller
 	 */
 	public function edit($id)
 	{
-	    //
+
 	}
 
 	/**
@@ -82,6 +83,8 @@ class PostController extends Controller
 	 */
 	public function destroy($id)
 	{
-	    //
+		$posts = Post::find($id);
+		$posts->delete();
+		return redirect('/dashboard');
 	}
 }
