@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 // Importation de l'alias de la classe
 use App\Post; 
 
@@ -26,8 +27,7 @@ class PostController extends Controller
 	 */
 	public function create()
 	{
-	    	$posts =newPost();
-   		return view('post-edit', compact('post'));
+       		return view('back.create');
 	}
 
 	/**
@@ -38,7 +38,17 @@ class PostController extends Controller
 	 */
 	public function store(Request $request)
 	{
-	    //
+		$post = new Post;
+		$post->titre = $request->titre;
+		$post->description = $request->description;
+		$post->start = $request->start;
+		$post->end = $request->end;
+		$post->price = $request->price;
+		$post->max_users = $request->max_users;
+
+		$post->save();
+
+		return redirect('/dashboard');
 	}
 
 	/**
@@ -85,6 +95,6 @@ class PostController extends Controller
 	{
 		$posts = Post::find($id);
 		$posts->delete();
-		return redirect('/dashboard');
+
 	}
 }

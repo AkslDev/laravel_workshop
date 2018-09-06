@@ -29,9 +29,15 @@ Route::get('contact', 'FrontController@contact');
 // Routes Sécurisées
 Route::resource('dashboard', 'PostController')->middleware('auth');
 
-// DELETE POST 
-// Route::delete('/dashboard','PostController@destroy')->name('post.destroy');
+
+// Création d'un Post
+Route::get('post/create', 'PostController@create')->middleware('auth');
+Route::post('post', 'PostController@store')->middleware('auth');
+
+
+// Suppression d'un Post
 Route::get('/post/delete/{id}','PostController@destroy')->name('post.destroy');
+
 
 Auth::routes();
 

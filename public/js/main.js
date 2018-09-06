@@ -1,8 +1,4 @@
 $( document ).ready(function() {	
-
-    	$(".delete").on("click", function(){
-      		return confirm("Are you sure?");
-   	});
 	
 	$('[data-toggle="tooltip"]').tooltip()
 
@@ -36,31 +32,12 @@ $( document ).ready(function() {
 		notification.fadeOut(600);
 	});
 
-	var 	popup_add 			= $('.popup_add'),
-		btn_add 				= $('.btn-add'),
-		btn_close_add 		= $('.btn-close-add'),
-		popup_remove 		= $('.popup_remove'),
+
+	var	popup_remove 		= $('.popup_remove'),
 		btn_remove			= $('.btn-remove'),
 		btn_close_remove		= $('.btn-close-remove'),
 		btn_cancel			= $('.btn-cancel');
 
-	$(btn_add).on('click', function(){
-		$('body').css('overflow','hidden');
-		$('nav').css('filter','blur(5px)');
-		$('.tableau').css('filter','blur(5px)');
-		$('.notification').css('filter','blur(5px)');
-		popup_add.toggleClass('popup_open');
-		popup_add.fadeIn(600);
-	});
-	$(btn_close_add).on('click',function(){
-		$('nav').css('filter','blur(0px)');
-		$('.tableau').css('filter','blur(0px)');
-		$('.notification').css('filter','blur(0px)');
-		popup_add.fadeOut(600);
-		popup_add.toggleClass('popup_open');
-		$('body').css('overflow','scroll');
-		
-	})
 	$(btn_remove).on('click', function(){
 		$('body').css('overflow','hidden');
 		$('nav').css('filter','blur(5px)');

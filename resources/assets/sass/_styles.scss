@@ -607,158 +607,7 @@
 								}
 							}
 						}		
-					}
-					.popup_add{
-						position:fixed;
-						display:none;
-						top:0;
-						left:0;
-						width:100%;
-						height:100%;
-						padding:95px 25px 0px;
-						background:rgba(0,0,0,0.5);
-						.btn-close-add{
-							position: absolute;
-							top: 95px;
-							left: 25px;
-							font-size: 30px;
-							color: #FFF;
-							transition:all ease 0.2s;
-							transform:scale(1);
-							&:hover,
-							&:focus{
-								color:#F56C6C;
-								transform:scale(1.05);
-							}
-						}
-						.popup_content{
-							width:50%;
-							height:auto;
-							margin:0 auto;
-							padding:25px;
-							background:#F8F8FA;
-							border-radius: 5px;
-							.top_popup{
-								display:flex;
-								align-items:center;
-								justify-content:space-between;
-								padding:25px;
-								border-radius: 5px 5px 0 0;
-								h2{
-									color:#FFF;
-									font-size:24px;
-									font-weight:400;
-									letter-spacing:0.5px;
-								}
-							}
-							form{
-								padding:15px;
-								border: 1px solid #dee2e6;
-								.form-group{
-									width: 70%;
-									margin: 0 auto 20px;;
-									label[for="new_titre"],
-									label[for="new_description"],
-									label[for="new_start"],
-									label[for="new_end"],
-									label[for="new_price"],
-									label[for="new_maxuser"]{
-										color:#39F;
-										font-size: 16px;
-										font-weight: 400;
-									}
-									
-									input{
-										transition: all ease 0.2s;
-										&:focus{
-											outline:none;
-											border-color:#39F;
-											box-shadow:none!important;
-										}
-									}
-									textarea{
-										height:200px;
-										resize:none;
-										transition: all ease 0.2s;
-										&:focus{
-											outline:none;
-											border-color:#39F;
-											box-shadow:none!important;
-										}
-									}
-									.btn-submit{
-										display:block;
-										margin:0 auto;
-										color:#39F;
-										font-size: 12px;
-										background: #3399ff4d;
-										border-radius: 15px;
-										border: 1px solid #3399ffb5;
-										padding: 6px 25px 6px 20px;
-										transition:all ease 0.2s;
-										height: fit-content;
-										margin-top: 3px;
-										span{
-											margin-right:5px;
-										}
-										&:hover{
-											color:#FFF;
-											background:#39F;
-											border-color:#39F;
-											text-decoration:none;
-										}
-									}
-								}
-								.form-group:nth-of-type(3),
-								.form-group:nth-of-type(4){
-									display:flex;
-									align-items:center;
-									justify-content:space-between;
-									input{
-										width:200px;
-									}
-									.input-group{
-										max-width:200px;
-										input{	
-     									 		width: 160px;
-										}
-										.input-group-append{
-											span{
-												border-top-right-radius: 5px;
-    												border-bottom-right-radius: 5px;
-											}
-										}
-									}
-								}
-								.form-group:nth-of-type(4){
-									margin-bottom:35px;
-								}
-							}
-							button.btn-add{
-								display:block;
-								margin:0 auto;
-								color:#39F;
-								font-size: 12px;
-								font-weight:400;
-								background: #dceeff;
-								border-radius: 15px;
-								border: 1px solid #3399ffb5;
-								padding: 8px 25px 8px 20px;
-								transition:all ease 0.2s;
-								span{
-									margin-right:5px;
-								}
-								&:hover,
-								&:focus{
-									outline:none;
-									color:#FFF;
-									background:#39F;
-									border-color:#39F;
-									text-decoration:none;
-								}
-							}
-						}
-					}
+					}				
 					.popup_remove{
 						position:fixed;
 						display:none;
@@ -819,6 +668,123 @@
 								}
 							}
 						}
+					}
+				}
+			}
+		// Administration - Create
+			.create{
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				width:100vw;
+				min-height: 100vh;
+    				padding: 80px 25px 25px;
+    				.create-content{
+    					width: 50vw;
+    					height: auto;
+					padding: 25px;
+					background:#F8F8FA;
+					border-radius:5px;
+					.top-create{
+						display:flex;
+						align-items:center;
+						justify-content:space-between;
+						padding:25px;
+						border-radius: 5px 5px 0 0;
+						h1{
+							color:#FFF;
+							font-size:24px;
+							font-weight:400;
+							letter-spacing:0.5px;
+						}
+					}
+					form{
+						padding:15px;
+						border: 1px solid #dee2e6;
+						.form-group{
+							width: 70%;
+							margin: 0 auto 20px;;
+							label[for="titre"],
+							label[for="description"],
+							label[for="start"],
+							label[for="end"],
+							label[for="price"],
+							label[for="max_users"]{
+								color:#39F;
+								font-size: 16px;
+								font-weight: 400;
+							}
+							
+							input{
+								transition: all ease 0.2s;
+								&:focus{
+									outline:none;
+									border-color:#39F;
+									box-shadow:none!important;
+								}
+							}
+							textarea{
+								height:200px;
+								resize:none;
+								transition: all ease 0.2s;
+								&:focus{
+									outline:none;
+									border-color:#39F;
+									box-shadow:none!important;
+								}
+							}
+							.btn-submit{
+								display:block;
+								margin:0 auto;
+								color:#39F;
+								font-size: 12px;
+								background: #3399ff4d;
+								border-radius: 15px;
+								border: 1px solid #3399ffb5;
+								padding: 6px 25px 6px 20px;
+								transition:all ease 0.2s;
+								height: fit-content;
+								margin-top: 3px;
+								span{
+									margin-right:5px;
+								}
+								&:hover{
+									color:#FFF;
+									background:#39F;
+									border-color:#39F;
+									text-decoration:none;
+								}
+							}
+						}
+						.form-group:nth-of-type(3),
+						.form-group:nth-of-type(4){
+							display:flex;
+							align-items:center;
+							justify-content:space-around;
+							input{
+								width:200px;
+							}
+							.input-group{
+								max-width:200px;
+								min-width: 200px;
+								input{	
+     							 		width: 160px;
+								}
+								.input-group-append{
+									span{
+										border-top-right-radius: 5px;
+    										border-bottom-right-radius: 5px;
+									}
+								}
+							}
+						}
+						.form-group:nth-of-type(4){
+							margin-bottom:35px;
+						}
+					}
+					button{
+						display:block;
+						margin:0 auto;
 					}
 				}
 			}

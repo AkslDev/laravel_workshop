@@ -3,26 +3,16 @@
 <div class="dashboard gradient">
 	<!-- {{ Auth::user()->name }} -->
 	<div class="dashboard-content">
-		<!-- <div class="notification">
-			<div class="notification-hello">
-				<div class="notification-close">
-					<i class="icon-close"></i>
-				</div>
-				<div class="notification-text">
-					<p>Bonjour <span>{{ Auth::user()->name }}</span> !</p>	
-				</div>
-			</div>			
-		</div> -->
 		<div class="tableau">
 			<div class="top-table gradient">
 				<div class="top-table-title">
 					<h1>Administration</h1>
 				</div>
 				<div class="top-table-action">
-					<button class="btn btn-blue btn-normal btn-add">
+					<a href="{{url('post/create')}}" class="btn btn-blue btn-normal btn-add">
 						<span><i class="fas fa-plus"></i></span>
 						Ajouter un(e) stage / formation
-					</button>
+					</a>
 					<button class="btn btn-red btn-normal btn-remove-multiple">
 						<span><i class="fas fa-trash-alt"></i></span>
 						Supression multiple
@@ -64,95 +54,6 @@
 					@endforeach
 				</tbody>
 			</table>
-		</div>
-		<div class="popup_add">
-			<a href="javascript:;" class="btn-close-add">
-				<i class="far fa-times-circle"></i>
-			</a>
-			<div class="popup_content">
-				<div class="top_popup gradient">
-					<h2>Ajout d'un(e) stage ou d'une formation</h2>	
-				</div>
-				<form class="needs-validation" novalidate>
-					<div class="form-group form-row">
-						<label for="new_titre">{{ __('Titre') }}</label>
-						<input id="new_titre" type="text" class="form-control" name="new_titre" placeholder="Titre de votre stage ou formation" required autofocus>
-						<div class="valid-feedback">
-        						Titre valide.
-      						</div>
-      						<div class="invalid-feedback">
-        						Titre invalide.
-      						</div>
-					</div>
-					<div class="form-group row">
-						<label for="new_description">{{ __('Description') }}</label>
-						<textarea id="new_description" name="new_description" class="form-control" placeholder="Description de votre stage ou formation" required></textarea>
-						<div class="valid-feedback">
-        						Description valide.
-      						</div>
-      						<div class="invalid-feedback">
-        						Description invalide.
-      						</div>
-					</div>
-					<div class="form-group row">
-						<div class="date_start">
-							<label for="new_start">{{ __('Démarre le') }}</label>
-   							<input id="new_start" name="new_start" class="form-control" type="date" placeholder="01/01/2018" required>
-   							<div class="valid-feedback">
-        							Date de démarrage valide.
-      							</div>
-      							<div class="invalid-feedback">
-        							Date de démarrage invalide.
-      							</div>
-						</div>
-						<div class="date_end">
-							<label for="new_end">{{ __('Termine le') }}</label>
-   							<input id="new_end" name="new_end" class="form-control" type="date" placeholder="01/01/2018"  required>
-   							<div class="valid-feedback">
-        							Date de fin valide.
-      							</div>
-      							<div class="invalid-feedback">
-        							Date de fin invalide.
-      							</div>
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="price">
-							<label for="new_price">{{ __('Prix') }}</label>
-							<div class="input-group">
-
-								<input id="new_price" type="number" class="form-control" name="new_price" placeholder="500"required>
-								<div class="input-group-append">
-          								<span class="input-group-text" id="inputGroupPrepend">€</span>
-       			 					</div>
-       			 					<div class="valid-feedback">
-        								Prix valide.
-      								</div>
-      								<div class="invalid-feedback">
-        								Prix invalide.
-      								</div>
-       			 					
-							</div>
-						</div>
-						<div class="maxuser">
-							<label for="new_maxuser">{{ __('Nombre d\'utilisateurs') }}</label>
-							<input id="new_maxuser" type="number" class="form-control" name="new_maxuser" placeholder="5" required>
-							<div class="valid-feedback">
-        							Nombre d'utilisateur(s) valide.
-      							</div>
-      							<div class="invalid-feedback">
-        							Nombre d'utilisateur(s) invalide.
-      							</div>
-						</div>
-					</div>
-					<div class="form-group row mb-0">
-						<button type="submit" class="btn-add">
-							<span><i class="fas fa-plus"></i></span>
-							{{ __('Ajouter') }}
-						</button>
-					</div>
-				</form>
-			</div>
 		</div>
 		<div class="popup_remove">
 			{{ csrf_token() }}
