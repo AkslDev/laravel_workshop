@@ -52,8 +52,7 @@
 					<div class="price">
 						<label for="price">{{ __('Prix') }}</label>
 						<div class="input-group">
-
-							<input id="price" type="number" class="form-control" name="price" placeholder="500"required>
+							<input id="price" type="number" class="form-control" name="price" placeholder="500" required>
 							<div class="input-group-append">
 								<span class="input-group-text">€</span>
 							</div>
@@ -75,6 +74,16 @@
 						<div class="invalid-feedback">
 							Nombre d'utilisateur(s) invalide.
 						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="picture">Image</label>
+					<input type="file" class="form-control-file" id="picture" placeholder="test">
+					<div class="valid-feedback">
+						Image valide.
+					</div>
+					<div class="invalid-feedback">
+						Image invalide.
 					</div>
 				</div>
 				<div class="form-group row mb-0">

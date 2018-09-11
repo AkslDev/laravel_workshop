@@ -33,10 +33,10 @@
     						</li>
     					</ul>
 						@guest
-							<a class="btn btn-blue btn-normal" href="{{ route('login') }}">
+							<!-- <a class="btn btn-blue btn-normal" href="{{ route('login') }}">
 								<span><i class="fas fa-sign-in-alt"></i></span>
 								{{ __('Connexion') }}
-							</a>
+							</a> -->
 						@else
 						<ul>
 							<li class="user-connected">

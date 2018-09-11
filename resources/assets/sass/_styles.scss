@@ -18,7 +18,7 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 	body{
-		background:#FFF;
+		background:$blanc;
 		margin: 0;
 		padding: 0;
 		font-style: normal;
@@ -36,7 +36,7 @@
 			align-items:center;
 			justify-content:space-between;
 			height:80px;
-			background:#F8F8FA;
+			background:$bgblanc;
 			box-shadow:0px 0px 5px #ABB6C5;
 			padding:0 25px;
 			ul:nth-of-type(1){
@@ -47,7 +47,7 @@
 					padding:10px;
 					a{
 						display:block;
-						color:#39F;
+						color:$bleu;
 						font-size:18px;
 						font-weight:700;
 						transition:all ease 0.2s;
@@ -84,7 +84,7 @@
 						height: 0;
 						border-style: solid;
 						border-width: 5px 5px 0 5px;
-						border-color: #39F transparent transparent transparent;
+						border-color: $bleu transparent transparent transparent;
 					}
 					&:hover{
 						text-decoration:none;
@@ -97,7 +97,7 @@
 					top:35px;
 					right:-20px;
 					width:200px;
-					background:#F8F8FA;
+					background:$bgblanc;
 					border:1px solid #0000001a;
 					border-radius:15px 0px 15px 15px;
 					a.link-dashboard{
@@ -152,23 +152,24 @@
 						justify-content:center;
 						.page-link{
 							font-size:16px;
-							color:#39F;
+							color:$bleu;
 							transition:all ease 0.4s;
 							&:hover{
-								color:#39F;
+								color:$bleu;
 							}
 						}
 						li.page-item.active{
 							.page-link{
-								color:#FFF;
-								background:#39F;
-								border-color:#39F;
+								color:$blanc;
+								background:$bleu;
+								border-color:$bleu;
 							}
 						}
 					}
 					.item{
+						position:relative;
 						width:calc(50vw - 50px);
-						background:#F8F8FA;
+						background:$bgblanc;
 						margin:25px 0;
 						padding:25px;
 						border-radius:5px;
@@ -176,17 +177,19 @@
 						align-items:center;
 						justify-content:space-between;
 						transition:all ease 0.25s;
-						.left-item{
-							img{
-
-							}
+						.item-link{
+							position: absolute;
+							top:0;
+							left: 0;
+							width: 100%;
+							height: 100%;
 						}
 						.right-item{
 							display:flex;
 							flex-direction:column;
 							margin-left:25px;
 							.title{
-								color:#39F;
+								color:$bleu;
 								font-size:18px;
 								font-weight:500;
 								text-align:left;
@@ -196,7 +199,8 @@
 								&:hover,
 								&:focus{
 									outline:none;
-									transform:scale(1.03);
+									-webkit-transform: translateX(10px) scale(1.03);
+    									transform: translateX(10px) scale(1.03);
 									text-decoration:underline;
 								}
 							}
@@ -226,7 +230,7 @@
 								text-transform:uppercase;
 								i{
 									font-size:14px;
-									color:#39F;
+									color:$bleu;
 									margin-right:5px;
 								}
 							}
@@ -243,7 +247,7 @@
 						position: sticky;
     						top: 105px;
 						width:40vw;
-						background:#F8F8FA;
+						background:$bgblanc;
 						margin:88px 0 0;
 						padding:25px;
 						border-radius:5px;
@@ -255,7 +259,7 @@
 						h1{
 							font-size:24px;
 							font-weight:600;
-							color:#39F;
+							color:$bleu;
 							margin-bottom:25px;
 						}
 						.input-search{
@@ -264,25 +268,71 @@
 								transition: all ease 0.2s;
 								&:focus{
 									outline:none;
-									border-color:#39F;
+									border-color:$bleu;
 									box-shadow:none!important;
 								}
 							}
 							.input-group-append{
 								button{
 									display:block;
-									color:#FFF;
+									color:$blanc;
 									background: #ced4da;
 									border-radius:0px 5px 5px 0;
 									border: 1px solid #ced4da;
 									padding: 1px 25px 2px;
 									transition: all ease 0.2s;
 									&:hover{
-										background:#39F;
+										background:$bleu;
 									}
 								}	
 							}
 						}
+					}
+					button.go-top{
+						position: fixed;
+						display:none;  
+						z-index: 1000;
+						right: 35px;
+						bottom: 35px;
+						width:50px;
+						height:50px;
+						border:none;
+						cursor:pointer;
+						background:$blanc;
+						border:1px solid $bordergrey;
+						border-radius:100%;
+						i{
+							color:$bleu;
+							font-size:24px;
+							transition:all ease 0.3s;
+						}
+						&:hover, &:focus{
+							outline:none;
+							-webkit-animation: moveUp 1s infinite;
+							-moz-animation:    moveUp 1s infinite;
+							-o-animation:      moveUp 1s infinite;
+							animation:         moveUp 1s infinite; 
+						}
+					}
+					@-webkit-keyframes moveUp {
+					  	0%   {transform:translateY(-5px);}
+					  	50%   {transform:translateY(0px);}
+					  	100% {transform:translateY(-5px);}
+					}
+					@-moz-keyframes moveUp {
+					  	0%   {transform:translateY(-5px);}
+					  	50%   {transform:translateY(0px);}
+					  	100% {transform:translateY(-5px);}
+					}
+					@-o-keyframes moveUp {
+					  	0%   {transform:translateY(-5px);}
+					  	50%   {transform:translateY(0px);}
+					  	100% {transform:translateY(-5px);}
+					}
+					@keyframes moveUp {
+					  	0%   {transform:translateY(-5px);}
+					  	50%   {transform:translateY(0px);}
+					  	100% {transform:translateY(-5px);}
 					}
 				}
 			}
@@ -307,7 +357,7 @@
 					padding:25px;
 					margin:25px auto;
 					border-radius:5px;
-					background: #F8F8FA;
+					background: $bgblanc;
 					.top-post{
 						display:flex;
 						align-items:center;
@@ -315,7 +365,7 @@
 						padding:25px;
 						border-radius: 5px 5px 0 0;
 						h1{
-							color:#FFF;
+							color:$blanc;
 							font-size:22px;
 							font-weight:400;
 							letter-spacing:0.5px;
@@ -324,7 +374,7 @@
 					.post-content{
 						display:flex;
 						padding: 25px;
-						border:1px solid #dee2e6;
+						border:1px solid $bordergrey;
 						justify-content: start;
 						.left-post{
 							.image{
@@ -350,7 +400,7 @@
 										font-weight:400;
 										letter-spacing:0.5px;
 										i{
-											color:#39F;
+											color:$bleu;
 											font-size:16px;	
 											width:21px;
 											margin-right:5px;
@@ -387,7 +437,7 @@
 					width: 40vw;
     					height: auto;
 					padding: 25px;
-					background:#F8F8FA;
+					background:$bgblanc;
 					border-radius:5px;
 					.top-contact{
 						display:flex;
@@ -396,7 +446,7 @@
 						padding:25px;
 						border-radius: 5px 5px 0 0;
 						h1{
-							color:#FFF;
+							color:$blanc;
 							font-size:28px;
 							font-weight:400;
 							letter-spacing:0.5px;
@@ -405,7 +455,7 @@
 					.form-contact{
 						padding: 25px;
 						height: calc(100% - 83px);
-						border: 1px solid #dee2e6;
+						border: 1px solid $bordergrey;
 						form{
 							display:flex;
 							flex-direction:column;
@@ -418,7 +468,7 @@
 								width: 100%;
 								label[for="contact-email"],
 								label[for="contact-description"]{
-									color:#39F;
+									color:$bleu;
 									font-size: 16px;
 									font-weight: 400;
 								}
@@ -426,7 +476,7 @@
 									transition: all ease 0.2s;
 									&:focus{
 										outline:none;
-										border-color:#39F;
+										border-color:$bleu;
 										box-shadow:none!important;
 									}
 								}
@@ -436,7 +486,7 @@
 									transition: all ease 0.2s;
 									&:focus{
 										outline:none;
-										border-color:#39F;
+										border-color:$bleu;
 										box-shadow:none!important;
 									}
 								}
@@ -461,7 +511,7 @@
 					width: 40vw;
     					height: auto;
 					padding: 25px;
-					background:#F8F8FA;
+					background:$bgblanc;
 					border-radius:5px;
 					.top-login{
 						display:flex;
@@ -470,7 +520,7 @@
 						padding:25px;
 						border-radius: 5px 5px 0 0;
 						h1{
-							color:#FFF;
+							color:$blanc;
 							font-size:28px;
 							font-weight:400;
 							letter-spacing:0.5px;
@@ -479,7 +529,7 @@
 					.form-login{
 						padding: 25px;
 						height: calc(100% - 83px);
-						border: 1px solid #dee2e6;
+						border: 1px solid $bordergrey;
 						form{
 							display:flex;
 							flex-direction:column;
@@ -493,7 +543,7 @@
 								label[for="password"],
 								label[for="remember"],
 								.forget-password{
-									color:#39F;
+									color:$bleu;
 									font-size: 16px;
 									font-weight: 300;
 								}
@@ -501,7 +551,7 @@
 									transition: all ease 0.2s;
 									&:focus{
 										outline:none;
-										border-color:#39F;
+										border-color:$bleu;
 										box-shadow:none!important;
 									}
 								}
@@ -541,7 +591,7 @@
     							right: 10px;
 							display:none;
 							i{
-								color:#FFF;
+								color:$blanc;
 								border-radius:100%;
 								padding:2px;
 								font-size:14px;
@@ -549,7 +599,7 @@
 						}
 						p{
 							margin: 0;
-							color: #FFF;
+							color: $blanc;
 							font-size: 16px;
     							font-weight: 300;
     							span{
@@ -564,7 +614,7 @@
 					}
 					.tableau{
 						padding: 25px;
-						background:#F8F8FA;
+						background:$bgblanc;
 						border-radius:5px;
 						width: 75%;
     						margin: 0 auto;
@@ -576,7 +626,7 @@
 							border-radius: 5px 5px 0 0;
 							.top-table-title{
 								h1{
-									color:#FFF;
+									color:$blanc;
 									font-size:28px;
 									font-weight:400;
 									letter-spacing:0.5px;
@@ -622,7 +672,7 @@
 							top: 110px;
 							left: 25px;
 							font-size: 30px;
-							color: #FFF;
+							color: $blanc;
 							transition:all ease 0.2s;
 							transform:scale(1);
 							&:hover,
@@ -636,7 +686,7 @@
 							height:auto;
 							margin:0 auto;
 							padding:25px;
-							background:#F8F8FA;
+							background:$bgblanc;
 							border-radius: 5px;
 							.top_popup{
 								display:flex;
@@ -645,7 +695,7 @@
 								padding:25px;
 								border-radius: 5px 5px 0 0;
 								h2{
-									color:#FFF;
+									color:$blanc;
 									font-size:24px;
 									font-weight:400;
 									letter-spacing:0.5px;
@@ -653,7 +703,7 @@
 							}
 							.body_popup{
 								padding: 50px 25px;
-								border: 1px solid #dee2e6;
+								border: 1px solid $bordergrey;
 								p{
 									color:#333;
 									font-size: 16px;
@@ -671,28 +721,31 @@
 					}
 				}
 			}
-		// Administration - Create
-			.create{
+		// Administration - Create / Edit
+			.create,
+			.edit{
 				display:flex;
 				align-items:center;
 				justify-content:center;
 				width:100vw;
 				min-height: 100vh;
     				padding: 80px 25px 25px;
-    				.create-content{
+    				.create-content,
+    				.edit-content{
     					width: 50vw;
     					height: auto;
 					padding: 25px;
-					background:#F8F8FA;
+					background:$bgblanc;
 					border-radius:5px;
-					.top-create{
+					.top-create,
+					.top-edit{
 						display:flex;
 						align-items:center;
 						justify-content:space-between;
 						padding:25px;
 						border-radius: 5px 5px 0 0;
 						h1{
-							color:#FFF;
+							color:$blanc;
 							font-size:24px;
 							font-weight:400;
 							letter-spacing:0.5px;
@@ -700,17 +753,18 @@
 					}
 					form{
 						padding:15px;
-						border: 1px solid #dee2e6;
+						border: 1px solid $bordergrey;
 						.form-group{
 							width: 70%;
 							margin: 0 auto 20px;;
 							label[for="titre"],
 							label[for="description"],
+							label[for="picture"],
 							label[for="start"],
 							label[for="end"],
 							label[for="price"],
 							label[for="max_users"]{
-								color:#39F;
+								color:$bleu;
 								font-size: 16px;
 								font-weight: 400;
 							}
@@ -719,7 +773,7 @@
 								transition: all ease 0.2s;
 								&:focus{
 									outline:none;
-									border-color:#39F;
+									border-color:$bleu;
 									box-shadow:none!important;
 								}
 							}
@@ -729,14 +783,14 @@
 								transition: all ease 0.2s;
 								&:focus{
 									outline:none;
-									border-color:#39F;
+									border-color:$bleu;
 									box-shadow:none!important;
 								}
 							}
 							.btn-submit{
 								display:block;
 								margin:0 auto;
-								color:#39F;
+								color:$bleu;
 								font-size: 12px;
 								background: #3399ff4d;
 								border-radius: 15px;
@@ -749,13 +803,14 @@
 									margin-right:5px;
 								}
 								&:hover{
-									color:#FFF;
-									background:#39F;
-									border-color:#39F;
+									color:$blanc;
+									background:$bleu;
+									border-color:$bleu;
 									text-decoration:none;
 								}
 							}
 						}
+						
 						.form-group:nth-of-type(3),
 						.form-group:nth-of-type(4){
 							display:flex;
@@ -781,6 +836,11 @@
 						.form-group:nth-of-type(4){
 							margin-bottom:35px;
 						}
+						.form-group:nth-of-type(5){
+							display:block;
+							margin:0 auto 20px;
+							width:fit-content;
+						}
 					}
 					button{
 						display:block;
@@ -793,7 +853,7 @@
 	footer{
 		width:100vw;
 		padding:50px;
-		background:#F8F8FA;
+		background:$bgblanc;
 		.footer-content{
 			ul{
 				display:flex;
@@ -802,7 +862,7 @@
 				li{
 					margin:10px;
 					a{
-						color:#39F;
+						color:$bleu;
 						font-size:15px;
 						font-weight:700;
 					}

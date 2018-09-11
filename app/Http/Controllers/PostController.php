@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // Importation de l'alias de la classe
-use App\Post; 
+use App\Post;  
+use App\Picture;  
 
 class PostController extends Controller
 {
@@ -46,6 +47,8 @@ class PostController extends Controller
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
 
+		$picture = new Picture;
+		$picture->link = $request->picture;		
 		$post->save();
 
 		return redirect('/dashboard');
@@ -68,8 +71,10 @@ class PostController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit($id)
+	public function edit(int $id)
 	{
+		$post = Post::find($id);
+      		return view('back.edit', ['posts' => $post]);
 
 	}
 
@@ -81,8 +86,18 @@ class PostController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, $id)
-	{
-	    //
+	{	
+		$post = Post::find($id);
+
+		$post->titre = $request->titre;
+		$post->description = $request->description;
+		$post->start = $request->start;
+		$post->end = $request->end;
+		$post->price = $request->price;
+		$post->max_users = $request->max_users;
+
+		$post->save();
+    		return redirect('/dashboard');
 	}
 
 	/**
@@ -96,5 +111,6 @@ class PostController extends Controller
 		$posts = Post::find($id);
 		$posts->delete();
 
+		return redirect('/dashboard');
 	}
 }

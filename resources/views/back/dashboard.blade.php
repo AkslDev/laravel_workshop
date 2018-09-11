@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('content')
 <div class="dashboard gradient">
-	<!-- {{ Auth::user()->name }} -->
+	<div class="notification">
+	</div>
 	<div class="dashboard-content">
 		<div class="tableau">
 			<div class="top-table gradient">
@@ -37,14 +38,12 @@
 							<td>{{ $posts->created_at }}</td>
 							<td></td>
 							<td>
-								<button class="btn btn-grey btn-icon btn-edit" id="edit_post-{{$posts->id}}"
-									data-toggle="tooltip" title="Editer">
+								<a href="post/edit/{{ $posts->id }}" class="btn btn-grey btn-icon btn-edit" id="edit_post-{{$posts->id}}" data-toggle="tooltip" title="Modifier">
 									<span><i class="far fa-edit"></i></span>
-								</button>
-								<button class="btn btn-blue btn-icon btn-preview" id="view_post-{{$posts->id}}"
-									data-toggle="tooltip" title="Prévisualiser">
+								</a>
+								<a href="{{ url('post/' . $posts->id) }}" class="btn btn-blue btn-icon btn-preview" id="view_post-{{$posts->id}}" data-toggle="tooltip" title="Prévisualiser" target="blank">
 									<span><i class="far fa-eye"></i></span>
-								</button>
+								</a>
 								<a href="{{route('post.destroy',$posts->id)}}" class="btn btn-red btn-icon" id="remove_post-{{$posts->id}}" data-toggle="tooltip" title="Supprimer">
 									<span><i class="far fa-trash-alt"></i></span>
 								</a>

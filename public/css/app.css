@@ -10940,6 +10940,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .home .left-content .item,
 .content .stage .left-content .item,
 .content .formation .left-content .item {
+  position: relative;
   width: calc(50vw - 50px);
   background: #F8F8FA;
   margin: 25px 0;
@@ -10956,6 +10957,16 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
           justify-content: space-between;
   -webkit-transition: all ease 0.25s;
   transition: all ease 0.25s;
+}
+
+.content .home .left-content .item .item-link,
+.content .stage .left-content .item .item-link,
+.content .formation .left-content .item .item-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .content .home .left-content .item .right-item,
@@ -10992,8 +11003,8 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .formation .left-content .item .right-item .title:hover,
 .content .formation .left-content .item .right-item .title:focus {
   outline: none;
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: translateX(10px) scale(1.03);
+  transform: translateX(10px) scale(1.03);
   text-decoration: underline;
 }
 
@@ -11128,6 +11139,77 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .stage .right-content .search .input-search .input-group-append button:hover,
 .content .formation .right-content .search .input-search .input-group-append button:hover {
   background: #39F;
+}
+
+.content .home .right-content button.go-top,
+.content .stage .right-content button.go-top,
+.content .formation .right-content button.go-top {
+  position: fixed;
+  display: none;
+  z-index: 1000;
+  right: 35px;
+  bottom: 35px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background: #FFF;
+  border: 1px solid #dee2e6;
+  border-radius: 100%;
+}
+
+.content .home .right-content button.go-top i,
+.content .stage .right-content button.go-top i,
+.content .formation .right-content button.go-top i {
+  color: #39F;
+  font-size: 24px;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.content .home .right-content button.go-top:hover,
+.content .home .right-content button.go-top:focus,
+.content .stage .right-content button.go-top:hover,
+.content .stage .right-content button.go-top:focus,
+.content .formation .right-content button.go-top:hover,
+.content .formation .right-content button.go-top:focus {
+  outline: none;
+  -webkit-animation: moveUp 1s infinite;
+  animation: moveUp 1s infinite;
+}
+
+@-webkit-keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+
+  50% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
 }
 
 .content .home .right-content .search {
@@ -11667,7 +11749,8 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   margin-top: 35px;
 }
 
-.content .create {
+.content .create,
+.content .edit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11682,7 +11765,10 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   padding: 80px 25px 25px;
 }
 
-.content .create .create-content {
+.content .create .create-content,
+.content .create .edit-content,
+.content .edit .create-content,
+.content .edit .edit-content {
   width: 50vw;
   height: auto;
   padding: 25px;
@@ -11690,7 +11776,14 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-radius: 5px;
 }
 
-.content .create .create-content .top-create {
+.content .create .create-content .top-create,
+.content .create .create-content .top-edit,
+.content .create .edit-content .top-create,
+.content .create .edit-content .top-edit,
+.content .edit .create-content .top-create,
+.content .edit .create-content .top-edit,
+.content .edit .edit-content .top-create,
+.content .edit .edit-content .top-edit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11704,61 +11797,111 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-radius: 5px 5px 0 0;
 }
 
-.content .create .create-content .top-create h1 {
+.content .create .create-content .top-create h1,
+.content .create .create-content .top-edit h1,
+.content .create .edit-content .top-create h1,
+.content .create .edit-content .top-edit h1,
+.content .edit .create-content .top-create h1,
+.content .edit .create-content .top-edit h1,
+.content .edit .edit-content .top-create h1,
+.content .edit .edit-content .top-edit h1 {
   color: #FFF;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
 
-.content .create .create-content form {
+.content .create .create-content form,
+.content .create .edit-content form,
+.content .edit .create-content form,
+.content .edit .edit-content form {
   padding: 15px;
   border: 1px solid #dee2e6;
 }
 
-.content .create .create-content form .form-group {
+.content .create .create-content form .form-group,
+.content .create .edit-content form .form-group,
+.content .edit .create-content form .form-group,
+.content .edit .edit-content form .form-group {
   width: 70%;
   margin: 0 auto 20px;
 }
 
 .content .create .create-content form .form-group label[for="titre"],
 .content .create .create-content form .form-group label[for="description"],
+.content .create .create-content form .form-group label[for="picture"],
 .content .create .create-content form .form-group label[for="start"],
 .content .create .create-content form .form-group label[for="end"],
 .content .create .create-content form .form-group label[for="price"],
-.content .create .create-content form .form-group label[for="max_users"] {
+.content .create .create-content form .form-group label[for="max_users"],
+.content .create .edit-content form .form-group label[for="titre"],
+.content .create .edit-content form .form-group label[for="description"],
+.content .create .edit-content form .form-group label[for="picture"],
+.content .create .edit-content form .form-group label[for="start"],
+.content .create .edit-content form .form-group label[for="end"],
+.content .create .edit-content form .form-group label[for="price"],
+.content .create .edit-content form .form-group label[for="max_users"],
+.content .edit .create-content form .form-group label[for="titre"],
+.content .edit .create-content form .form-group label[for="description"],
+.content .edit .create-content form .form-group label[for="picture"],
+.content .edit .create-content form .form-group label[for="start"],
+.content .edit .create-content form .form-group label[for="end"],
+.content .edit .create-content form .form-group label[for="price"],
+.content .edit .create-content form .form-group label[for="max_users"],
+.content .edit .edit-content form .form-group label[for="titre"],
+.content .edit .edit-content form .form-group label[for="description"],
+.content .edit .edit-content form .form-group label[for="picture"],
+.content .edit .edit-content form .form-group label[for="start"],
+.content .edit .edit-content form .form-group label[for="end"],
+.content .edit .edit-content form .form-group label[for="price"],
+.content .edit .edit-content form .form-group label[for="max_users"] {
   color: #39F;
   font-size: 16px;
   font-weight: 400;
 }
 
-.content .create .create-content form .form-group input {
+.content .create .create-content form .form-group input,
+.content .create .edit-content form .form-group input,
+.content .edit .create-content form .form-group input,
+.content .edit .edit-content form .form-group input {
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
-.content .create .create-content form .form-group input:focus {
+.content .create .create-content form .form-group input:focus,
+.content .create .edit-content form .form-group input:focus,
+.content .edit .create-content form .form-group input:focus,
+.content .edit .edit-content form .form-group input:focus {
   outline: none;
   border-color: #39F;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
-.content .create .create-content form .form-group textarea {
+.content .create .create-content form .form-group textarea,
+.content .create .edit-content form .form-group textarea,
+.content .edit .create-content form .form-group textarea,
+.content .edit .edit-content form .form-group textarea {
   height: 200px;
   resize: none;
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
-.content .create .create-content form .form-group textarea:focus {
+.content .create .create-content form .form-group textarea:focus,
+.content .create .edit-content form .form-group textarea:focus,
+.content .edit .create-content form .form-group textarea:focus,
+.content .edit .edit-content form .form-group textarea:focus {
   outline: none;
   border-color: #39F;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
-.content .create .create-content form .form-group .btn-submit {
+.content .create .create-content form .form-group .btn-submit,
+.content .create .edit-content form .form-group .btn-submit,
+.content .edit .create-content form .form-group .btn-submit,
+.content .edit .edit-content form .form-group .btn-submit {
   display: block;
   margin: 0 auto;
   color: #39F;
@@ -11775,11 +11918,17 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   margin-top: 3px;
 }
 
-.content .create .create-content form .form-group .btn-submit span {
+.content .create .create-content form .form-group .btn-submit span,
+.content .create .edit-content form .form-group .btn-submit span,
+.content .edit .create-content form .form-group .btn-submit span,
+.content .edit .edit-content form .form-group .btn-submit span {
   margin-right: 5px;
 }
 
-.content .create .create-content form .form-group .btn-submit:hover {
+.content .create .create-content form .form-group .btn-submit:hover,
+.content .create .edit-content form .form-group .btn-submit:hover,
+.content .edit .create-content form .form-group .btn-submit:hover,
+.content .edit .edit-content form .form-group .btn-submit:hover {
   color: #FFF;
   background: #39F;
   border-color: #39F;
@@ -11787,7 +11936,13 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 }
 
 .content .create .create-content form .form-group:nth-of-type(3),
-.content .create .create-content form .form-group:nth-of-type(4) {
+.content .create .create-content form .form-group:nth-of-type(4),
+.content .create .edit-content form .form-group:nth-of-type(3),
+.content .create .edit-content form .form-group:nth-of-type(4),
+.content .edit .create-content form .form-group:nth-of-type(3),
+.content .edit .create-content form .form-group:nth-of-type(4),
+.content .edit .edit-content form .form-group:nth-of-type(3),
+.content .edit .edit-content form .form-group:nth-of-type(4) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11799,32 +11954,73 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 }
 
 .content .create .create-content form .form-group:nth-of-type(3) input,
-.content .create .create-content form .form-group:nth-of-type(4) input {
+.content .create .create-content form .form-group:nth-of-type(4) input,
+.content .create .edit-content form .form-group:nth-of-type(3) input,
+.content .create .edit-content form .form-group:nth-of-type(4) input,
+.content .edit .create-content form .form-group:nth-of-type(3) input,
+.content .edit .create-content form .form-group:nth-of-type(4) input,
+.content .edit .edit-content form .form-group:nth-of-type(3) input,
+.content .edit .edit-content form .form-group:nth-of-type(4) input {
   width: 200px;
 }
 
 .content .create .create-content form .form-group:nth-of-type(3) .input-group,
-.content .create .create-content form .form-group:nth-of-type(4) .input-group {
+.content .create .create-content form .form-group:nth-of-type(4) .input-group,
+.content .create .edit-content form .form-group:nth-of-type(3) .input-group,
+.content .create .edit-content form .form-group:nth-of-type(4) .input-group,
+.content .edit .create-content form .form-group:nth-of-type(3) .input-group,
+.content .edit .create-content form .form-group:nth-of-type(4) .input-group,
+.content .edit .edit-content form .form-group:nth-of-type(3) .input-group,
+.content .edit .edit-content form .form-group:nth-of-type(4) .input-group {
   max-width: 200px;
   min-width: 200px;
 }
 
 .content .create .create-content form .form-group:nth-of-type(3) .input-group input,
-.content .create .create-content form .form-group:nth-of-type(4) .input-group input {
+.content .create .create-content form .form-group:nth-of-type(4) .input-group input,
+.content .create .edit-content form .form-group:nth-of-type(3) .input-group input,
+.content .create .edit-content form .form-group:nth-of-type(4) .input-group input,
+.content .edit .create-content form .form-group:nth-of-type(3) .input-group input,
+.content .edit .create-content form .form-group:nth-of-type(4) .input-group input,
+.content .edit .edit-content form .form-group:nth-of-type(3) .input-group input,
+.content .edit .edit-content form .form-group:nth-of-type(4) .input-group input {
   width: 160px;
 }
 
 .content .create .create-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
-.content .create .create-content form .form-group:nth-of-type(4) .input-group .input-group-append span {
+.content .create .create-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
+.content .create .edit-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
+.content .create .edit-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
+.content .edit .create-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
+.content .edit .create-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
+.content .edit .edit-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
+.content .edit .edit-content form .form-group:nth-of-type(4) .input-group .input-group-append span {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.content .create .create-content form .form-group:nth-of-type(4) {
+.content .create .create-content form .form-group:nth-of-type(4),
+.content .create .edit-content form .form-group:nth-of-type(4),
+.content .edit .create-content form .form-group:nth-of-type(4),
+.content .edit .edit-content form .form-group:nth-of-type(4) {
   margin-bottom: 35px;
 }
 
-.content .create .create-content button {
+.content .create .create-content form .form-group:nth-of-type(5),
+.content .create .edit-content form .form-group:nth-of-type(5),
+.content .edit .create-content form .form-group:nth-of-type(5),
+.content .edit .edit-content form .form-group:nth-of-type(5) {
+  display: block;
+  margin: 0 auto 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.content .create .create-content button,
+.content .create .edit-content button,
+.content .edit .create-content button,
+.content .edit .edit-content button {
   display: block;
   margin: 0 auto;
 }

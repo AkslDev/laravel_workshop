@@ -4,20 +4,21 @@
 <section class="home gradient">
 	<div class="left-content">
 		@foreach ($posts as $posts)
-		<div class="item">
-			<div class="left-item">
-				<img class="image" src="{{url('images', $posts->pictures->link)}}" alt="Image du post {{$posts->titre}}">
+			<div class="item">
+				<a class="item-link" href="{{ url('post/' . $posts->id) }}"></a>
+				<div class="left-item">
+					<img class="image" src="{{url('images', $posts->pictures->link)}}" alt="Image du post {{$posts->titre}}">
+				</div>
+				<div class="right-item">
+					<a class="title" href="{{ url('post/' . $posts->id) }}">{{ $posts->titre }}</a>
+					<span  class="type">{{ $posts->post_type }}</span >
+					<p class="description">{{ $posts->description }}</p>	
+					<p class="date-start">
+						<i class="far fa-calendar-alt"></i>
+						Débute le : {{$posts->start}}
+					</p> 	
+				</div>
 			</div>
-			<div class="right-item">
-				<a class="title" href="{{ url('post/' . $posts->id) }}">{{ $posts->titre }}</a>
-				<span  class="type">{{ $posts->post_type }}</span >
-				<p class="description">{{ $posts->description }}</p>	
-				<p class="date-start">
-					<i class="far fa-calendar-alt"></i>
-					Débute le : {{$posts->start}}
-				</p> 	
-			</div>
-		</div>
 		@endforeach
 	</div>
 	<div class="right-content">

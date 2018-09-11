@@ -30,10 +30,17 @@ Route::get('contact', 'FrontController@contact');
 Route::resource('dashboard', 'PostController')->middleware('auth');
 
 
-// Création d'un Post
+// Page de création d'un post
 Route::get('post/create', 'PostController@create')->middleware('auth');
+
+// Envoie du form de création d'un post
 Route::post('post', 'PostController@store')->middleware('auth');
 
+// Page d'edition d'un post
+Route::get('post/edit/{id}', 'PostController@edit')->name('post.edit');
+
+// Envoie du form d'édition d'un post
+Route::post('post/edit/{id}', 'PostController@update')->name('post.update');
 
 // Suppression d'un Post
 Route::get('/post/delete/{id}','PostController@destroy')->name('post.destroy');
