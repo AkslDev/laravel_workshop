@@ -11,6 +11,8 @@
 |
 */
 
+// **************** Client **************** \\
+
 // Page d'accueil
 Route::get('/', 'FrontController@index');
 
@@ -21,14 +23,21 @@ Route::get('/stage', 'FrontController@stage');
 Route::get('/formation', 'FrontController@formation');
 
 // Page d'un post
-Route::get('post/{id}', 'FrontController@show') -> where(['id' => '[0-9]+']);
+Route::get('/post/{id}', 'FrontController@show') -> where(['id' => '[0-9]+']);
 
 // Page d'un post
-Route::get('contact', 'FrontController@contact');
+Route::get('/contact', 'FrontController@contact');
+
+// Affichage des résultats de recherche
+Route::get('/search', 'FrontController@search');
+
+// Recherche via l'index
+Route::post('/search', 'FrontController@find');
+
+// **************** Admin **************** \\
 
 // Routes Sécurisées
 Route::resource('dashboard', 'PostController')->middleware('auth');
-
 
 // Page de création d'un post
 Route::get('post/create', 'PostController@create')->middleware('auth');

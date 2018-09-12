@@ -24,10 +24,13 @@
 	<div class="right-content">
 		<div class="search">
 			<h1>Recherchez un(e) stage / formation </h1>
+
+			<form action="" method="POST" role="search"></form>
+			{{ csrf_field() }}
 			<div class="input-search input-group">
-				<input class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage ou formation">
+				<input name="search" class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage ou formation">
 				<div class="input-group-append">
-        				<button><i class='fas fa-search'></i></button>
+        				<button type="submit"><i class='fas fa-search'></i></button>
   				</div>
 			</div>
 		</div>

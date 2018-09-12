@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Picture extends Model
 {
         public function posts(){
-                return $this->belongsTo(Posts::class);
+                return $this->belongsTo(Post::class);
         }
 }

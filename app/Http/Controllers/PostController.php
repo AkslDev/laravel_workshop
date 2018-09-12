@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 // Importation de l'alias de la classe
 use App\Post;  
 use App\Picture;  
 
-class PostController extends Controller
-{
+class PostController extends Controller{	
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -40,15 +41,26 @@ class PostController extends Controller
 	public function store(Request $request)
 	{
 		$post = new Post;
+
 		$post->titre = $request->titre;
 		$post->description = $request->description;
 		$post->start = $request->start;
 		$post->end = $request->end;
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
-
+		
 		$picture = new Picture;
-		$picture->link = $request->picture;		
+		$link = str_random(12) . '.jpg';
+		$file = $request->picture;
+
+		Storage::disk('local')->put($link, $file);
+
+		$picture->post_id = $post->id;
+		$picture->link = $link;
+		$picture->title = 'TEST';
+
+		$post->pictures()->save($picture);
+
 		$post->save();
 
 		return redirect('/dashboard');

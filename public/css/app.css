@@ -11762,7 +11762,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
           justify-content: center;
   width: 100vw;
   min-height: 100vh;
-  padding: 80px 25px 25px;
+  padding: 95px 25px 25px;
 }
 
 .content .create .create-content,
@@ -11829,32 +11829,32 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .create .create-content form .form-group label[for="titre"],
 .content .create .create-content form .form-group label[for="description"],
-.content .create .create-content form .form-group label[for="picture"],
 .content .create .create-content form .form-group label[for="start"],
 .content .create .create-content form .form-group label[for="end"],
 .content .create .create-content form .form-group label[for="price"],
 .content .create .create-content form .form-group label[for="max_users"],
+.content .create .create-content form .form-group label[for="picture"],
 .content .create .edit-content form .form-group label[for="titre"],
 .content .create .edit-content form .form-group label[for="description"],
-.content .create .edit-content form .form-group label[for="picture"],
 .content .create .edit-content form .form-group label[for="start"],
 .content .create .edit-content form .form-group label[for="end"],
 .content .create .edit-content form .form-group label[for="price"],
 .content .create .edit-content form .form-group label[for="max_users"],
+.content .create .edit-content form .form-group label[for="picture"],
 .content .edit .create-content form .form-group label[for="titre"],
 .content .edit .create-content form .form-group label[for="description"],
-.content .edit .create-content form .form-group label[for="picture"],
 .content .edit .create-content form .form-group label[for="start"],
 .content .edit .create-content form .form-group label[for="end"],
 .content .edit .create-content form .form-group label[for="price"],
 .content .edit .create-content form .form-group label[for="max_users"],
+.content .edit .create-content form .form-group label[for="picture"],
 .content .edit .edit-content form .form-group label[for="titre"],
 .content .edit .edit-content form .form-group label[for="description"],
-.content .edit .edit-content form .form-group label[for="picture"],
 .content .edit .edit-content form .form-group label[for="start"],
 .content .edit .edit-content form .form-group label[for="end"],
 .content .edit .edit-content form .form-group label[for="price"],
-.content .edit .edit-content form .form-group label[for="max_users"] {
+.content .edit .edit-content form .form-group label[for="max_users"],
+.content .edit .edit-content form .form-group label[for="picture"] {
   color: #39F;
   font-size: 16px;
   font-weight: 400;
@@ -11935,14 +11935,48 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   text-decoration: none;
 }
 
-.content .create .create-content form .form-group:nth-of-type(3),
+.content .create .create-content form .form-group:nth-of-type(3) .picture .input-file,
+.content .create .edit-content form .form-group:nth-of-type(3) .picture .input-file,
+.content .edit .create-content form .form-group:nth-of-type(3) .picture .input-file,
+.content .edit .edit-content form .form-group:nth-of-type(3) .picture .input-file {
+  visibility: hidden;
+  position: absolute;
+}
+
+.content .create .create-content form .form-group:nth-of-type(3) .picture .input-group .input-group-append span,
+.content .create .edit-content form .form-group:nth-of-type(3) .picture .input-group .input-group-append span,
+.content .edit .create-content form .form-group:nth-of-type(3) .picture .input-group .input-group-append span,
+.content .edit .edit-content form .form-group:nth-of-type(3) .picture .input-group .input-group-append span {
+  border-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.content .create .create-content form .form-group:nth-of-type(3) .picture .input-group .form-control,
+.content .create .edit-content form .form-group:nth-of-type(3) .picture .input-group .form-control,
+.content .edit .create-content form .form-group:nth-of-type(3) .picture .input-group .form-control,
+.content .edit .edit-content form .form-group:nth-of-type(3) .picture .input-group .form-control {
+  border-right: 0;
+  background: #FFF;
+  color: #333;
+}
+
+.content .create .create-content form .form-group:nth-of-type(3) .picture .input-group .input-group-prepend button,
+.content .create .edit-content form .form-group:nth-of-type(3) .picture .input-group .input-group-prepend button,
+.content .edit .create-content form .form-group:nth-of-type(3) .picture .input-group .input-group-prepend button,
+.content .edit .edit-content form .form-group:nth-of-type(3) .picture .input-group .input-group-prepend button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .content .create .create-content form .form-group:nth-of-type(4),
-.content .create .edit-content form .form-group:nth-of-type(3),
+.content .create .create-content form .form-group:nth-of-type(5),
 .content .create .edit-content form .form-group:nth-of-type(4),
-.content .edit .create-content form .form-group:nth-of-type(3),
+.content .create .edit-content form .form-group:nth-of-type(5),
 .content .edit .create-content form .form-group:nth-of-type(4),
-.content .edit .edit-content form .form-group:nth-of-type(3),
-.content .edit .edit-content form .form-group:nth-of-type(4) {
+.content .edit .create-content form .form-group:nth-of-type(5),
+.content .edit .edit-content form .form-group:nth-of-type(4),
+.content .edit .edit-content form .form-group:nth-of-type(5) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11953,68 +11987,57 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
       justify-content: space-around;
 }
 
-.content .create .create-content form .form-group:nth-of-type(3) input,
 .content .create .create-content form .form-group:nth-of-type(4) input,
-.content .create .edit-content form .form-group:nth-of-type(3) input,
+.content .create .create-content form .form-group:nth-of-type(5) input,
 .content .create .edit-content form .form-group:nth-of-type(4) input,
-.content .edit .create-content form .form-group:nth-of-type(3) input,
+.content .create .edit-content form .form-group:nth-of-type(5) input,
 .content .edit .create-content form .form-group:nth-of-type(4) input,
-.content .edit .edit-content form .form-group:nth-of-type(3) input,
-.content .edit .edit-content form .form-group:nth-of-type(4) input {
+.content .edit .create-content form .form-group:nth-of-type(5) input,
+.content .edit .edit-content form .form-group:nth-of-type(4) input,
+.content .edit .edit-content form .form-group:nth-of-type(5) input {
   width: 200px;
 }
 
-.content .create .create-content form .form-group:nth-of-type(3) .input-group,
 .content .create .create-content form .form-group:nth-of-type(4) .input-group,
-.content .create .edit-content form .form-group:nth-of-type(3) .input-group,
+.content .create .create-content form .form-group:nth-of-type(5) .input-group,
 .content .create .edit-content form .form-group:nth-of-type(4) .input-group,
-.content .edit .create-content form .form-group:nth-of-type(3) .input-group,
+.content .create .edit-content form .form-group:nth-of-type(5) .input-group,
 .content .edit .create-content form .form-group:nth-of-type(4) .input-group,
-.content .edit .edit-content form .form-group:nth-of-type(3) .input-group,
-.content .edit .edit-content form .form-group:nth-of-type(4) .input-group {
+.content .edit .create-content form .form-group:nth-of-type(5) .input-group,
+.content .edit .edit-content form .form-group:nth-of-type(4) .input-group,
+.content .edit .edit-content form .form-group:nth-of-type(5) .input-group {
   max-width: 200px;
   min-width: 200px;
 }
 
-.content .create .create-content form .form-group:nth-of-type(3) .input-group input,
 .content .create .create-content form .form-group:nth-of-type(4) .input-group input,
-.content .create .edit-content form .form-group:nth-of-type(3) .input-group input,
+.content .create .create-content form .form-group:nth-of-type(5) .input-group input,
 .content .create .edit-content form .form-group:nth-of-type(4) .input-group input,
-.content .edit .create-content form .form-group:nth-of-type(3) .input-group input,
+.content .create .edit-content form .form-group:nth-of-type(5) .input-group input,
 .content .edit .create-content form .form-group:nth-of-type(4) .input-group input,
-.content .edit .edit-content form .form-group:nth-of-type(3) .input-group input,
-.content .edit .edit-content form .form-group:nth-of-type(4) .input-group input {
+.content .edit .create-content form .form-group:nth-of-type(5) .input-group input,
+.content .edit .edit-content form .form-group:nth-of-type(4) .input-group input,
+.content .edit .edit-content form .form-group:nth-of-type(5) .input-group input {
   width: 160px;
 }
 
-.content .create .create-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
 .content .create .create-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
-.content .create .edit-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
+.content .create .create-content form .form-group:nth-of-type(5) .input-group .input-group-append span,
 .content .create .edit-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
-.content .edit .create-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
+.content .create .edit-content form .form-group:nth-of-type(5) .input-group .input-group-append span,
 .content .edit .create-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
-.content .edit .edit-content form .form-group:nth-of-type(3) .input-group .input-group-append span,
-.content .edit .edit-content form .form-group:nth-of-type(4) .input-group .input-group-append span {
+.content .edit .create-content form .form-group:nth-of-type(5) .input-group .input-group-append span,
+.content .edit .edit-content form .form-group:nth-of-type(4) .input-group .input-group-append span,
+.content .edit .edit-content form .form-group:nth-of-type(5) .input-group .input-group-append span {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-
-.content .create .create-content form .form-group:nth-of-type(4),
-.content .create .edit-content form .form-group:nth-of-type(4),
-.content .edit .create-content form .form-group:nth-of-type(4),
-.content .edit .edit-content form .form-group:nth-of-type(4) {
-  margin-bottom: 35px;
 }
 
 .content .create .create-content form .form-group:nth-of-type(5),
 .content .create .edit-content form .form-group:nth-of-type(5),
 .content .edit .create-content form .form-group:nth-of-type(5),
 .content .edit .edit-content form .form-group:nth-of-type(5) {
-  display: block;
-  margin: 0 auto 20px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin-bottom: 35px;
 }
 
 .content .create .create-content button,

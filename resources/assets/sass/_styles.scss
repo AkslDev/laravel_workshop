@@ -729,7 +729,7 @@
 				justify-content:center;
 				width:100vw;
 				min-height: 100vh;
-    				padding: 80px 25px 25px;
+    				padding: 95px 25px 25px;
     				.create-content,
     				.edit-content{
     					width: 50vw;
@@ -759,11 +759,11 @@
 							margin: 0 auto 20px;;
 							label[for="titre"],
 							label[for="description"],
-							label[for="picture"],
 							label[for="start"],
 							label[for="end"],
 							label[for="price"],
-							label[for="max_users"]{
+							label[for="max_users"],
+							label[for="picture"]{
 								color:$bleu;
 								font-size: 16px;
 								font-weight: 400;
@@ -810,9 +810,36 @@
 								}
 							}
 						}
-						
-						.form-group:nth-of-type(3),
-						.form-group:nth-of-type(4){
+						.form-group:nth-of-type(3){
+							.picture{
+								.input-file { 
+									visibility: hidden; 
+									position: absolute;
+								}
+								.input-group{
+									.input-group-append{
+										span{
+											border-right: 0;
+											border-top-left-radius: 5px;
+    											border-bottom-left-radius: 5px;
+										}
+									}
+									.form-control{
+										border-right: 0;
+										background:#FFF;
+										color:#333;
+									}
+									.input-group-prepend{
+										button{
+											border-top-right-radius: 5px;
+    											border-bottom-right-radius: 5px;
+										}
+									}
+								}
+							}
+						}
+						.form-group:nth-of-type(4),
+						.form-group:nth-of-type(5){
 							display:flex;
 							align-items:center;
 							justify-content:space-around;
@@ -833,13 +860,8 @@
 								}
 							}
 						}
-						.form-group:nth-of-type(4){
-							margin-bottom:35px;
-						}
 						.form-group:nth-of-type(5){
-							display:block;
-							margin:0 auto 20px;
-							width:fit-content;
+							margin-bottom:35px;
 						}
 					}
 					button{

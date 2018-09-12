@@ -14,15 +14,15 @@
 						<span><i class="fas fa-plus"></i></span>
 						Ajouter un(e) stage / formation
 					</a>
-					<button class="btn btn-red btn-normal btn-remove-multiple">
+					<!-- <button class="btn btn-red btn-normal btn-remove-multiple">
 						<span><i class="fas fa-trash-alt"></i></span>
 						Supression multiple
-					</button>
+					</button> -->
 				</div>			
 			</div>
 			<table class="table table-bordered table-hover">
 				<thead>
-					<th><i class="fas fa-trash-alt"></i></th>
+					<!-- <th><i class="fas fa-trash-alt"></i></th> -->
 					<th>Titre</th>
 					<th>Type</th>
 					<th>Crée le</th>
@@ -32,7 +32,7 @@
 				<tbody>
 					@foreach ($posts as $posts)
 						<tr>
-							<td> <input type="checkbox"> </td>
+							<!-- <td> <input type="checkbox"> </td> -->
 							<td>{{ $posts->titre }}</td>
 							<td>{{ $posts->post_type }}</td>
 							<td>{{ $posts->created_at }}</td>

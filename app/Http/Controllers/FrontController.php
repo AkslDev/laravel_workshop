@@ -11,7 +11,6 @@ class FrontController extends Controller{
 
 	private $paginate = 5;
 
-
 	// Page d'accueil
 	public function index(){
 		// Retourne tout les posts
@@ -42,5 +41,5 @@ class FrontController extends Controller{
    	public function contact(){
         	return view('front.contact');
    	} 
-   	
+
 }

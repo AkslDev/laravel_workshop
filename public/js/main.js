@@ -1,6 +1,16 @@
 $( document ).ready(function() {	
 	
+	// Appel des tooltips
 	$('[data-toggle="tooltip"]').tooltip()
+
+	// Page Create - Input type file
+	$(document).on('click', '.upload-field', function(){
+  		var file = $(this).parent().parent().parent().find('.input-file');
+  		file.trigger('click');
+	});
+	$(document).on('change', '.input-file', function(){
+  		$(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+	});
 
 	// Dropdown du Menu
 	var 	btn_user = $('.user');
@@ -17,83 +27,49 @@ $( document ).ready(function() {
 		
 	});
 
-	var 	notification = $('.notification'),
-		icon_close = $('.notification-close');
+	// var	popup_remove 		= $('.popup_remove'),
+	// 	btn_remove			= $('.btn-remove'),
+	// 	btn_close_remove		= $('.btn-close-remove'),
+	// 	btn_cancel			= $('.btn-cancel');
 
-	$(notification).css('right', '-10px');
+	// $(btn_remove).on('click', function(){
+	// 	$('body').css('overflow','hidden');
+	// 	$('nav').css('filter','blur(5px)');
+	// 	$('.tableau').css('filter','blur(5px)');
+	// 	$('.notification').css('filter','blur(5px)');
+	// 	popup_remove.toggleClass('popup_open');
+	// 	popup_remove.fadeIn(600);
+	// });
+	// $(btn_close_remove).on('click',function(){
+	// 	$('nav').css('filter','blur(0px)');
+	// 	$('.tableau').css('filter','blur(0px)');
+	// 	$('.notification').css('filter','blur(0px)');
+	// 	popup_remove.fadeOut(600);
+	// 	popup_remove.toggleClass('popup_open');
+	// 	$('body').css('overflow','scroll');
+	// });
 
-	$(notification).on('mouseenter',function(){
-		icon_close.fadeIn(600);
-	});
-	$(notification).on('mouseleave',function(){
-		icon_close.fadeOut(600);
-	});
-	$(notification).on('click', function(){
-		notification.fadeOut(600);
-	});
-
-
-	var	popup_remove 		= $('.popup_remove'),
-		btn_remove			= $('.btn-remove'),
-		btn_close_remove		= $('.btn-close-remove'),
-		btn_cancel			= $('.btn-cancel');
-
-	$(btn_remove).on('click', function(){
-		$('body').css('overflow','hidden');
-		$('nav').css('filter','blur(5px)');
-		$('.tableau').css('filter','blur(5px)');
-		$('.notification').css('filter','blur(5px)');
-		popup_remove.toggleClass('popup_open');
-		popup_remove.fadeIn(600);
-	});
-	$(btn_close_remove).on('click',function(){
-		$('nav').css('filter','blur(0px)');
-		$('.tableau').css('filter','blur(0px)');
-		$('.notification').css('filter','blur(0px)');
-		popup_remove.fadeOut(600);
-		popup_remove.toggleClass('popup_open');
-		$('body').css('overflow','scroll');
-	});
-
-	$(btn_cancel).on('click',function(){
-		$('nav').css('filter','blur(0px)');
-		$('.tableau').css('filter','blur(0px)');
-		$('.notification').css('filter','blur(0px)');
-		popup_remove.fadeOut(600);
-		popup_remove.toggleClass('popup_open');
-		$('body').css('overflow','scroll');
-	});
+	// $(btn_cancel).on('click',function(){
+	// 	$('nav').css('filter','blur(0px)');
+	// 	$('.tableau').css('filter','blur(0px)');
+	// 	$('.notification').css('filter','blur(0px)');
+	// 	popup_remove.fadeOut(600);
+	// 	popup_remove.toggleClass('popup_open');
+	// 	$('body').css('overflow','scroll');
+	// });
 
 	// Bouton pour retourner en haut de la page
 	var 	$backToTop = $(".go-top");
 
-		$(window).on('scroll', function() {
-		 	if ($(this).scrollTop() > 500) {
-		   		$backToTop.fadeIn();
-		 	}else{
-		   		$backToTop.fadeOut();
-		 	}
-		});
-		
-		$backToTop.on('click', function(e) {
-		  	$("html, body").animate({scrollTop: 0}, 1200);
-		});
-
-	// (function() {
-	// 	'use strict';
-	// 	window.addEventListener('load', function() {
-	// 		// Fetch all the forms we want to apply custom Bootstrap validation styles to
-	// 		var forms = document.getElementsByClassName('needs-validation');
-	// 		// Loop over them and prevent submission
-	// 		var validation = Array.prototype.filter.call(forms, function(form) {
-	// 			form.addEventListener('submit', function(event) {
-	// 				if (form.checkValidity() === false) {
-	// 				  	event.preventDefault();
-	// 				  	event.stopPropagation();
-	// 				}
-	// 				form.classList.add('was-validated');
-	// 			}, false);
-	// 		});
-	// 	}, false);
-	// })();
+	$(window).on('scroll', function() {
+	 	if ($(this).scrollTop() > 500) {
+	   		$backToTop.fadeIn();
+	 	}else{
+	   		$backToTop.fadeOut();
+	 	}
+	});
+	
+	$backToTop.on('click', function(e) {
+	  	$("html, body").animate({scrollTop: 0}, 1200);
+	});
 });
