@@ -7,6 +7,8 @@
 			<div class="item">
 				<a class="item-link" href="{{ url('post/' . $posts->id) }}"></a>
 				<div class="left-item">
+					<!-- <img class="image" src="{{url('images', $posts->pictures->link)}}" alt="Image du post {{$posts->titre}}"> -->
+					<!-- <div class="image" style="background:url('../images/{{$posts->pictures->link}}')"></div> -->
 					<img class="image" src="{{url('images', $posts->pictures->link)}}" alt="Image du post {{$posts->titre}}">
 				</div>
 				<div class="right-item">

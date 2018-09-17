@@ -10,7 +10,7 @@
 					<h1>Administration</h1>
 				</div>
 				<div class="top-table-action">
-					<a href="{{url('post/create')}}" class="btn btn-blue btn-normal btn-add">
+					<a href="{{ url('/post/create') }}" class="btn btn-blue btn-normal btn-add">
 						<span><i class="fas fa-plus"></i></span>
 						Ajouter un(e) stage / formation
 					</a>

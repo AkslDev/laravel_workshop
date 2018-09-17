@@ -41,27 +41,27 @@ class PostController extends Controller{
 	public function store(Request $request)
 	{
 		$post = new Post;
-
 		$post->titre = $request->titre;
 		$post->description = $request->description;
 		$post->start = $request->start;
 		$post->end = $request->end;
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
-		
-		$picture = new Picture;
-		$link = str_random(12) . '.jpg';
-		$file = $request->picture;
-
-		Storage::disk('local')->put($link, $file);
-
-		$picture->post_id = $post->id;
-		$picture->link = $link;
-		$picture->title = 'TEST';
-
-		$post->pictures()->save($picture);
 
 		$post->save();
+		
+		$path = $request->picture->store('/');
+		$file =  $request->file('picture');
+
+		// Storage::disk('local')->put($path, $file);
+
+		$picture = Picture::create([
+		    'title' => 'Default',
+		    'link' => $path,
+		    'post_id' => $post->id,
+		]);
+		
+		$post->pictures()->save($picture);
 
 		return redirect('/dashboard');
 	}

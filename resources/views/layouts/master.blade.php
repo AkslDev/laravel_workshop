@@ -46,7 +46,7 @@
 								</a>
 								<div class="dropdown">
 									<a 	class="link-dashboard" 
-										href="{{ url('dashboard') }}">
+										href="{{ url('/dashboard') }}">
 										<span><i class="fas fa-table"></i></span>
 										{{ __('Dashboard') }}
 									</a>	

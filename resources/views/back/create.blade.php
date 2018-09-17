@@ -5,7 +5,7 @@
 			<div class="top-create gradient">
 				<h1>Ajout d'un(e) stage ou d'une formation</h1>	
 			</div>
-			<form method="POST" action="{{url('dashboard')}}" class="needs-validation" novalidate>
+			<form action="{{ url('/dashboard') }}" method="post" enctype="multipart/form-data">
 				<div class="form-group form-row">
 					<label for="titre">Titre</label>
 					<input id="titre" type="text" class="form-control" name="titre" placeholder="Titre de votre stage ou formation" required autofocus>
@@ -15,7 +15,9 @@
 					<textarea id="description" name="description" class="form-control" placeholder="Description de votre stage ou formation" required></textarea>
 				</div>
 				<div class="form-group">
-					<div class="picture">
+    					<label for="picture">Example file input</label>
+    					<input type="file" name="picture" class="form-control-file" id="picture">
+					<!-- <div class="picture">
 						<label for="picture">Image</label>
 						<input id="picture" type="file" name="picture" class="input-file">
 						<div class="input-group">
@@ -27,7 +29,7 @@
 								</button>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="form-group row">
 					<div class="date_start">
