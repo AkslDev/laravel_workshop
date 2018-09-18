@@ -5,19 +5,31 @@
 			<div class="top-create gradient">
 				<h1>Ajout d'un(e) stage ou d'une formation</h1>	
 			</div>
-			<form action="{{ url('/admin') }}" method="post" enctype="multipart/form-data">
+			<form action="{{ url('/admin') }}" method="post" enctype="multipart/form-data" novalidate class="needs-validation">
 				<div class="form-group form-row">
 					<label for="titre">Titre</label>
 					<input id="titre" type="text" class="form-control" name="titre" placeholder="Titre de votre stage ou formation" required autofocus>
+					<div class="valid-feedback">
+        					Titre valide
+      					</div>
+      					<div class="invalid-feedback">
+        					Titre non-valide
+      					</div>
 				</div>
 				<div class="form-group row">
 					<label for="description">Description</label>
 					<textarea id="description" name="description" class="form-control" placeholder="Description de votre stage ou formation" required></textarea>
+					<div class="valid-feedback">
+        					Description valide
+      					</div>
+      					<div class="invalid-feedback">
+        					Description non-valide
+      					</div>
 				</div>
 				<div class="form-group">
 					<div class="picture">
 						<label for="picture">Image</label>
-						<input id="picture" type="file" name="picture" class="input-file">
+						<input id="picture" type="file" name="picture" class="input-file" required>
 						<div class="input-group">
 							<input type="text" class="form-control" disabled placeholder="Image de votre stage ou formation">
 							<div class="input-group-prepend">
@@ -33,10 +45,22 @@
 					<div class="date_start">
 						<label for="start">Démarre le</label>
 						<input id="start" name="start" class="form-control" type="date" placeholder="01/01/2018" required>
+						<div class="valid-feedback">
+        						Date de démarrage valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Date de démarrage non-valide
+      						</div>
 					</div>
 					<div class="date_end">
 						<label for="end">Termine le</label>
 						<input id="end" name="end" class="form-control" type="date" placeholder="01/01/2018"  required>
+						<div class="valid-feedback">
+        						Date de fin valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Date de fin non-valide
+      						</div>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -47,11 +71,23 @@
 							<div class="input-group-append">
 								<span class="input-group-text">€</span>
 							</div>
+							<div class="valid-feedback">
+        							Prix valide
+      							</div>
+      							<div class="invalid-feedback">
+        							Prix non-valide
+      							</div>
 						</div>
 					</div>
 					<div class="maxuser">
 						<label for="max_users">Nombre d'utilisateurs</label>
 						<input id="max_users" type="number" class="form-control" name="max_users" placeholder="5" required>
+						<div class="valid-feedback">
+        						Nombre d'utilisateurs maximum valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Nombre d'utilisateurs maximum non-valide
+      						</div>
 					</div>
 				</div>
 				<div class="form-group row mb-0">

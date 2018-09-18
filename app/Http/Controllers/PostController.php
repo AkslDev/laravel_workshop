@@ -40,7 +40,6 @@ class PostController extends Controller{
 	 */
 	public function store(Request $request)
 	{
-		 
 		$post = new Post;
 		$post->titre = $request->titre;
 		$post->description = $request->description;
