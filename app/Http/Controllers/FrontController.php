@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,14 +16,18 @@ class FrontController extends Controller{
 		$post = Post::orderBy('created_at', 'asc')->take(2)->get();
 		return view('front.index', ['posts' => $post]);
 	}
-
+	// Recherche
+   	public function search(Request $request){
+  		$query = $request->search;
+  		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->paginate(5);
+		return view('front.index', compact('posts', 'query'));
+   	}
 	// Page d'un Post
 	public function show(int $id){
 		// Retourne le post demandé
         	$post = Post::find($id);
         	return view('front.post', ['posts' => $post]);
    	}
-
 	// Page Stage
    	public function stage(){
    		// Retourne les posts ayant pour 'post_type' -> 'stage'
@@ -41,5 +44,4 @@ class FrontController extends Controller{
    	public function contact(){
         	return view('front.contact');
    	} 
-
 }

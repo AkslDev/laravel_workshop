@@ -13,7 +13,7 @@
   	}
 	body *{
 		box-sizing: border-box;
-		font-family: $Roboto;
+		font-family: $Catamaran;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -100,7 +100,7 @@
 					background:$bgblanc;
 					border:1px solid #0000001a;
 					border-radius:15px 0px 15px 15px;
-					a.link-dashboard{
+					a.link-admin{
 						display:flex;
 						align-items:center;
 						justify-content:center;
@@ -175,7 +175,6 @@
 						border-radius:5px;
 						display:flex;
 						align-items:center;
-						justify-content:space-between;
 						transition:all ease 0.25s;
 						.item-link{
 							position: absolute;
@@ -183,6 +182,13 @@
 							left: 0;
 							width: 100%;
 							height: 100%;
+						}
+						.left-item{
+							img{
+								width:250px;
+								height:250px;
+								object-fit:cover;
+							}
 						}
 						.right-item{
 							display:flex;
@@ -381,6 +387,9 @@
 								display:block;
 								margin:0 0 25px;
 								border-radius:5px;
+								width: 250px;
+								height: 250px;
+								object-fit: cover;
 							}
 							.post-info{
 								display:flex;
@@ -560,8 +569,8 @@
 					}
 				}
 			}
-		// Administration - Dashboard 
-			.dashboard{
+		// Administration 
+			.admin{
 				display:flex;
 				align-items:center;
 				justify-content:center;
@@ -569,7 +578,7 @@
 				width:100vw;
 				min-height: 100vh;
     				padding: 125px 25px 25px;
-				.dashboard-content{
+				.admin-content{
 					position:relative;
 					width:100%;
 					height:100%;
@@ -870,6 +879,91 @@
 					}
 				}
 			}
+		// Administration - Preview
+		.preview{
+			display:flex;
+			align-items:start;
+			flex-direction:column;
+			width:100vw;
+			height:100vh;
+    			padding: 125px 25px 25px;
+			.item-open{
+				width:75vw;
+				height:auto;
+				padding:25px;
+				margin:0 auto;
+				border-radius:5px;
+				background: $bgblanc;
+				.top-preview{
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+					padding:25px;
+					border-radius: 5px 5px 0 0;
+					h1{
+						color:$blanc;
+						font-size:22px;
+						font-weight:400;
+						letter-spacing:0.5px;
+					}
+				}
+				.preview-content{
+					display:flex;
+					padding: 25px;
+					border:1px solid $bordergrey;
+					justify-content: start;
+					.left-post{
+						.image{
+							display:block;
+							margin:0 0 25px;
+							border-radius:5px;
+							width: 250px;
+							height: 250px;
+							object-fit: cover;
+						}
+						.post-info{
+							display:flex;
+							align-items:start;
+							justify-content:space-between;
+							flex-direction:column;
+							padding:25px;
+							background:#efefef;
+							border-radius:5px;
+							.dates, .price-user{
+								.date-start,
+								.date-end,
+								.price,
+								.user{
+									color:#333;
+									font-size:14px;
+									font-weight:400;
+									letter-spacing:0.5px;
+									i{
+										color:$bleu;
+										font-size:16px;	
+										width:21px;
+										margin-right:5px;
+									}
+								}
+								.user{
+									margin:0;
+								}
+							}
+						}
+					}	
+					.right-post{
+						margin-left:25px;
+						.description{
+							color:#333;
+							font-size:14px;
+							font-weight:400;
+							letter-spacing:0.5px;
+							text-align:left;
+						}
+					}
+				}	
+			}				
+		}
 	}
 /* ********** Stylisation du Footer ********** */
 	footer{

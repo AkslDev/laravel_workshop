@@ -16,6 +16,9 @@
 // Page d'accueil
 Route::get('/', 'FrontController@index');
 
+// Affichage des résultats de recherche
+Route::post('/', 'FrontController@search')->name('search');
+
 // Page des stages
 Route::get('/stage', 'FrontController@stage');
 
@@ -28,31 +31,30 @@ Route::get('/post/{id}', 'FrontController@show') -> where(['id' => '[0-9]+']);
 // Page d'un post
 Route::get('/contact', 'FrontController@contact');
 
-// Affichage des résultats de recherche
-Route::get('/search', 'FrontController@search');
 
-// Recherche via l'index
-Route::post('/search', 'FrontController@find');
 
 // **************** Admin **************** \\
 
 // Routes Sécurisées
-Route::resource('dashboard', 'PostController')->middleware('auth');
+Route::resource('admin', 'PostController')->middleware('auth');
+
+// Prévisualisation d'un post
+Route::get('admin/preview/{id}', 'PostController@show')->where(['id' => '[0-9]+'])->middleware('auth');
 
 // Page de création d'un post
-Route::get('post/create', 'PostController@create')->middleware('auth');
+Route::get('admin/create', 'PostController@create')->middleware('auth');
 
 // Envoie du form de création d'un post
-Route::post('post', 'PostController@store')->middleware('auth');
+Route::post('admin/create', 'PostController@store')->middleware('auth');
 
 // Page d'edition d'un post
-Route::get('post/edit/{id}', 'PostController@edit')->name('post.edit');
+Route::get('admin/edit/{id}', 'PostController@edit')->name('admin.edit')->middleware('auth');
 
 // Envoie du form d'édition d'un post
-Route::post('post/edit/{id}', 'PostController@update')->name('post.update');
+Route::post('admin/edit/{id}', 'PostController@update')->name('admin.update')->middleware('auth');
 
 // Suppression d'un Post
-Route::get('/post/delete/{id}','PostController@destroy')->name('post.destroy');
+Route::get('/admin/delete/{id}','PostController@destroy')->name('admin.destroy')->middleware('auth');
 
 
 Auth::routes();

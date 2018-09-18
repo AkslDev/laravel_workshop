@@ -7,7 +7,7 @@
 				<h1>Modification d'un stage ou d'une formation
 				</h1>	
 			</div>
-			<form method="POST" action="{{ route('post.update', $posts->id) }}" class="needs-validation" novalidate>
+			<form method="POST" action="{{ route('admin.update', $posts->id) }}" class="needs-validation" enctype="multipart/form-data">
         			@csrf
 				<div class="form-group form-row">
 					<label for="titre">Titre</label>

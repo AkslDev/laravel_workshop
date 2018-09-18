@@ -19,7 +19,7 @@ class PostController extends Controller{
 	public function index()
 	{
 		$posts = Post::all();
-       		return view('back.dashboard', ['posts' => $posts]);
+       		return view('back.admin', ['posts' => $posts]);
 	}
 
 	/**
@@ -40,6 +40,7 @@ class PostController extends Controller{
 	 */
 	public function store(Request $request)
 	{
+		 
 		$post = new Post;
 		$post->titre = $request->titre;
 		$post->description = $request->description;
@@ -49,11 +50,9 @@ class PostController extends Controller{
 		$post->max_users = $request->max_users;
 
 		$post->save();
-		
+
 		$path = $request->picture->store('/');
 		$file =  $request->file('picture');
-
-		// Storage::disk('local')->put($path, $file);
 
 		$picture = Picture::create([
 		    'title' => 'Default',
@@ -63,7 +62,7 @@ class PostController extends Controller{
 		
 		$post->pictures()->save($picture);
 
-		return redirect('/dashboard');
+		return redirect('/admin');
 	}
 
 	/**
@@ -74,7 +73,9 @@ class PostController extends Controller{
 	 */
 	public function show($id)
 	{
-	    //
+	    	// Retourne le post demandé
+        	$post = Post::find($id);
+        	return view('back.preview', ['posts' => $post]);
 	}
 
 	/**
@@ -108,8 +109,31 @@ class PostController extends Controller{
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
 
+		$new_picture = $request->file('picture');
+		$old_picture = $post->pictures->link;
+
+		if ($new_picture !== null) {
+			Storage::disk('local')->delete($old_picture);
+
+			$path = $request->picture->store('/');
+			if ($post->pictures()->exists()) {
+				$post->pictures()->update([
+					'title' => 'Default',
+					'link' => $path,
+					'post_id' => $post->id,
+				]);
+			}else{
+ 				$post->pictures()->create([
+					'title' => 'Default',
+					'link' => $path,
+					'post_id' => $post->id,
+				]);
+			}
+		}
+		
 		$post->save();
-    		return redirect('/dashboard');
+
+    		return redirect('/admin');
 	}
 
 	/**
@@ -123,6 +147,6 @@ class PostController extends Controller{
 		$posts = Post::find($id);
 		$posts->delete();
 
-		return redirect('/dashboard');
+		return redirect('/admin');
 	}
 }

@@ -21,7 +21,7 @@
 				</div>
 				<div class="form-group row">
 					<label for="contact-description">{{ __('Description') }}</label>
-					<textarea id="contact-description" name="contact-description" class="form-control" placeholder="Saisissez l'objet de votre contact"> 
+					<textarea id="contact-description" name="contact-description" class="form-control" placeholder="Saisissez l'objet de votre message"> 
 					</textarea>
 				</div>
 				<div class="form-group row mb-0">

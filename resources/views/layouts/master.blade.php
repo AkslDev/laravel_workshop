@@ -20,7 +20,7 @@
     				<div class="nav-content">
     					<ul>
     						<li>
-    							<a href="{{ url('/') }}">Accueil</a>
+    							<a href="/">Accueil</a>
     						</li>
     						<li>
     							<a href="/stage">Stage</a>
@@ -45,17 +45,17 @@
 									{{ Auth::user()->name }}
 								</a>
 								<div class="dropdown">
-									<a 	class="link-dashboard" 
-										href="{{ url('/dashboard') }}">
+									<a 	class="link-admin" 
+										href="/admin">
 										<span><i class="fas fa-table"></i></span>
-										{{ __('Dashboard') }}
+										Administration
 									</a>	
 									<hr>
-									<a 	class="link-logout" 
+									<a class="link-logout" 
 										href="{{ route('logout') }}"
 										onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 										<span><i class="fas fa-sign-out-alt"></i></span>
-										{{ __('Déconnexion') }}
+										Déconnexion
 									</a>
 									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 										@csrf
@@ -74,7 +74,7 @@
 				<div class="footer-content">
     					<ul>
     						<li>
-    							<a href="{{ url('/') }}">Accueil</a>
+    							<a href="/">Accueil</a>
     						</li>
     						<li>
     							<a href="javascript:;">Stage</a>

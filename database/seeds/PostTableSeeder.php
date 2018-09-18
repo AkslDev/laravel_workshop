@@ -10,7 +10,7 @@ class PostTableSeeder extends Seeder{
 	 */
 	public function run(){
 		// factory(\App\Post::class, 30) -> create();
-
+		Storage::disk('local')->delete(Storage::allFiles());
 		factory(App\Post::class, 30)->create()->each(function($post){
 			//Pour les images: ne pas oublier le champs post_id
 			$link = str_random(12) . '.jpg';

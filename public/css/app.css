@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900);/* ******************************* VARIABLES ******************************* */
+@import url(https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900);/* ******************************* VARIABLES ******************************* */
 
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
@@ -10710,7 +10710,7 @@ body:-webkit-full-page-media {
 body * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Catamaran", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10831,7 +10831,7 @@ nav .nav-content .user-connected .dropdown {
   border-radius: 15px 0px 15px 15px;
 }
 
-nav .nav-content .user-connected .dropdown a.link-dashboard {
+nav .nav-content .user-connected .dropdown a.link-admin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10848,12 +10848,12 @@ nav .nav-content .user-connected .dropdown a.link-dashboard {
   transition: all ease 0.3s;
 }
 
-nav .nav-content .user-connected .dropdown a.link-dashboard span {
+nav .nav-content .user-connected .dropdown a.link-admin span {
   font-size: 14px;
   margin-right: 10px;
 }
 
-nav .nav-content .user-connected .dropdown a.link-dashboard:hover {
+nav .nav-content .user-connected .dropdown a.link-admin:hover {
   letter-spacing: 0.5px;
 }
 
@@ -10953,9 +10953,6 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-transition: all ease 0.25s;
   transition: all ease 0.25s;
 }
@@ -10968,6 +10965,15 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.content .home .left-content .item .left-item img,
+.content .stage .left-content .item .left-item img,
+.content .formation .left-content .item .left-item img {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content .home .left-content .item .right-item,
@@ -11280,6 +11286,10 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   display: block;
   margin: 0 0 25px;
   border-radius: 5px;
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content .post .item-open .post-content .left-post .post-info {
@@ -11547,7 +11557,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
           box-shadow: none !important;
 }
 
-.content .dashboard {
+.content .admin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11563,13 +11573,13 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   padding: 125px 25px 25px;
 }
 
-.content .dashboard .dashboard-content {
+.content .admin .admin-content {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.content .dashboard .dashboard-content .notification {
+.content .admin .admin-content .notification {
   position: absolute;
   top: 0px;
   right: -200%;
@@ -11590,34 +11600,34 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   transition: all ease 0.5s;
 }
 
-.content .dashboard .dashboard-content .notification .notification-close {
+.content .admin .admin-content .notification .notification-close {
   position: absolute;
   top: 20px;
   right: 10px;
   display: none;
 }
 
-.content .dashboard .dashboard-content .notification .notification-close i {
+.content .admin .admin-content .notification .notification-close i {
   color: #FFF;
   border-radius: 100%;
   padding: 2px;
   font-size: 14px;
 }
 
-.content .dashboard .dashboard-content .notification p {
+.content .admin .admin-content .notification p {
   margin: 0;
   color: #FFF;
   font-size: 16px;
   font-weight: 300;
 }
 
-.content .dashboard .dashboard-content .notification p span {
+.content .admin .admin-content .notification p span {
   text-transform: capitalize;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-.content .dashboard .dashboard-content .tableau {
+.content .admin .admin-content .tableau {
   padding: 25px;
   background: #F8F8FA;
   border-radius: 5px;
@@ -11625,7 +11635,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   margin: 0 auto;
 }
 
-.content .dashboard .dashboard-content .tableau .top-table {
+.content .admin .admin-content .tableau .top-table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11639,21 +11649,21 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-radius: 5px 5px 0 0;
 }
 
-.content .dashboard .dashboard-content .tableau .top-table .top-table-title h1 {
+.content .admin .admin-content .tableau .top-table .top-table-title h1 {
   color: #FFF;
   font-size: 28px;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
 
-.content .dashboard .dashboard-content .tableau table thead th {
+.content .admin .admin-content .tableau table thead th {
   color: #a9a9a9;
   font-size: 14px;
   font-weight: 400;
   border-bottom-width: 1px;
 }
 
-.content .dashboard .dashboard-content .tableau table tbody tr td {
+.content .admin .admin-content .tableau table tbody tr td {
   font-size: 14px;
   font-weight: 400;
   padding: 15px;
@@ -11661,11 +11671,11 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   vertical-align: middle;
 }
 
-.content .dashboard .dashboard-content .tableau table tbody tr td:nth-of-type(3) {
+.content .admin .admin-content .tableau table tbody tr td:nth-of-type(3) {
   text-transform: capitalize;
 }
 
-.content .dashboard .dashboard-content .popup_remove {
+.content .admin .admin-content .popup_remove {
   position: fixed;
   display: none;
   top: 0;
@@ -11676,7 +11686,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.content .dashboard .dashboard-content .popup_remove .btn-close-remove {
+.content .admin .admin-content .popup_remove .btn-close-remove {
   position: absolute;
   top: 110px;
   left: 25px;
@@ -11688,14 +11698,14 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
           transform: scale(1);
 }
 
-.content .dashboard .dashboard-content .popup_remove .btn-close-remove:hover,
-.content .dashboard .dashboard-content .popup_remove .btn-close-remove:focus {
+.content .admin .admin-content .popup_remove .btn-close-remove:hover,
+.content .admin .admin-content .popup_remove .btn-close-remove:focus {
   color: #F56C6C;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.content .dashboard .dashboard-content .popup_remove .popup_content {
+.content .admin .admin-content .popup_remove .popup_content {
   width: 50%;
   height: auto;
   margin: 0 auto;
@@ -11704,7 +11714,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-radius: 5px;
 }
 
-.content .dashboard .dashboard-content .popup_remove .popup_content .top_popup {
+.content .admin .admin-content .popup_remove .popup_content .top_popup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11718,26 +11728,26 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-radius: 5px 5px 0 0;
 }
 
-.content .dashboard .dashboard-content .popup_remove .popup_content .top_popup h2 {
+.content .admin .admin-content .popup_remove .popup_content .top_popup h2 {
   color: #FFF;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
 
-.content .dashboard .dashboard-content .popup_remove .popup_content .body_popup {
+.content .admin .admin-content .popup_remove .popup_content .body_popup {
   padding: 50px 25px;
   border: 1px solid #dee2e6;
 }
 
-.content .dashboard .dashboard-content .popup_remove .popup_content .body_popup p {
+.content .admin .admin-content .popup_remove .popup_content .body_popup p {
   color: #333;
   font-size: 16px;
   font-weight: 300;
   text-align: center;
 }
 
-.content .dashboard .dashboard-content .popup_remove .popup_content .body_popup .btn_action {
+.content .admin .admin-content .popup_remove .popup_content .body_popup .btn_action {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12047,6 +12057,137 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .edit .edit-content button {
   display: block;
   margin: 0 auto;
+}
+
+.content .preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 125px 25px 25px;
+}
+
+.content .preview .item-open {
+  width: 75vw;
+  height: auto;
+  padding: 25px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: #F8F8FA;
+}
+
+.content .preview .item-open .top-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px;
+  border-radius: 5px 5px 0 0;
+}
+
+.content .preview .item-open .top-preview h1 {
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.content .preview .item-open .preview-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px;
+  border: 1px solid #dee2e6;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.content .preview .item-open .preview-content .left-post .image {
+  display: block;
+  margin: 0 0 25px;
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.content .preview .item-open .preview-content .left-post .post-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 25px;
+  background: #efefef;
+  border-radius: 5px;
+}
+
+.content .preview .item-open .preview-content .left-post .post-info .dates .date-start,
+.content .preview .item-open .preview-content .left-post .post-info .dates .date-end,
+.content .preview .item-open .preview-content .left-post .post-info .dates .price,
+.content .preview .item-open .preview-content .left-post .post-info .dates .user,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .date-start,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .date-end,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .price,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .user {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.content .preview .item-open .preview-content .left-post .post-info .dates .date-start i,
+.content .preview .item-open .preview-content .left-post .post-info .dates .date-end i,
+.content .preview .item-open .preview-content .left-post .post-info .dates .price i,
+.content .preview .item-open .preview-content .left-post .post-info .dates .user i,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .date-start i,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .date-end i,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .price i,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .user i {
+  color: #39F;
+  font-size: 16px;
+  width: 21px;
+  margin-right: 5px;
+}
+
+.content .preview .item-open .preview-content .left-post .post-info .dates .user,
+.content .preview .item-open .preview-content .left-post .post-info .price-user .user {
+  margin: 0;
+}
+
+.content .preview .item-open .preview-content .right-post {
+  margin-left: 25px;
+}
+
+.content .preview .item-open .preview-content .right-post .description {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: left;
 }
 
 /* ********** Stylisation du Footer ********** */

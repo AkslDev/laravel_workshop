@@ -4,19 +4,19 @@
 <section class="stage gradient">
 	<div class="left-content">
 		{{ $posts->links() }}
-		@foreach ($posts as $posts)
+		@foreach ($posts as $post)
 			<div class="item">
-				<a class="item-link" href="{{ url('post/' . $posts->id) }}"></a>
+				<a class="item-link" href="{{ url('post/' . $post->id) }}"></a>
 				<div class="left-item">
-					<img class="image" src="{{url('images', $posts->pictures->link)}}" alt="Image du post {{$posts->titre}}">
+					<img class="image" src="{{url('images', $post->pictures->link)}}" alt="Image du post {{$post->titre}}">
 				</div>
 				<div class="right-item">
-					<a class="title" href="{{ url('post/' . $posts->id) }}">{{ $posts->titre }}</a>
-					<span  class="type">{{ $posts->post_type }}</span >
-					<p class="description">{{ $posts->description }}</p>	
+					<a class="title" href="{{ url('post/' . $post->id) }}">{{ $post->titre }}</a>
+					<span  class="type"><strong>{{ $post->post_type }}</strong></span >
+					<p class="description">{{ $post->description }}</p>	
 					<p class="date-start">
 						<i class="far fa-calendar-alt"></i>
-						Débute le : {{$posts->start}}
+						Débute le : <strong>{{$post->start}}</strong>
 					</p> 	
 				</div>
 			</div>

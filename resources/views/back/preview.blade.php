@@ -1,13 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="post gradient">
+<section class="preview gradient">
 	<article class="item-open">
 		@if(count($posts)>0)
-			<div class="top-post gradient">
-				<h1 class='title'>{{$posts->titre}}</h1>	
+			<div class="top-preview gradient">
+				<div class="top-table-title">
+					<h1>{{$posts->titre}}</h1>
+				</div>
+				<div class="top-table-action">
+					<a href="/admin" class="btn btn-blue btn-normal btn-add">
+						<span><i class="fas fa-angle-left"></i></span>
+						Retour au dashboard
+					</a>
+				</div>
 			</div>
-			<div class="post-content">
+			<div class="preview-content">
 				<div class="left-post">
 					<img class="image" src="{{url('images', $posts->pictures->link)}}" alt="Image du post {{$posts->titre}}">
 					<div class="post-info">
