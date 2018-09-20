@@ -1,15 +1,15 @@
 ## Installation des dépendances
 	
-	$ npm install
+	npm install
 
 ## Lancement du serveur
 
-	$ php artisan serve
+	php artisan serve
 
 ## Lancement du Watcher (Compilateur SASS->CSS)
 
-	$ npm run watch
+	npm run watch
 
 ## Création de Post aléatoire dans la base de donnée
 
-	$ php artisan migrate:refresh --seed
+	php artisan migrate:refresh --seed
