@@ -15,7 +15,8 @@ class Post extends Model
 		'end', 
 		'price', 
 		'max_users'
-   	];	
+   	];
+
         public function categories(){
                 return $this->belongsTo(Category::class);
         }

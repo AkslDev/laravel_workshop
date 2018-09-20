@@ -68,6 +68,17 @@
 			border-color:#39F;
 		}
 	}
+	.btn-green{
+		color:#67C23A;
+		background: #f0f9eb;
+		border-color:#c2e7b0;
+		&:hover,
+		&:focus{
+			color:#FFF;
+			background:#67C23A;
+			border-color:#67C23A;
+		}
+	}
 	.btn-red{
 		color: #f56c6c;
 		background: #fef0f0;

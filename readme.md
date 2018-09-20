@@ -13,3 +13,7 @@
 ## Création de Post aléatoire dans la base de donnée
 
 	php artisan migrate:refresh --seed
+
+## Lancement du serveur SMTP pour l'envoie de mail en Local
+
+	maildev

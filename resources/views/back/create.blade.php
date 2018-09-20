@@ -16,7 +16,6 @@
 						</ul>
     					</div>
 				@endif
-
 				<div class="form-group form-row">
 					<label for="titre">Titre</label>
 					<input id="titre" type="text" class="form-control" name="titre" placeholder="Titre de votre stage ou formation" required autofocus>

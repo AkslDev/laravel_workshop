@@ -40,29 +40,30 @@ Route::get('/contact', 'FrontController@contact');
 // Envoie du formulaire de contact
 Route::post('/contact', 'FrontController@sendmail')->name('sendmail');
 
-
-
 // **************** Admin **************** \\
 
-// Routes Sécurisées
+// Page d'accueil - Admin
 Route::resource('admin', 'PostController')->middleware('auth');
 
-// Prévisualisation d'un post
+// Affichage des résultats de recherche - Admin
+Route::post('/admin', 'PostController@searchAdmin')->name('searchAdmin');
+
+// Prévisualisation d'un post - Admin
 Route::get('admin/preview/{id}', 'PostController@show')->where(['id' => '[0-9]+'])->middleware('auth');
 
-// Page de création d'un post
+// Page de création d'un post - Admin
 Route::get('admin/create', 'PostController@create')->middleware('auth');
 
-// Envoie du form de création d'un post
+// Envoie du form de création d'un post - Admin
 Route::post('admin/create', 'PostController@store')->middleware('auth');
 
-// Page d'edition d'un post
+// Page d'edition d'un post - Admin
 Route::get('admin/edit/{id}', 'PostController@edit')->name('admin.edit')->middleware('auth');
 
-// Envoie du form d'édition d'un post
+// Envoie du form d'édition d'un post - Admin
 Route::post('admin/edit/{id}', 'PostController@update')->name('admin.update')->middleware('auth');
 
-// Suppression d'un Post
+// Suppression d'un Post - Admin
 Route::get('/admin/delete/{id}','PostController@destroy')->name('admin.destroy')->middleware('auth');
 
 

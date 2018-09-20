@@ -22,8 +22,7 @@
 				</div>
 				<div class="form-group row">
 					<label for="message">Message</label>
-					<textarea id="message" name="message" class="form-control" placeholder="Saisissez l'objet de votre message"> 
-					</textarea>
+					<textarea id="message" name="message" class="form-control" placeholder="Saisissez l'objet de votre message"></textarea>
 				</div>
 				<div class="form-group row mb-0">
 					<button type="submit" class="btn btn-normal btn-blue btn-submit">

@@ -11,37 +11,29 @@ use App\Post;
 use App\Picture;
 
 class PostController extends Controller{	
+	
+	private $paginate = 5;
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function index()
-	{
-		$posts = Post::orderBy('created_at', 'desc')->get();
-
+	// Page d'accueil - Admin
+	public function index(){
+		$posts = Post::orderBy('created_at', 'desc')->paginate(15);
        		return view('back.admin', ['posts' => $posts]);
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function create()
-	{
+	// Recherche sur la page d'accueil - Admin
+	public function searchAdmin(Request $request){
+		$query = $request->search;
+  		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->paginate($this->paginate);
+		return view('back.admin', compact('posts', 'query'));
+	}
+
+	// Page de création d'un post - Admin
+	public function create(){
        		return view('back.create');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return \Illuminate\Http\Response
-	 */
-	public function store(Request $request)
-	{	
+	// Stockage de la data à la création d'un post
+	public function store(Request $request){	
 		$this->validate($request, [
 			'post_type' => 'required',
 			'name' => 'required',
@@ -72,41 +64,20 @@ class PostController extends Controller{
 		return redirect('/admin');
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function show($id)
-	{
-	    	// Retourne le post demandé
+	// Page de prévisualisation d'un post - Admin
+	public function show($id){
         	$post = Post::find($id);
         	return view('back.preview', ['posts' => $post]);
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function edit(int $id)
-	{
+	// Page de modification d'un post - Admin
+	public function edit(int $id){
 		$post = Post::find($id);
       		return view('back.edit', ['posts' => $post]);
-
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update(Request $request, $id)
-	{	
+	// Stockage de la data à la modification d'un post
+	public function update(Request $request, $id){
 		$post = Post::find($id);
 
 		$post->titre = $request->titre;
@@ -145,14 +116,8 @@ class PostController extends Controller{
     		return redirect('/admin');
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	public function destroy($id)
-	{
+	// Suppression de la data au click sur le bouton supprimer
+	public function destroy($id){
 		$posts = Post::find($id);
 		$posts->delete();
 

@@ -42,6 +42,11 @@
 					</div>
 				</div>
 				<div class="right-post">
+					<p class="post_type">
+						<span class="type">{{$posts->post_type}}</span>
+						-
+						<span class="categorie">{{$posts->categories->name}}</span>
+					</p>
 					<p class="description">{{$posts->description}}</p> 
 				</div>
 			</div>
