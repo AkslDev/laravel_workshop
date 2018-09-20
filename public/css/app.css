@@ -11850,7 +11850,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .create .create-content form .form-group label[for="max_users"],
 .content .create .create-content form .form-group label[for="picture"],
 .content .create .create-content form .form-group label[for="post_type"],
-.content .create .create-content form .form-group label[for="categorie"],
+.content .create .create-content form .form-group label[for="name"],
 .content .create .edit-content form .form-group label[for="titre"],
 .content .create .edit-content form .form-group label[for="description"],
 .content .create .edit-content form .form-group label[for="start"],
@@ -11859,7 +11859,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .create .edit-content form .form-group label[for="max_users"],
 .content .create .edit-content form .form-group label[for="picture"],
 .content .create .edit-content form .form-group label[for="post_type"],
-.content .create .edit-content form .form-group label[for="categorie"],
+.content .create .edit-content form .form-group label[for="name"],
 .content .edit .create-content form .form-group label[for="titre"],
 .content .edit .create-content form .form-group label[for="description"],
 .content .edit .create-content form .form-group label[for="start"],
@@ -11868,7 +11868,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .edit .create-content form .form-group label[for="max_users"],
 .content .edit .create-content form .form-group label[for="picture"],
 .content .edit .create-content form .form-group label[for="post_type"],
-.content .edit .create-content form .form-group label[for="categorie"],
+.content .edit .create-content form .form-group label[for="name"],
 .content .edit .edit-content form .form-group label[for="titre"],
 .content .edit .edit-content form .form-group label[for="description"],
 .content .edit .edit-content form .form-group label[for="start"],
@@ -11877,7 +11877,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .edit .edit-content form .form-group label[for="max_users"],
 .content .edit .edit-content form .form-group label[for="picture"],
 .content .edit .edit-content form .form-group label[for="post_type"],
-.content .edit .edit-content form .form-group label[for="categorie"] {
+.content .edit .edit-content form .form-group label[for="name"] {
   color: #39F;
   font-size: 16px;
   font-weight: 400;

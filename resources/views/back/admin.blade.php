@@ -25,6 +25,7 @@
 					<!-- <th><i class="fas fa-trash-alt"></i></th> -->
 					<th>Titre</th>
 					<th>Type</th>
+					<th>Categorie</th>
 					<th>Crée le</th>
 					<th>Statut</th>
 					<th>Action(s)</th>
@@ -35,6 +36,7 @@
 							<!-- <td> <input type="checkbox"> </td> -->
 							<td>{{ $posts->titre }}</td>
 							<td>{{ $posts->post_type }}</td>
+							<td>{{ $posts->categories->name }}</td>
 							<td>{{ $posts->created_at }}</td>
 							<td></td>
 							<td>

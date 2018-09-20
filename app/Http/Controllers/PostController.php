@@ -44,6 +44,7 @@ class PostController extends Controller{
 	{	
 		$this->validate($request, [
 			'post_type' => 'required',
+			'name' => 'required',
 			'titre' => 'required|string',
 			'description' => 'required|string',
 			'picture' => 'required|image|max:3000',
@@ -52,7 +53,8 @@ class PostController extends Controller{
 			'price' => 'required|integer|numeric',
 			'max_users' => 'required|integer|numeric',
        		]);
-       		$post = Post::create($request->all());
+       		$post = Post::create($request->except(['name']));
+       		$post->categories_id = $request->name;
 
 		$post->save();
 
@@ -113,6 +115,8 @@ class PostController extends Controller{
 		$post->end = $request->end;
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
+		$post->categories_id = $request->name;
+
 
 		$new_picture = $request->file('picture');
 		$old_picture = $post->pictures->link;

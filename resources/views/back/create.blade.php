@@ -68,12 +68,12 @@
       						</div>
 					</div>
 					<div class="categorie">
-						<label for="categorie">Catégorie</label>
-						<select name="categorie" class="custom-select" id="categorie" required>
+						<label for="name">Catégorie</label>
+						<select name="name" class="custom-select" id="name" required>
 							<option selected>Catégorie du post</option>
-							<option value="front-end">Front-End</option>
-							<option value="back-end">Back-End</option>
-							<option value="fullstack ">Full Stack</option>
+							<option value="1">Front-End</option>
+							<option value="2">Back-End</option>
+							<option value="3">Full Stack</option>
 						</select>
 						<div class="valid-feedback">
         						Catégorie valide

@@ -65,8 +65,8 @@
       						</div>
 					</div>
 					<div class="categorie">
-						<label for="categorie">Catégorie</label>
-						<select class="custom-select" id="categorie" required>
+						<label for="name">Catégorie</label>
+						<select name="name" class="custom-select" id="name" required>
 							<option selected>Catégorie du post</option>
 							<option value="1">Front-End</option>
 							<option value="2">Back-End</option>
