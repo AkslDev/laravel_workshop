@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 // Importation de l'alias de la classe
 use App\Post;  
-use App\Picture;  
+use App\Picture;
 
 class PostController extends Controller{	
 
@@ -18,7 +19,8 @@ class PostController extends Controller{
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::orderBy('created_at', 'desc')->get();
+
        		return view('back.admin', ['posts' => $posts]);
 	}
 
@@ -39,14 +41,18 @@ class PostController extends Controller{
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
-	{
-		$post = new Post;
-		$post->titre = $request->titre;
-		$post->description = $request->description;
-		$post->start = $request->start;
-		$post->end = $request->end;
-		$post->price = $request->price;
-		$post->max_users = $request->max_users;
+	{	
+		$this->validate($request, [
+			'post_type' => 'required',
+			'titre' => 'required|string',
+			'description' => 'required|string',
+			'picture' => 'required|image|max:3000',
+			'start' => 'required|date',
+			'end' => 'required|date|after_or_equal:start',
+			'price' => 'required|integer|numeric',
+			'max_users' => 'required|integer|numeric',
+       		]);
+       		$post = Post::create($request->all());
 
 		$post->save();
 

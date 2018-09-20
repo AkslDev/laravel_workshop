@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 	protected $fillable = [
-		'category_id',
+		'categories_id',
 		'post_type', 
 		'titre', 
 		'description', 
@@ -17,7 +17,7 @@ class Post extends Model
 		'max_users'
    	];	
         public function categories(){
-                return $this->belongsTo(Categorie::class);
+                return $this->belongsTo(Category::class);
         }
         public function pictures(){
                 return $this->hasOne(Picture::class);

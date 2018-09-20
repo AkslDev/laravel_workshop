@@ -38,7 +38,7 @@
 							<td>{{ $posts->created_at }}</td>
 							<td></td>
 							<td>
-								<a href="admin/edit/{{ $posts->id }}" class="btn btn-grey btn-icon btn-edit" id="edit_post-{{$posts->id}}" data-toggle="tooltip" title="Modifier">
+								<a href="admin/edit/{{$posts->id}}" class="btn btn-grey btn-icon btn-edit" id="edit_post-{{$posts->id}}" data-toggle="tooltip" title="Modifier">
 									<span><i class="far fa-edit"></i></span>
 								</a>
 								<a href="admin/preview/{{$posts->id}}" class="btn btn-blue btn-icon btn-preview" id="view_post-{{$posts->id}}" data-toggle="tooltip" title="Prévisualiser" target="blank">

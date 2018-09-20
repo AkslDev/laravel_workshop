@@ -13,7 +13,7 @@ class CreatePostsTable extends Migration{
 	public function up(){
 		Schema::create('posts', function (Blueprint $table) {
 			$table->increments('id');
-			$table->unsignedInteger('category_id')->nullable();
+			$table->unsignedInteger('categories_id')->nullable();
 			$table->enum('post_type',['formation','stage']);
 			$table->string('titre');
 			$table->text('description')->nullable();
@@ -21,8 +21,9 @@ class CreatePostsTable extends Migration{
 			$table->date('end');
 			$table->float('price', 7, 2);
 			$table->integer('max_users');
-			$table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
 			$table->timestamps();
+			$table->foreign('categories_id')->references('id')->on('categories')->onDelete('SET NULL');
+			
 		});
 	}
 

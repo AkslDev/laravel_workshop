@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
 
 class PostTableSeeder extends Seeder{
 	/**
@@ -9,9 +10,16 @@ class PostTableSeeder extends Seeder{
 	 * @return void
 	 */
 	public function run(){
-		// factory(\App\Post::class, 30) -> create();
+
+		// Création des catégories
+		Category::create(['name'=>'Front-End']);
+		Category::create(['name'=>'Back-End']);
+		Category::create(['name'=>'FullStack']);
+
 		Storage::disk('local')->delete(Storage::allFiles());
 		factory(App\Post::class, 30)->create()->each(function($post){
+
+
 			//Pour les images: ne pas oublier le champs post_id
 			$link = str_random(12) . '.jpg';
 
@@ -22,6 +30,9 @@ class PostTableSeeder extends Seeder{
 				'title' => 'Default', //Valeur par défaut
 				'link' => $link, 
 			]);
+
+            		$post->categories()->associate(rand(1,3));
+			
 			$post->save();
     		});
 	}

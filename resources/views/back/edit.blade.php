@@ -8,7 +8,6 @@
 				</h1>	
 			</div>
 			<form method="POST" action="{{ route('admin.update', $posts->id) }}" class="needs-validation" enctype="multipart/form-data">
-        			@csrf
 				<div class="form-group form-row">
 					<label for="titre">Titre</label>
 					<input id="titre" type="text" class="form-control" name="titre" placeholder="Titre de votre stage ou formation" required autofocus value="{{$posts->titre}}">
@@ -48,6 +47,37 @@
 					</div>
 					<div class="invalid-feedback">
 						Image invalide.
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="type">
+						<label for="post_type">Type</label>
+						<select name="post_type" class="custom-select" id="post_type" required>
+							<option selected>Type du post</option>
+							<option value="1">Stage</option>
+							<option value="2">Formation</option>
+						</select>
+						<div class="valid-feedback">
+        						Type valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Type non-valide
+      						</div>
+					</div>
+					<div class="categorie">
+						<label for="categorie">Catégorie</label>
+						<select class="custom-select" id="categorie" required>
+							<option selected>Catégorie du post</option>
+							<option value="1">Front-End</option>
+							<option value="2">Back-End</option>
+							<option value="3">Full Stack</option>
+						</select>
+						<div class="valid-feedback">
+        						Catégorie valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Catégorie non-valide
+      						</div>
 					</div>
 				</div>
 				<div class="form-group row">

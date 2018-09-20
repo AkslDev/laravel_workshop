@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Categorie::class, function (Faker $faker) {
+$factory->define(App\Category::class, function (Faker $faker) {
         return [
-                'name' => $faker -> sentence()
+                'name' => $faker -> randomElement(['front-end', 'back-end', 'fullstack']),
         ];
 });

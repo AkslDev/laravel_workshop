@@ -7,14 +7,15 @@
 			<div class="item">
 				<a class="item-link" href="{{ url('post/' . $post->id) }}"></a>
 				<div class="left-item">
-					<!-- <img class="image" src="{{url('images', $post->pictures->link)}}" alt="Image du post {{$post->titre}}"> -->
-					<!-- <div class="image" style="background:url('../images/{{$post->pictures->link}}')"></div> -->
 					<img class="image" src="{{url('images', $post->pictures->link)}}" alt="Image du post {{$post->titre}}">
 				</div>
 				<div class="right-item">
 					<a class="title" href="{{ url('post/' . $post->id) }}">{{ $post->titre }}</a>
-					<span  class="type"><strong>{{ $post->post_type }}</strong></span >
-					<p class="description">{{ $post->description }}</p>	
+					<span  class="type">
+						<strong>{{ $post->post_type }}</strong> - 
+						<span class="categorie">{{$post->categories->name}}</span>	
+					 </span >
+					<p class="description">{{ $post->description }}</p>
 					<p class="date-start">
 						<i class="far fa-calendar-alt"></i>
 						Débute le : <strong>{{$post->start}}</strong>
@@ -26,8 +27,7 @@
 	<div class="right-content">
 		<div class="search">
 			<h1>Recherchez un(e) stage / formation </h1>
-
-			<form action="{{route('search')}}" method="POST" role="search"enctype="multipart/form-data">
+			<form action="{{route('search')}}" method="POST" role="search" enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<div class="input-search input-group">
 					<input name="search" class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage ou formation">

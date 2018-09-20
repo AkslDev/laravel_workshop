@@ -5,7 +5,18 @@
 			<div class="top-create gradient">
 				<h1>Ajout d'un(e) stage ou d'une formation</h1>	
 			</div>
+			
 			<form action="{{ url('/admin') }}" method="post" enctype="multipart/form-data" novalidate class="needs-validation">
+				@if ($errors->any())
+    					<div class="alert alert-danger">
+						<ul>
+						    	@foreach ($errors->all() as $error)
+						        	<li>{{$error}}</li>
+						    	@endforeach
+						</ul>
+    					</div>
+				@endif
+
 				<div class="form-group form-row">
 					<label for="titre">Titre</label>
 					<input id="titre" type="text" class="form-control" name="titre" placeholder="Titre de votre stage ou formation" required autofocus>
@@ -37,8 +48,39 @@
 									<span><i class="fas fa-upload"></i></span>
 									Importer
 								</button>
-							</div>
+							</div>	
 						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="type">
+						<label for="post_type">Type</label>
+						<select name="post_type" class="custom-select" id="post_type" required>
+							<option selected>Type du post</option>
+							<option value="stage">Stage</option>
+							<option value="formation">Formation</option>
+						</select>
+						<div class="valid-feedback">
+        						Type valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Type non-valide
+      						</div>
+					</div>
+					<div class="categorie">
+						<label for="categorie">Catégorie</label>
+						<select name="categorie" class="custom-select" id="categorie" required>
+							<option selected>Catégorie du post</option>
+							<option value="front-end">Front-End</option>
+							<option value="back-end">Back-End</option>
+							<option value="fullstack ">Full Stack</option>
+						</select>
+						<div class="valid-feedback">
+        						Catégorie valide
+      						</div>
+      						<div class="invalid-feedback">
+        						Catégorie non-valide
+      						</div>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -100,4 +142,5 @@
 			</form>
 		</div>
 	</div>
+
 @endsection

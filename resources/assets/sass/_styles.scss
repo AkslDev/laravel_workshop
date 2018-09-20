@@ -254,7 +254,7 @@
     						top: 105px;
 						width:40vw;
 						background:$bgblanc;
-						margin:88px 0 0;
+						margin:25px 0;
 						padding:25px;
 						border-radius:5px;
 						display:flex;
@@ -287,7 +287,8 @@
 									border: 1px solid #ced4da;
 									padding: 1px 25px 2px;
 									transition: all ease 0.2s;
-									&:hover{
+									&:hover, &:focus{
+										outline:none;
 										background:$bleu;
 									}
 								}	
@@ -476,7 +477,7 @@
 							.form-group{
 								width: 100%;
 								label[for="contact-email"],
-								label[for="contact-description"]{
+								label[for="contact-message"]{
 									color:$bleu;
 									font-size: 16px;
 									font-weight: 400;
@@ -772,7 +773,9 @@
 							label[for="end"],
 							label[for="price"],
 							label[for="max_users"],
-							label[for="picture"]{
+							label[for="picture"],
+							label[for="post_type"],
+							label[for="categorie"]{
 								color:$bleu;
 								font-size: 16px;
 								font-weight: 400;
@@ -848,10 +851,11 @@
 							}
 						}
 						.form-group:nth-of-type(4),
-						.form-group:nth-of-type(5){
+						.form-group:nth-of-type(5),
+						.form-group:nth-of-type(6){
 							display:flex;
 							align-items:center;
-							justify-content:space-around;
+							justify-content:space-between;
 							input{
 								width:200px;
 							}
@@ -868,8 +872,22 @@
 									}
 								}
 							}
+							.type,
+							.categorie{
+								display: flex;
+								justify-content: center;
+								flex-direction: column;
+								select{
+									width:200px;
+									&:focus{
+										outline:none;
+										border-color:$bleu;
+										box-shadow:none;
+									}
+								}
+							}
 						}
-						.form-group:nth-of-type(5){
+						.form-group:nth-of-type(6){
 							margin-bottom:35px;
 						}
 					}

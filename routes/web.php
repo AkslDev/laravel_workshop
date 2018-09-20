@@ -22,14 +22,23 @@ Route::post('/', 'FrontController@search')->name('search');
 // Page des stages
 Route::get('/stage', 'FrontController@stage');
 
+// Affichage des résultats de recherche pour les Stages
+Route::post('/stage', 'FrontController@searchStage')->name('searchStage');
+
 // Page des formations
 Route::get('/formation', 'FrontController@formation');
+
+// Affichage des résultats de recherche pour les Formations
+Route::post('/formation', 'FrontController@searchFormation')->name('searchFormation');
 
 // Page d'un post
 Route::get('/post/{id}', 'FrontController@show') -> where(['id' => '[0-9]+']);
 
-// Page d'un post
+// Page d'un contact
 Route::get('/contact', 'FrontController@contact');
+
+// Envoie du formulaire de contact
+Route::post('/contact', 'FrontController@sendmail')->name('sendmail');
 
 
 
