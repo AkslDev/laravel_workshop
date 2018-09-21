@@ -29,7 +29,7 @@ Route::get('/resultstage', 'FrontController@searchStage')->name('searchStage');
 Route::get('/formation', 'FrontController@formation');
 
 // Affichage des résultats de recherche pour les Formations
-Route::post('/formation', 'FrontController@searchFormation')->name('searchFormation');
+Route::get('/resultformation', 'FrontController@searchFormation')->name('searchFormation');
 
 // Page d'un post
 Route::get('/post/{id}', 'FrontController@show') -> where(['id' => '[0-9]+']);
@@ -65,6 +65,9 @@ Route::post('admin/edit/{id}', 'PostController@update')->name('admin.update')->m
 
 // Suppression d'un Post - Admin
 Route::get('/admin/delete/{id}','PostController@destroy')->name('admin.destroy')->middleware('auth');
+
+// Modification du statut d'un Post
+Route::get('/admin/statut/{id}','PostController@status')->name('admin.status')->middleware('auth');
 
 
 Auth::routes();

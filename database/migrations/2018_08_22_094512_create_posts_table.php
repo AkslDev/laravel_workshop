@@ -15,7 +15,11 @@ class CreatePostsTable extends Migration{
 			$table->increments('id');
 			$table->unsignedInteger('categories_id')->nullable();
 			$table->enum('post_type',['formation','stage']);
+<<<<<<< HEAD
 			$table->enum('statut',['publié','non-publié']);
+=======
+			$table->enum('status',['publié','non-publié']);
+>>>>>>> fixbug
 			$table->string('titre');
 			$table->text('description')->nullable();
 			$table->date('start');

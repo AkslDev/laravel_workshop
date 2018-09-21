@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Installation des dépendances
 	
 	npm install
@@ -17,3 +18,5 @@
 ## Lancement du serveur SMTP pour l'envoie de mail en Local
 
 	maildev
+=======
+>>>>>>> fixbug

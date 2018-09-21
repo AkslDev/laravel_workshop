@@ -12,9 +12,9 @@ class PostTableSeeder extends Seeder{
 	public function run(){
 
 		// Création des catégories
-		Category::create(['name'=>'Front-End']);
-		Category::create(['name'=>'Back-End']);
-		Category::create(['name'=>'FullStack']);
+		App\Category::create(['name'=>'Front-End']);
+		App\Category::create(['name'=>'Back-End']);
+		App\Category::create(['name'=>'FullStack']);
 
 		Storage::disk('local')->delete(Storage::allFiles());
 		factory(App\Post::class, 30)->create()->each(function($post){
@@ -24,6 +24,7 @@ class PostTableSeeder extends Seeder{
 			$link = str_random(12) . '.jpg';
 
 			$file = file_get_contents('http://via.placeholder.com/250x250/' . rand(1, 9));
+
 			Storage::disk('local')->put($link, $file);
 
 			$post->pictures()->create([

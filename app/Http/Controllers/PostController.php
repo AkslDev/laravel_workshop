@@ -8,6 +8,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 // Importation de l'alias de la classe
 use App\Post;  
+use App\Category;
 use App\Picture;
 
 class PostController extends Controller{	
@@ -72,6 +73,7 @@ class PostController extends Controller{
         	return view('back.preview', ['posts' => $post]);
 	}
 
+<<<<<<< HEAD
 	// Page de modification d'un post - Admin
 	public function edit(int $id){
 		$post = Post::find($id);
@@ -80,6 +82,28 @@ class PostController extends Controller{
 
 	// Stockage de la data à la modification d'un post
 	public function update(Request $request, $id){
+=======
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit(int $id){
+		$post = Post::find($id);
+		$categories = Category::all();
+      		return view('back.edit', compact('post', 'categories'));
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, $id){	
+>>>>>>> fixbug
 		$post = Post::find($id);
 
 		$post->titre = $request->titre;
@@ -118,11 +142,35 @@ class PostController extends Controller{
     		return redirect('/admin');
 	}
 
+<<<<<<< HEAD
 	// Suppression de la data au click sur le bouton supprimer
+=======
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+>>>>>>> fixbug
 	public function destroy($id){
 		$posts = Post::find($id);
 		$posts->delete();
 
+		return redirect('/admin');
+	}
+
+	public function status($id){
+		$post = Post::find($id);      
+		if($post->status == 'publié'){
+			$post->update([
+				'status' => 'non-publié'
+			]);
+		}else{
+			$post->update([
+				'status' => 'publié'
+			]);
+		}
+		$post->save();
 		return redirect('/admin');
 	}
 }

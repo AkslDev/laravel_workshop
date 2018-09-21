@@ -10473,8 +10473,6 @@ a.text-dark:focus {
   }
 }
 
-/* ********** Imports ********** */
-
 h1,
 h2,
 h3,
@@ -10701,6 +10699,19 @@ body:-webkit-full-page-media {
   background: #f56c6c;
   border-color: #f56c6c;
   color: #fff;
+}
+
+.btn-green {
+  color: #67C23A;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+  color: #FFF;
+  background: #67C23A;
+  border-color: #67C23A;
 }
 
 .gradient {
@@ -11170,21 +11181,29 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   font-weight: 500;
   letter-spacing: 1px;
   text-align: left;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .content .home .left-content .item .right-item .type strong,
 .content .stage .left-content .item .right-item .type strong,
+<<<<<<< HEAD
 .content .formation .left-content .item .right-item .type strong,
 .content .result .left-content .item .right-item .type strong {
+=======
+.content .formation .left-content .item .right-item .type strong {
+>>>>>>> fixbug
   font-weight: 800;
 }
 
 .content .home .left-content .item .right-item .type .categorie,
 .content .stage .left-content .item .right-item .type .categorie,
+<<<<<<< HEAD
 .content .formation .left-content .item .right-item .type .categorie,
 .content .result .left-content .item .right-item .type .categorie {
+=======
+.content .formation .left-content .item .right-item .type .categorie {
+>>>>>>> fixbug
   font-weight: 300;
 }
 
@@ -11529,6 +11548,40 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .post .item-open .post-content .right-post {
   width: 100%;
   margin-left: 25px;
+  width: 100%;
+}
+
+.content .post .item-open .post-content .right-post .post_type {
+  position: relative;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.content .post .item-open .post-content .right-post .post_type .type {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.content .post .item-open .post-content .right-post .post_type .categorie {
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.content .post .item-open .post-content .right-post .post_type:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #3399ff;
+  background: -webkit-gradient(linear, left top, right top, from(#39F), color-stop(90%, #39F0));
+  background: linear-gradient(to right, #39F 0%, #39F0 90%);
+  border: 0;
 }
 
 .content .post .item-open .post-content .right-post .post_type {
@@ -11888,23 +11941,55 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-color: #39F;
 }
 
+<<<<<<< HEAD
 .content .admin .admin-content .tableau .top-table .top-table-action .input-search {
   width: 400px;
 }
 
 .content .admin .admin-content .tableau .top-table .top-table-action .input-search input {
+=======
+.content .admin .admin-content .tableau .top-table .top-table-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content .admin .admin-content .tableau .top-table .top-table-action form {
+  margin-right: 25px;
+}
+
+.content .admin .admin-content .tableau .top-table .top-table-action form .input-search {
+  width: 400px;
+}
+
+.content .admin .admin-content .tableau .top-table .top-table-action form .input-search input {
+>>>>>>> fixbug
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
+<<<<<<< HEAD
 .content .admin .admin-content .tableau .top-table .top-table-action .input-search input:focus {
+=======
+.content .admin .admin-content .tableau .top-table .top-table-action form .input-search input:focus {
+>>>>>>> fixbug
   outline: none;
   border-color: #39F;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
 
+<<<<<<< HEAD
 .content .admin .admin-content .tableau .top-table .top-table-action .input-search .input-group-append button {
+=======
+.content .admin .admin-content .tableau .top-table .top-table-action form .input-search .input-group-append button {
+>>>>>>> fixbug
   display: block;
   color: #FFF;
   background: #39F;
@@ -11915,8 +12000,13 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   transition: all ease 0.2s;
 }
 
+<<<<<<< HEAD
 .content .admin .admin-content .tableau .top-table .top-table-action .input-search .input-group-append button:hover,
 .content .admin .admin-content .tableau .top-table .top-table-action .input-search .input-group-append button:focus {
+=======
+.content .admin .admin-content .tableau .top-table .top-table-action form .input-search .input-group-append button:hover,
+.content .admin .admin-content .tableau .top-table .top-table-action form .input-search .input-group-append button:focus {
+>>>>>>> fixbug
   outline: none;
   background: #0d2742;
   border-color: #dee2e6;
@@ -12445,6 +12535,21 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   border-color: #39F;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.content .create .create-content form .form-group:nth-of-type(4) .categorie select,
+.content .create .create-content form .form-group:nth-of-type(5) .categorie select,
+.content .create .create-content form .form-group:nth-of-type(6) .categorie select,
+.content .create .edit-content form .form-group:nth-of-type(4) .categorie select,
+.content .create .edit-content form .form-group:nth-of-type(5) .categorie select,
+.content .create .edit-content form .form-group:nth-of-type(6) .categorie select,
+.content .edit .create-content form .form-group:nth-of-type(4) .categorie select,
+.content .edit .create-content form .form-group:nth-of-type(5) .categorie select,
+.content .edit .create-content form .form-group:nth-of-type(6) .categorie select,
+.content .edit .edit-content form .form-group:nth-of-type(4) .categorie select,
+.content .edit .edit-content form .form-group:nth-of-type(5) .categorie select,
+.content .edit .edit-content form .form-group:nth-of-type(6) .categorie select {
+  text-transform: capitalize;
 }
 
 .content .create .create-content form .form-group:nth-of-type(6),

@@ -1,4 +1,3 @@
-/* ********** Imports ********** */
 	@import 'fonts';
 	@import 'elements';
 	@import 'variables';
@@ -217,7 +216,7 @@
 								font-weight:500;
 								letter-spacing:1px;
 								text-align:left;
-								margin-bottom: 15px;
+								margin-bottom: 10px;
 								text-transform:uppercase;
 								strong{
 									font-weight: 800;
@@ -432,6 +431,10 @@
 						.right-post{
 							width:100%;
 							margin-left:25px;
+<<<<<<< HEAD
+=======
+							width:100%;
+>>>>>>> fixbug
 							.post_type{
 								position:relative;
 								width:100%;
@@ -691,6 +694,7 @@
 								}
 							}
 							.top-table-action{
+<<<<<<< HEAD
 								.input-search{
 									width: 400px;
 									input{
@@ -718,6 +722,42 @@
 										}	
 									}
 								}
+=======
+								display:flex;
+								align-items:center;
+								justify-content:center;
+								form{
+									margin-right:25px;
+									.input-search{
+										width: 400px;
+										input{
+											transition: all ease 0.2s;
+											&:focus{
+												outline:none;
+												border-color:$bleu;
+												box-shadow:none!important;
+											}
+										}
+										.input-group-append{
+											button{
+												display:block;
+												color:$blanc;
+												background: $bleu;
+												border-radius:0px 5px 5px 0;
+												border: 1px solid $bleu;
+												padding: 1px 25px 2px;
+												transition: all ease 0.2s;
+												&:hover, &:focus{
+													outline:none;
+													background:$bleuF;
+													border-color:$bordergrey;
+												}
+											}	
+										}
+									}
+								}
+								
+>>>>>>> fixbug
 							}
 							.top-table-title{
 								h1{
@@ -978,6 +1018,11 @@
 									}
 								}
 							}
+							.categorie{
+								select{
+									text-transform:capitalize;
+								}
+							}
 						}
 						.form-group:nth-of-type(6){
 							margin-bottom:35px;
@@ -1103,8 +1148,55 @@
 							}
 						}
 					}	
+<<<<<<< HEAD
 				}				
 			}
+=======
+					.right-post{
+						width:100%;
+						margin-left:25px;
+						.post_type{
+							position:relative;
+							width:100%;
+							padding-bottom:10px;
+							.type{
+								font-size:12px;
+								font-weight: 800;
+								letter-spacing:1px;
+								text-transform:uppercase;
+							}
+							.categorie{
+								font-size:12px;
+								font-weight: 200;
+								letter-spacing:1px;
+								text-transform:uppercase;
+							}
+							&:after{
+								position:absolute;
+								content:"";
+								left:0;
+								bottom:0;
+								width:100%;
+								height:1px;
+								background: #3399ff;
+								background: -webkit-linear-gradient(left, $bleu 0%, #39F0 90%);
+								background: -o-linear-gradient(left, $bleu 0%, #39F0 90%);
+								background: linear-gradient(to right, $bleu 0%, #39F0 90%);
+								border:0;
+							}
+						}
+						.description{
+							color:#333;
+							font-size:14px;
+							font-weight:400;
+							letter-spacing:0.5px;
+							text-align:left;
+						}
+					}
+				}	
+			}				
+		}
+>>>>>>> fixbug
 	}
 /* ********** Stylisation du Footer ********** */
 	footer{
