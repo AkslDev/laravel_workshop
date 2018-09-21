@@ -73,10 +73,9 @@
 					<i class="fas fa-plus"></i>
 				</span>
 			</a> 
-
-     			<a class="menu--floating__action has-background background-blue" href="javascript">
+     			<a class="menu--floating__action has-background background-blue" href="javascript:;">
      				<span class="hide-accessible">
-     					<i class="fas fa-ellipsis-v"></i>
+					<i class="fas fa-cog"></i>
      				</span>
      			</a>
 		</div>

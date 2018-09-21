@@ -27,7 +27,7 @@
 	<div class="right-content">
 		<div class="search">
 			<h1>Recherchez un(e) stage / formation </h1>
-			<form action="{{route('search')}}" method="POST" role="search" enctype="multipart/form-data">
+			<form action="{{route('search')}}" method="GET" role="search" enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<div class="input-search input-group">
 					<input name="search" class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage ou formation">

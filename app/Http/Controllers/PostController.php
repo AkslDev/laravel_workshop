@@ -12,11 +12,11 @@ use App\Picture;
 
 class PostController extends Controller{	
 	
-	private $paginate = 5;
+	private $paginate = 15;
 
 	// Page d'accueil - Admin
 	public function index(){
-		$posts = Post::orderBy('created_at', 'desc')->paginate(15);
+		$posts = Post::orderBy('created_at', 'desc')->paginate($this->paginate);
        		return view('back.admin', ['posts' => $posts]);
 	}
 
@@ -34,6 +34,7 @@ class PostController extends Controller{
 
 	// Stockage de la data à la création d'un post
 	public function store(Request $request){	
+
 		$this->validate($request, [
 			'post_type' => 'required',
 			'name' => 'required',
@@ -45,7 +46,8 @@ class PostController extends Controller{
 			'price' => 'required|integer|numeric',
 			'max_users' => 'required|integer|numeric',
        		]);
-       		$post = Post::create($request->except(['name']));
+
+       		$post = Post::create($request->except(['name', 'statut']));
        		$post->categories_id = $request->name;
 
 		$post->save();

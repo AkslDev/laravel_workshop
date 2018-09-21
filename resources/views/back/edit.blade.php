@@ -54,8 +54,8 @@
 						<label for="post_type">Type</label>
 						<select name="post_type" class="custom-select" id="post_type" required>
 							<option selected>Type du post</option>
-							<option value="1">Stage</option>
-							<option value="2">Formation</option>
+							<option value="stage">Stage</option>
+							<option value="formation">Formation</option>
 						</select>
 						<div class="valid-feedback">
         						Type valide

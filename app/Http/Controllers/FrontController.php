@@ -23,7 +23,7 @@ class FrontController extends Controller{
    	public function search(Request $request){
   		$query = $request->search;
   		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->paginate($this->paginate);
-		return view('front.index', compact('posts', 'query'));
+		return view('front.index', compact('posts'));
    	}
 	// Page d'un Post
 	public function show(int $id){
@@ -41,7 +41,7 @@ class FrontController extends Controller{
    	public function searchStage(Request $request){
   		$query = $request->search;
   		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->where('post_type', 'stage')->paginate($this->paginate);
-		return view('front.stage', compact('posts', 'query'));
+		return view('front.stage', compact('posts'));
    	}
 	// Page Formation
 	public function formation(){

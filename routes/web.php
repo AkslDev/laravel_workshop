@@ -17,13 +17,13 @@
 Route::get('/', 'FrontController@index');
 
 // Affichage des résultats de recherche
-Route::post('/', 'FrontController@search')->name('search');
+Route::get('/result', 'FrontController@search')->name('search');
 
 // Page des stages
 Route::get('/stage', 'FrontController@stage');
 
 // Affichage des résultats de recherche pour les Stages
-Route::post('/stage', 'FrontController@searchStage')->name('searchStage');
+Route::get('/resultstage', 'FrontController@searchStage')->name('searchStage');
 
 // Page des formations
 Route::get('/formation', 'FrontController@formation');
