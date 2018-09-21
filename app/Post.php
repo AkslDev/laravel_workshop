@@ -8,7 +8,7 @@ class Post extends Model
 {
 	protected $fillable = [
 		'categories_id',
-    'status',
+		'status',
 		'post_type', 
 		'titre', 
 		'description', 
@@ -16,20 +16,14 @@ class Post extends Model
 		'end', 
 		'price', 
 		'max_users'
-<<<<<<< HEAD
-   	];
-
-=======
-   	];	
-   	public function scopePublished($query){
-   		return $query->where('status', 'publié');
-   	}
->>>>>>> fixbug
-        public function categories(){
-                return $this->belongsTo(Category::class);
-        }
-        public function pictures(){
-                return $this->hasOne(Picture::class);
-        }
-
+	];	
+	public function scopePublished($query){
+		return $query->where('status', 'publié');
+	}
+	public function categories(){
+		return $this->belongsTo(Category::class);
+	}
+	public function pictures(){
+		return $this->hasOne(Picture::class);
+	}
 }

@@ -6,7 +6,7 @@
 				<h1>Ajout d'un(e) stage ou d'une formation</h1>	
 			</div>
 			
-			<form action="{{url('/admin')}}" method="post" enctype="multipart/form-data" novalidate class="needs-validation">
+			<form action="{{ route('admin.create') }}" method="post" enctype="multipart/form-data" novalidate class="needs-validation">
 				@if ($errors->any())
     					<div class="alert alert-danger">
 						<ul>

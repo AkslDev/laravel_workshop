@@ -52,16 +52,9 @@
 				<div class="form-group row">
 					<div class="type">
 						<label for="post_type">Type</label>
-<<<<<<< HEAD
-						<select name="post_type" class="custom-select" id="post_type" required>
-							<option selected>Type du post</option>
-							<option value="stage">Stage</option>
-							<option value="formation">Formation</option>
-=======
 						<select  class="custom-select" id="post_type" name="post_type"required>
 							<option value="stage" {{ $post->post_type === "stage" ? 'selected' :''}}>Stage</option>
 							<option value="formation" {{ $post->post_type === "formation" ? 'selected' :''}}>Formation</option>
->>>>>>> fixbug
 						</select>
 						<div class="valid-feedback">
         						Type valide
@@ -72,7 +65,7 @@
 					</div>
 					<div class="categorie">
 						<label for="name">Catégorie</label>
-						<select name="categories_id" class="custom-select" id="name" required>
+						<select name="name" class="custom-select" id="name" required>
 							@foreach($categories as $categorie)
 								<option {{$post->categories_id == $categorie->id ? 'selected' : ''}} value="{{$categorie->id}}">
 									{{$categorie->name}}

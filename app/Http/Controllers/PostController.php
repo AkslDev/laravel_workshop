@@ -48,7 +48,7 @@ class PostController extends Controller{
 			'max_users' => 'required|integer|numeric',
        		]);
 
-       		$post = Post::create($request->except(['name', 'statut']));
+       		$post = Post::create($request->except(['name']));
        		$post->categories_id = $request->name;
 
 		$post->save();
@@ -73,37 +73,13 @@ class PostController extends Controller{
         	return view('back.preview', ['posts' => $post]);
 	}
 
-<<<<<<< HEAD
-	// Page de modification d'un post - Admin
-	public function edit(int $id){
-		$post = Post::find($id);
-      		return view('back.edit', ['posts' => $post]);
-	}
-
-	// Stockage de la data à la modification d'un post
-	public function update(Request $request, $id){
-=======
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
 	public function edit(int $id){
 		$post = Post::find($id);
 		$categories = Category::all();
       		return view('back.edit', compact('post', 'categories'));
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
 	public function update(Request $request, $id){	
->>>>>>> fixbug
 		$post = Post::find($id);
 
 		$post->titre = $request->titre;
@@ -113,7 +89,6 @@ class PostController extends Controller{
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
 		$post->categories_id = $request->name;
-
 
 		$new_picture = $request->file('picture');
 		$old_picture = $post->pictures->link;
@@ -142,16 +117,7 @@ class PostController extends Controller{
     		return redirect('/admin');
 	}
 
-<<<<<<< HEAD
 	// Suppression de la data au click sur le bouton supprimer
-=======
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
->>>>>>> fixbug
 	public function destroy($id){
 		$posts = Post::find($id);
 		$posts->delete();

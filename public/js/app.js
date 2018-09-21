@@ -35939,7 +35939,7 @@ module.exports = function spread(callback) {
 /* 36 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n\t\t\t\t\t\t\tmargin-left:25px;\n                       ^\n      Invalid CSS after \"...rgin-left:25px;\": expected \"}\", was \"<<<<<<< HEAD\"\n      in /Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/resources/assets/sass/_styles.scss (line 433, column 25)\n    at runLoaders (/Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/neo-async/async.js:7974:18)\n    at options.error (/Applications/MAMP/htdocs/Workshop/DFE2/workshop_final/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

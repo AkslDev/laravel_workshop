@@ -8,11 +8,7 @@ $factory->define(App\Post::class, function (Faker $faker) {
 
 	return [
                 'post_type' => $faker -> randomElement(['formation', 'stage']),
-<<<<<<< HEAD
-		'statut' => $faker -> randomElement(['publié', 'non-publié']),
-=======
 		'status' => $faker -> randomElement(['publié', 'non-publié']),
->>>>>>> fixbug
                 'titre' => $faker -> sentence(),
                 'description' => $faker -> paragraph(),
                 'start' => $faker -> dateTimeInInterval("+" .$start . " days"),

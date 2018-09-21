@@ -10,16 +10,12 @@
 				</div>
 				{{ $posts->links() }}
 				<div class="top-table-action">
-<<<<<<< HEAD
-					<form action="{{route('searchAdmin')}}" method="POST" role="search" enctype="multipart/form-data">
-=======
 					
 					<!-- <button class="btn btn-red btn-normal btn-remove-multiple">
 						<span><i class="fas fa-trash-alt"></i></span>
 						Supression multiple
 					</button> -->
 					<form action="" method="POST" role="search" enctype="multipart/form-data">
->>>>>>> fixbug
 						{{ csrf_field() }}
 						<div class="input-search input-group">
 							<input name="search" class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage ou formation">
@@ -28,13 +24,10 @@
   							</div>
 						</div>
 					</form>
-<<<<<<< HEAD
-=======
 					<a href="{{ url('/admin/create') }}" class="btn btn-blue btn-normal btn-add">
 						<span><i class="fas fa-plus"></i></span>
 						Ajouter un(e) stage / formation
 					</a>
->>>>>>> fixbug
 				</div>			
 			</div>
 			<table class="table table-bordered table-hover">
@@ -52,18 +45,6 @@
 							<td>{{ $posts->titre }}</td>
 							<td>{{ $posts->post_type }}</td>
 							<td>{{ $posts->categories->name }}</td>
-<<<<<<< HEAD
-							<td>{{ date('d/m/y', strtotime($posts->created_at)) }}</td>
-							@if($posts->statut == "publié")
-							<td>
-								<a href="javascript:;" class="btn btn-green btn-icon btn-publish" id="statut_post-{{$posts->id}}" data-toggle="tooltip" title="Publié" target="blank">
-									<span><i class="far fa-check-circle"></i></span>
-								</a>
-							</td>
-							@elseif($posts->statut == "non-publié")
-							<td>
-								<a href="javascript:;" class="btn btn-yellow btn-icon btn-unpublished" id="statut_post-{{$posts->id}}" data-toggle="tooltip" title="Non-publié" target="blank">
-=======
 							<td>{{ $posts->created_at }}</td>
 							@if($posts->status == "publié")
 							<td>
@@ -74,7 +55,6 @@
 							@elseif($posts->status == "non-publié")
 							<td>
 								<a href="{{route('admin.status',$posts->id)}}" class="btn btn-yellow btn-icon btn-unpublished" id="statut_post-{{$posts->id}}" data-toggle="tooltip" title="Non-publié">
->>>>>>> fixbug
 									<span><i class="far fa-times-circle"></i></span>
 								</a>
 							</td>
@@ -95,18 +75,6 @@
 					@endforeach
 				</tbody>
 			</table>
-		</div>
-		<div class="admin-action menu menu--floating ">
-			<a href="{{ url('/admin/create') }}" class="menu--floating__action btn btn-blue btn-icon btn-create" title="Ajouter un post">
-				<span class="hide-accessible">
-					<i class="fas fa-plus"></i>
-				</span>
-			</a> 
-     			<a class="menu--floating__action has-background background-blue" href="javascript:;">
-     				<span class="hide-accessible">
-					<i class="fas fa-cog"></i>
-     				</span>
-     			</a>
 		</div>
 	</div>		
 </div>

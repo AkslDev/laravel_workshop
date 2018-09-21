@@ -55,7 +55,7 @@ Route::get('admin/preview/{id}', 'PostController@show')->where(['id' => '[0-9]+'
 Route::get('admin/create', 'PostController@create')->middleware('auth');
 
 // Envoie du form de création d'un post - Admin
-Route::post('admin/create', 'PostController@store')->middleware('auth');
+Route::post('admin/create', 'PostController@store')->name('admin.create')->middleware('auth');
 
 // Page d'edition d'un post - Admin
 Route::get('admin/edit/{id}', 'PostController@edit')->name('admin.edit')->middleware('auth');
