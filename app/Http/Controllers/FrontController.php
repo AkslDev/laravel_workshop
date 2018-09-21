@@ -16,14 +16,14 @@ class FrontController extends Controller{
 	// Page d'accueil
 	public function index(){
 		// Retourne tout les posts
-		$post = Post::orderBy('created_at', 'desc')->take(2)->get();
+		$post = Post::published()->orderby('created_at', 'desc')->take(2)->get();
 		return view('front.index', ['posts' => $post]);
 	}
 	// Recherche
    	public function search(Request $request){
   		$query = $request->search;
-  		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->paginate($this->paginate);
-		return view('front.index', compact('posts', 'query'));
+  		$posts = Post::published()->where('titre', 'LIKE', '%' . $query . '%')->paginate($this->paginate);
+		return view('front.index', compact('posts'));
    	}
 	// Page d'un Post
 	public function show(int $id){
@@ -34,26 +34,26 @@ class FrontController extends Controller{
 	// Page Stage
    	public function stage(){
    		// Retourne les posts ayant pour 'post_type' -> 'stage'
-		$posts = Post::where('post_type', 'stage')->paginate($this->paginate);
+		$posts = Post::published()->where('post_type', 'stage')->paginate($this->paginate);
 		return view('front.stage', ['posts' => $posts]);
 	}
 	// Recherche
    	public function searchStage(Request $request){
   		$query = $request->search;
-  		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->where('post_type', 'stage')->paginate($this->paginate);
-		return view('front.stage', compact('posts', 'query'));
+  		$posts = Post::published()->where('titre', 'LIKE', '%' . $query . '%')->where('post_type', 'stage')->paginate($this->paginate);
+		return view('front.stage', compact('posts'));
    	}
 	// Page Formation
 	public function formation(){
    		// Retourne les posts ayant pour 'post_type' -> 'formation'
-		$posts = Post::where('post_type', 'formation')->paginate($this->paginate);
+		$posts = Post::published()->where('post_type', 'formation')->paginate($this->paginate);
 		return view('front.formation', ['posts' => $posts]);
 	}
 	// Recherche
    	public function searchFormation(Request $request){
   		$query = $request->search;
-  		$posts = Post::where('titre', 'LIKE', '%' . $query . '%')->paginate($this->paginate);
-		return view('front.formation', compact('posts', 'query'));
+  		$posts = Post::published()->where('titre', 'LIKE', '%' . $query . '%')->paginate($this->paginate);
+		return view('front.formation', compact('posts'));
    	}
 	// Page Contact
    	public function contact(){

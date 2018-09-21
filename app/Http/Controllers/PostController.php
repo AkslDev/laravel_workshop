@@ -8,6 +8,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 // Importation de l'alias de la classe
 use App\Post;  
+use App\Category;
 use App\Picture;
 
 class PostController extends Controller{	
@@ -91,11 +92,10 @@ class PostController extends Controller{
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit(int $id)
-	{
+	public function edit(int $id){
 		$post = Post::find($id);
-      		return view('back.edit', ['posts' => $post]);
-
+		$categories = Category::all();
+      		return view('back.edit', compact('post', 'categories'));
 	}
 
 	/**
@@ -105,8 +105,7 @@ class PostController extends Controller{
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
-	{	
+	public function update(Request $request, $id){	
 		$post = Post::find($id);
 
 		$post->titre = $request->titre;
@@ -151,11 +150,25 @@ class PostController extends Controller{
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy($id)
-	{
+	public function destroy($id){
 		$posts = Post::find($id);
 		$posts->delete();
 
+		return redirect('/admin');
+	}
+
+	public function status($id){
+		$post = Post::find($id);      
+		if($post->status == 'publié'){
+			$post->update([
+				'status' => 'non-publié'
+			]);
+		}else{
+			$post->update([
+				'status' => 'publié'
+			]);
+		}
+		$post->save();
 		return redirect('/admin');
 	}
 }

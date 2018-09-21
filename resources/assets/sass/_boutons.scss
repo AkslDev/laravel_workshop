@@ -79,3 +79,14 @@
 			color: #fff;
 		}
 	}
+	.btn-green{
+		color:#67C23A;
+		background: #f0f9eb;
+		border-color:#c2e7b0;
+		&:hover,
+		&:focus{
+			color:#FFF;
+			background:#67C23A;
+			border-color:#67C23A;
+		}
+	}
