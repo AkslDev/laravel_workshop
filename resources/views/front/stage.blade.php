@@ -4,7 +4,7 @@
 <section class="stage gradient">
 	<div class="left-content">
 		{{ $posts->links() }}
-		@foreach ($posts as $post)
+		@forelse ($posts as $post)
 			<div class="item">
 				<a class="item-link" href="{{ url('post/' . $post->id) }}"></a>
 				<div class="left-item">
@@ -19,11 +19,16 @@
 					<p class="description">{{ $post->description }}</p>	
 					<p class="date-start">
 						<i class="far fa-calendar-alt"></i>
-						Débute le : <strong>{{$post->start}}</strong>
+						Débute le : <strong>{{date('d/m/Y', strtotime($post->start))}}</strong>
 					</p> 	
 				</div>
 			</div>
-		@endforeach
+			@empty
+			<div class="no-item item">
+				<h1>Oop's</h1>
+				<p>Il semblerait qu'il y ait un soucis, il n'y a aucun stage à afficher !</p>
+			</div>
+		@endforelse
 		
 	</div>
 	<div class="right-content">
@@ -32,7 +37,7 @@
 			<form action="{{route('searchStage')}}" method="GET" role="search" enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<div class="input-search input-group">
-					<input name="search" class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage ou formation">
+					<input name="search" class="form-control" type="search" id="site-search" placeholder="Saisissez le titre d'un stage">
 					<div class="input-group-append">
         					<button type="submit"><i class='fas fa-search'></i></button>
   					</div>

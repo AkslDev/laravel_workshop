@@ -13,7 +13,7 @@ use App\Picture;
 
 class PostController extends Controller{	
 	
-	private $paginate = 15;
+	private $paginate = 10;
 
 	// Page d'accueil - Admin
 	public function index(){
@@ -64,7 +64,7 @@ class PostController extends Controller{
 		
 		$post->pictures()->save($picture);
 
-		return redirect('/admin');
+		return redirect('/admin')->with('message', 'Le post a été créé');   
 	}
 
 	// Page de prévisualisation d'un post - Admin
@@ -88,6 +88,7 @@ class PostController extends Controller{
 		$post->end = $request->end;
 		$post->price = $request->price;
 		$post->max_users = $request->max_users;
+		$post->post_type = $request->post_type;
 		$post->categories_id = $request->name;
 
 		$new_picture = $request->file('picture');
@@ -114,7 +115,7 @@ class PostController extends Controller{
 		
 		$post->save();
 
-    		return redirect('/admin');
+    		return redirect('/admin')->with('message', 'Le post a été modifié');   
 	}
 
 	// Suppression de la data au click sur le bouton supprimer
@@ -122,7 +123,7 @@ class PostController extends Controller{
 		$posts = Post::find($id);
 		$posts->delete();
 
-		return redirect('/admin');
+		return redirect('/admin')->with('message', 'Le post a été supprimé');   ;
 	}
 
 	public function status($id){
@@ -137,6 +138,6 @@ class PostController extends Controller{
 			]);
 		}
 		$post->save();
-		return redirect('/admin');
+		return redirect('/admin')->with('message', 'Le statut du post a été mis à jour');   
 	}
 }

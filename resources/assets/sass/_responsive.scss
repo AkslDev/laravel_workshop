@@ -1,0 +1,364 @@
+/* ********** Stylisation de la Nav ********** */
+	@media screen and (min-width: 320px) and (max-width: 425px) {
+		nav{
+			.nav-content{
+				display:none;
+			}
+			.nav-responsive{
+				display:flex;
+				height:80px;
+				background:#F8F8FA;
+				.menu-burger {
+					position: absolute;
+					z-index:10;
+					top: 30px;
+					right: 20px;
+					width: 30px;
+					height: 20px;
+					cursor: pointer;
+					background: none;
+					border: none;
+					outline: none;
+					.bar-bottom , .bar-middle , .bar-top {
+						position: absolute;
+						background: $bleu;
+						height: 2px;
+						transition: all 0.3s ease;
+						width: 100%;
+					}
+					.bar-top {
+						top: 0;
+						left: 0;
+					}
+					.bar-middle {
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+					}
+					.bar-bottom {
+						bottom: 0;
+						right: 0;
+					}
+					&.active {
+						.bar-top , .bar-bottom {
+							top: 50%;
+							left: 0;
+							transform: rotate(225deg);
+						}
+						.bar-middle {
+							top: 50%;
+							right: 0;
+							transform: rotate(135deg);
+						}
+					}
+				}
+				.menu-content{
+					position:relative;
+					top:0;
+					display:none;
+					height:100vh;
+					width:100vw;
+					background:#F8F8FA;
+					transition:all ease 0.2s;
+					&.active{
+						top:80px;
+						display:block;
+					}
+					ul{
+						height: auto;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-evenly;
+						li{
+							margin: 10px 0;
+							a{
+								font-size: 18px;
+    								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 425px) and (max-width: 768px) {
+		nav{
+			.nav-content{
+				display:none;
+			}
+			.nav-responsive{
+				display:flex;
+				height:80px;
+				background:#F8F8FA;
+				.menu-burger {
+					position: absolute;
+					z-index:10;
+					top: 30px;
+					right: 20px;
+					width: 30px;
+					height: 20px;
+					cursor: pointer;
+					background: none;
+					border: none;
+					outline: none;
+					.bar-bottom , .bar-middle , .bar-top {
+						position: absolute;
+						background: $bleu;
+						height: 2px;
+						transition: all 0.3s ease;
+						width: 100%;
+					}
+					.bar-top {
+						top: 0;
+						left: 0;
+					}
+					.bar-middle {
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+					}
+					.bar-bottom {
+						bottom: 0;
+						right: 0;
+					}
+					&.active {
+						.bar-top , .bar-bottom {
+							top: 50%;
+							left: 0;
+							transform: rotate(225deg);
+						}
+						.bar-middle {
+							top: 50%;
+							right: 0;
+							transform: rotate(135deg);
+						}
+					}
+				}
+				.menu-content{
+					position:relative;
+					top:0;
+					display:none;
+					height:100vh;
+					width:100vw;
+					background:#F8F8FA;
+					transition:all ease 0.2s;
+					&.active{
+						top:80px;
+						display:block;
+					}
+					ul{
+						height: auto;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-evenly;
+						li{
+							margin: 10px 0;
+							a{
+								font-size: 18px;
+    								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 1024px){
+		nav{
+			.nav-content{
+
+			}
+			.nav-responsive{
+				display:none;
+				
+			}
+		}
+	}
+/* ********** Stylisation des pages ********** */
+
+	@media screen and (min-width: 320px) and (max-width: 425px) {
+		.home, .stage, .formation{
+			flex-direction:column-reverse;
+			.left-content{
+				padding: 0 25px!important;
+				.item{
+					width:100%!important;
+					flex-direction: column;
+					.left-item{
+						.image{
+							margin-bottom: 25px;
+						}
+					}
+					.right-item{
+						margin-left:0!important;
+					}
+					
+				}
+			}
+			.right-content{
+				padding: 105px 25px 25px!important;
+				.search{
+					width:100%!important;
+					h1{
+						font-size: 20px!important;
+    						text-align: center;
+					}
+					form{
+						width:100%;
+						.input-search{
+							width: auto!important;
+						}
+					}
+				}
+			}
+		}
+		.contact, .login, .create, .edit{
+			.contact-content, .login-content, .create-content, .edit-content{
+				width: 100%!important;
+				form{
+					margin: 0!important;
+    					width: 100%!important;
+    					.form-group{
+    						margin:25px 0!important;
+    						width:100%!important;
+    					}
+				}
+			}
+		}
+		.admin{
+			.admin-content{
+				.tableau{
+					width:100%!important;
+					.top-table{
+						flex-direction:column;
+						.top-table-title{
+							margin-bottom: 15px;
+						}
+						.top-table-action{
+							flex-direction: column;
+							form{
+								.input-search{
+									width:100%!important;
+									margin: 15px!important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.post, .preview{
+			padding: 105px 25px 25px!important;
+    			height: auto!important;
+    			.item-open{
+    				width: 100%!important;
+    				margin: 0!important;
+    				.top-preview{
+    					flex-direction: column;
+    					.top-table-action{
+    						margin-top:15px;
+    					}
+    				}
+    				.post-content, .preview-content{
+    					flex-direction: column;
+    					.right-post{
+    						margin: 25px 0 0 0!important;
+    					}
+    				}
+    			}
+		}
+	}
+	@media screen and (min-width: 425px) and (max-width: 768px) {
+		.home, .stage, .formation{
+			flex-direction:column-reverse;
+			.left-content{
+				padding: 0 25px!important;
+				.item{
+					width:100%!important;
+					flex-direction: column;
+					.left-item{
+						.image{
+							margin-bottom: 25px;
+						}
+					}
+					.right-item{
+						margin-left:0!important;
+					}
+					
+				}
+			}
+			.right-content{
+				padding: 105px 25px 25px!important;
+				.search{
+					width:100%!important;
+					h1{
+						font-size: 20px!important;
+    						text-align: center;
+					}
+					form{
+						width:100%;
+						.input-search{
+							width: auto!important;
+						}
+					}
+				}
+			}
+		}
+		.contact, .login, .create, .edit{
+			.contact-content, .login-content, .create-content, .edit-content{
+				width: 100%!important;
+				form{
+					margin: 0!important;
+    					width: 100%!important;
+    					.form-group{
+    						margin:25px 0!important;
+    						width:100%!important;
+    					}
+				}
+			}
+		}
+		.admin{
+			.admin-content{
+				.tableau{
+					width:100%!important;
+					.top-table{
+						flex-direction:column;
+						.top-table-title{
+							margin-bottom: 15px;
+						}
+						.top-table-action{
+							flex-direction: column;
+							form{
+								.input-search{
+									width:100%!important;
+									margin: 15px!important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.post, .preview{
+			padding: 105px 25px 25px!important;
+    			height: auto!important;
+    			.item-open{
+    				width: 100%!important;
+    				margin: 0!important;
+    				.top-preview{
+    					flex-direction: column;
+    					.top-table-action{
+    						margin-top:15px;
+    					}
+    				}
+    				.post-content, .preview-content{
+    					flex-direction: column;
+    					.right-post{
+    						margin: 25px 0 0 0!important;
+    					}
+    				}
+    			}
+		}
+	}

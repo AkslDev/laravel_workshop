@@ -66,6 +66,6 @@ class FrontController extends Controller{
 			'message' => 'required|string'
        		]);
 	 	Mail::to('admin@contact.fr')->send(new SendMail($request));
-	 	return redirect()->route('sendmail')->with('message', __('Your mail has been sent'));
+	 	return redirect()->route('sendmail')->with('message', __('Votre mail à bien été envoyé, un administrateur vous répondra au plus vite !'));
 	}	 
 }

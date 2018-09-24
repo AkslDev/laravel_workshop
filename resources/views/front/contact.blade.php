@@ -2,6 +2,16 @@
 
 @section('content')
 <section class="contact gradient">
+	<div class="notification">
+		<div class="notification-close">
+			<i class="icon-close"></i>
+		</div>
+		<div class="notification-text">
+			@if(session()->has('message'))
+				<p class="notification-message">{{session()->get('message')}}</p>
+			@endif
+		</div>	
+	</div> 
 	<div class="contact-content">
 		<div class="top-contact gradient">
 			<h1>Contact</h1>
@@ -22,7 +32,7 @@
 				</div>
 				<div class="form-group row">
 					<label for="message">Message</label>
-					<textarea id="message" name="message" class="form-control" placeholder="Saisissez l'objet de votre message"></textarea>
+					<textarea id="message" name="message" class="form-control" placeholder="Saisissez votre message"></textarea>
 				</div>
 				<div class="form-group row mb-0">
 					<button type="submit" class="btn btn-normal btn-blue btn-submit">

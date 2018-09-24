@@ -7,7 +7,7 @@
 
 	php artisan serve
 
-## Lancement du Watcher (Compilateur SASS->CSS)
+## Lancement du Watcher (Compilateur SCSS->CSS)
 
 	npm run watch
 

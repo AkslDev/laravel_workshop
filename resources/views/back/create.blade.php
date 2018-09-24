@@ -3,7 +3,7 @@
 	<div class="create gradient">
 		<div class="create-content">
 			<div class="top-create gradient">
-				<h1>Ajout d'un(e) stage ou d'une formation</h1>	
+				<h1>Ajout d'un(e) stage ou formation</h1>	
 			</div>
 			
 			<form action="{{ route('admin.create') }}" method="post" enctype="multipart/form-data" novalidate class="needs-validation">

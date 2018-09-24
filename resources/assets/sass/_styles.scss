@@ -4,6 +4,7 @@
 	@import 'boutons';
 	@import 'colors';
 
+
 /* ********** Stylisation du Body ********** */
 	.clearboth{
 		content: "";
@@ -141,9 +142,10 @@
 /* ********** Stylisation du contenu ********** */
 	.content{
 		// Page d'Accueil / des Stages et des formations
-			.home, .stage, .formation, .result{
+			.home, .stage, .formation{
 				display:flex;
-				justify-content:space-between;
+				justify-content:space-evenly;
+				min-height:90vh;
 				.left-content{
 					padding:80px 25px 25px;
 					.pagination{
@@ -174,7 +176,8 @@
 						border-radius:5px;
 						display:flex;
 						align-items:center;
-						transition:all ease 0.25s;
+						transform:scale(0);
+						opacity:0;
 						.item-link{
 							position: absolute;
 							top:0;
@@ -251,6 +254,26 @@
     							transform: translateX(10px);
 						}
 					}
+					.no-item{
+						position: sticky;
+    						top: 105px;
+						display:flex;
+						align-items:start;
+						flex-direction:column;
+						h1{
+							font-size:24px;
+							font-weight:600;
+							color:$bleu;
+							margin-bottom:25px;
+						}
+						p{
+							color:#333;
+							font-size:18px;
+							font-weight:300;
+							letter-spacing:0.5px;
+							margin: 0 0 15px;	
+						}
+					}
 				}
 				.right-content{	
 					padding:80px 25px 25px;
@@ -266,7 +289,8 @@
 						align-items:center;
 						flex-direction:column;
 						justify-content:space-between;
-						transition:all ease 0.25s;
+						transform:scale(0);
+						opacity:0;
 						h1{
 							font-size:24px;
 							font-weight:600;
@@ -370,6 +394,7 @@
 					margin:25px auto;
 					border-radius:5px;
 					background: $bgblanc;
+					opacity:0;
 					.top-post{
 						display:flex;
 						align-items:center;
@@ -479,12 +504,54 @@
 				width:100vw;
 				min-height: 100vh;
     				padding: 100px 25px 25px;
+    				.notification{
+					position: absolute;
+					z-index:100;
+					top:105px;
+					right:-100%;
+					display:flex;
+					align-items:center;
+					justify-content:center;
+					padding:20px 50px;
+					background: rgba(0,0,0,0.9);
+    					border-radius: 50px;
+					cursor:pointer;
+					transition:all ease 0.5s;
+					.notification-close{
+						position:absolute;
+						top: 20px;
+    						right: 10px;
+						display:none;
+						i{
+							color:#FFF;
+							border-radius:100%;
+							padding:2px;
+							font-size:14px;
+						}
+					}
+					p{
+						margin: 0;
+						color: #FFF;
+						font-size: 16px;
+    						font-weight: 300;
+    						span{
+							text-transform: capitalize;
+							font-weight: 600;
+							letter-spacing: 0.5px;
+    						}
+					}
+					&:hover{
+						
+					}
+				}
 				.contact-content{
 					width: 40vw;
     					height: auto;
 					padding: 25px;
 					background:$bgblanc;
 					border-radius:5px;
+					transform:scale(0);
+					opacity:0;
 					.top-contact{
 						display:flex;
 						align-items:center;
@@ -559,6 +626,8 @@
 					padding: 25px;
 					background:$bgblanc;
 					border-radius:5px;
+					transform:scale(0);
+					opacity:0;
 					.top-login{
 						display:flex;
 						align-items:center;
@@ -615,49 +684,51 @@
 				width:100vw;
 				min-height: 100vh;
     				padding: 125px 25px 25px;
+    				.notification{
+					position: absolute;
+					z-index:100;
+					top:105px;
+					right:-100%;
+					display:flex;
+					align-items:center;
+					justify-content:center;
+					padding:20px 50px;
+					background: rgba(0,0,0,0.9);
+    					border-radius: 50px;
+					cursor:pointer;
+					transition:all ease 0.5s;
+					.notification-close{
+						position:absolute;
+						top: 20px;
+    						right: 10px;
+						display:none;
+						i{
+							color:#FFF;
+							border-radius:100%;
+							padding:2px;
+							font-size:14px;
+						}
+					}
+					p{
+						margin: 0;
+						color: #FFF;
+						font-size: 16px;
+    						font-weight: 300;
+    						span{
+							text-transform: capitalize;
+							font-weight: 600;
+							letter-spacing: 0.5px;
+    						}
+					}
+					&:hover{
+						
+					}
+				}	
 				.admin-content{
 					position:relative;
 					width:100%;
 					height:100%;
-					.notification{
-						position: absolute;
-						top:0px;
-						right:-200%;
-						display:flex;
-						align-items:center;
-						justify-content:center;
-						padding:20px 50px;
-						background: rgba(0,0,0,0.5);
-    						border-radius: 50px;
-						cursor:pointer;
-						transition:all ease 0.5s;
-						.notification-close{
-							position:absolute;
-							top: 20px;
-    							right: 10px;
-							display:none;
-							i{
-								color:$blanc;
-								border-radius:100%;
-								padding:2px;
-								font-size:14px;
-							}
-						}
-						p{
-							margin: 0;
-							color: $blanc;
-							font-size: 16px;
-    							font-weight: 300;
-    							span{
-								text-transform: capitalize;
-								font-weight: 600;
-								letter-spacing: 0.5px;
-    							}
-						}
-						&:hover{
-							
-						}
-					}
+					opacity:0;
 					.tableau{
 						padding: 25px;
 						background:$bgblanc;
@@ -750,6 +821,7 @@
 							}
 							tbody{
 								tr{
+									opacity:0;
 									td{
 										font-size: 14px;
 										font-weight: 400;
@@ -757,16 +829,19 @@
 										color: #4a4a4a;
 										vertical-align:middle;
 									}
-									td:nth-of-type(3){
+									td:nth-of-type(2),
+									td:nth-of-type(3),{
 										text-transform:capitalize;
 									}
 								}
 							}
 						}		
-					}				
+					}
 					.popup_remove{
 						position:fixed;
+						z-index: 100;
 						display:none;
+						opacity:0;
 						top:0;
 						left:0;
 						width:100%;
@@ -778,7 +853,7 @@
 							top: 110px;
 							left: 25px;
 							font-size: 30px;
-							color: $blanc;
+							color: #FFF;
 							transition:all ease 0.2s;
 							transform:scale(1);
 							&:hover,
@@ -792,7 +867,7 @@
 							height:auto;
 							margin:0 auto;
 							padding:25px;
-							background:$bgblanc;
+							background:#F8F8FA;
 							border-radius: 5px;
 							.top_popup{
 								display:flex;
@@ -801,7 +876,7 @@
 								padding:25px;
 								border-radius: 5px 5px 0 0;
 								h2{
-									color:$blanc;
+									color:#FFF;
 									font-size:24px;
 									font-weight:400;
 									letter-spacing:0.5px;
@@ -809,7 +884,7 @@
 							}
 							.body_popup{
 								padding: 50px 25px;
-								border: 1px solid $bordergrey;
+								border: 1px solid #dee2e6;
 								p{
 									color:#333;
 									font-size: 16px;
@@ -843,6 +918,8 @@
 					padding: 25px;
 					background:$bgblanc;
 					border-radius:5px;
+					transform:scale(0.5);
+					opacity:0;
 					.top-create,
 					.top-edit{
 						display:flex;
@@ -1013,6 +1090,7 @@
 					margin:0 auto;
 					border-radius:5px;
 					background: $bgblanc;
+					opacity:0;
 					.top-preview{
 						display:flex;
 						align-items:center;
@@ -1136,3 +1214,8 @@
 			}
 		}
 	}
+
+// Importation du Responsive
+
+	@import 'responsive';
+

@@ -32,14 +32,14 @@
     							<a href="/contact">Contact</a>
     						</li>
     					</ul>
-						@guest
-							<!-- <a class="btn btn-blue btn-normal" href="{{ route('login') }}">
-								<span><i class="fas fa-sign-in-alt"></i></span>
-								{{ __('Connexion') }}
-							</a> -->
-						@else
-						<ul>
-							<li class="user-connected">
+					@guest
+						<!-- <a class="btn btn-blue btn-normal" href="{{ route('login') }}">
+							<span><i class="fas fa-sign-in-alt"></i></span>
+							{{ __('Connexion') }}
+						</a> -->
+					@else
+					<ul>
+						<li class="user-connected">
 								<a class="user" href="javascript:;">
 									<span><i class="far fa-user"></i></span>
 									{{ Auth::user()->name }}
@@ -61,11 +61,59 @@
 										@csrf
 									</form>
 								</div>
+						</li>
+					</ul>		
+					@endguest
+    				</div>
+				<div class="nav-responsive">
+					<div class="menu-burger">
+						<div class="bar-top"></div>
+						<div class="bar-middle"></div>
+						<div class="bar-bottom"></div>
+					</div>
+					<div class="menu-content">
+						<ul>
+							<li>
+    								<a href="/">Accueil</a>
+    							</li>
+    							<li>
+    								<a href="/stage">Stage</a>
+    							</li>
+    							<li>
+    								<a href="/formation">Formation</a>
+    							</li>
+    							<li>
+    								<a href="/contact">Contact</a>
+    							</li>
+						</ul>
+						@guest
+						<!-- <a class="btn btn-blue btn-normal" href="{{ route('login') }}">
+							<span><i class="fas fa-sign-in-alt"></i></span>
+							{{ __('Connexion') }}
+						</a> -->
+						@else
+						<ul>
+							<li>
+    								<a class="link-admin" 
+									href="/admin">
+									<span><i class="fas fa-table"></i></span>
+									Administration
+								</a>	
+								
+							</li>
+							<li>
+								<a class="link-logout" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+									<span><i class="fas fa-sign-out-alt"></i></span>
+									Déconnexion
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+								</form>
 							</li>
 						</ul>		
 						@endguest
-					</ul>
-    				</div>
+					</div>
+				</div>
     			</nav>
     			<section class="content">
 				@yield('content')
@@ -77,13 +125,13 @@
     							<a href="/">Accueil</a>
     						</li>
     						<li>
-    							<a href="javascript:;">Stage</a>
+    							<a href="/stage">Stage</a>
     						</li>
     						<li>
-    							<a href="javascript:;">Formation</a>
+    							<a href="/formation">Formation</a>
     						</li>
     						<li>
-    							<a href="javascript:;">Contact</a>
+    							<a href="/contact">Contact</a>
     						</li>
     					</ul>
     				</div>
@@ -92,6 +140,8 @@
 
 		<!-- Appels des Scripts -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 		<script src="{{ asset('js/main.js') }}" defer></script>
     		<script src="{{asset('js/app.js')}}"></script>
     	</body>

@@ -10915,27 +10915,25 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home,
 .content .stage,
-.content .formation,
-.content .result {
+.content .formation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  min-height: 90vh;
 }
 
 .content .home .left-content,
 .content .stage .left-content,
-.content .formation .left-content,
-.content .result .left-content {
+.content .formation .left-content {
   padding: 80px 25px 25px;
 }
 
 .content .home .left-content .pagination,
 .content .stage .left-content .pagination,
-.content .formation .left-content .pagination,
-.content .result .left-content .pagination {
+.content .formation .left-content .pagination {
   margin-top: 25px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -10944,8 +10942,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .pagination .page-link,
 .content .stage .left-content .pagination .page-link,
-.content .formation .left-content .pagination .page-link,
-.content .result .left-content .pagination .page-link {
+.content .formation .left-content .pagination .page-link {
   font-size: 16px;
   color: #39F;
   -webkit-transition: all ease 0.4s;
@@ -10954,15 +10951,13 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .pagination .page-link:hover,
 .content .stage .left-content .pagination .page-link:hover,
-.content .formation .left-content .pagination .page-link:hover,
-.content .result .left-content .pagination .page-link:hover {
+.content .formation .left-content .pagination .page-link:hover {
   color: #39F;
 }
 
 .content .home .left-content .pagination li.page-item.active .page-link,
 .content .stage .left-content .pagination li.page-item.active .page-link,
-.content .formation .left-content .pagination li.page-item.active .page-link,
-.content .result .left-content .pagination li.page-item.active .page-link {
+.content .formation .left-content .pagination li.page-item.active .page-link {
   color: #FFF;
   background: #39F;
   border-color: #39F;
@@ -10970,8 +10965,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item,
 .content .stage .left-content .item,
-.content .formation .left-content .item,
-.content .result .left-content .item {
+.content .formation .left-content .item {
   position: relative;
   width: calc(50vw - 50px);
   background: #F8F8FA;
@@ -10984,14 +10978,14 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all ease 0.25s;
-  transition: all ease 0.25s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
 }
 
 .content .home .left-content .item .item-link,
 .content .stage .left-content .item .item-link,
-.content .formation .left-content .item .item-link,
-.content .result .left-content .item .item-link {
+.content .formation .left-content .item .item-link {
   position: absolute;
   top: 0;
   left: 0;
@@ -11001,8 +10995,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .left-item img,
 .content .stage .left-content .item .left-item img,
-.content .formation .left-content .item .left-item img,
-.content .result .left-content .item .left-item img {
+.content .formation .left-content .item .left-item img {
   width: 250px;
   height: 250px;
   -o-object-fit: cover;
@@ -11011,8 +11004,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .right-item,
 .content .stage .left-content .item .right-item,
-.content .formation .left-content .item .right-item,
-.content .result .left-content .item .right-item {
+.content .formation .left-content .item .right-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11025,8 +11017,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .right-item .title,
 .content .stage .left-content .item .right-item .title,
-.content .formation .left-content .item .right-item .title,
-.content .result .left-content .item .right-item .title {
+.content .formation .left-content .item .right-item .title {
   color: #39F;
   font-size: 18px;
   font-weight: 500;
@@ -11043,9 +11034,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .stage .left-content .item .right-item .title:hover,
 .content .stage .left-content .item .right-item .title:focus,
 .content .formation .left-content .item .right-item .title:hover,
-.content .formation .left-content .item .right-item .title:focus,
-.content .result .left-content .item .right-item .title:hover,
-.content .result .left-content .item .right-item .title:focus {
+.content .formation .left-content .item .right-item .title:focus {
   outline: none;
   -webkit-transform: translateX(10px) scale(1.03);
   transform: translateX(10px) scale(1.03);
@@ -11054,8 +11043,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .right-item .type,
 .content .stage .left-content .item .right-item .type,
-.content .formation .left-content .item .right-item .type,
-.content .result .left-content .item .right-item .type {
+.content .formation .left-content .item .right-item .type {
   color: #333;
   font-size: 12px;
   font-weight: 500;
@@ -11067,22 +11055,19 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .right-item .type strong,
 .content .stage .left-content .item .right-item .type strong,
-.content .formation .left-content .item .right-item .type strong,
-.content .result .left-content .item .right-item .type strong {
+.content .formation .left-content .item .right-item .type strong {
   font-weight: 800;
 }
 
 .content .home .left-content .item .right-item .type .categorie,
 .content .stage .left-content .item .right-item .type .categorie,
-.content .formation .left-content .item .right-item .type .categorie,
-.content .result .left-content .item .right-item .type .categorie {
+.content .formation .left-content .item .right-item .type .categorie {
   font-weight: 300;
 }
 
 .content .home .left-content .item .right-item .description,
 .content .stage .left-content .item .right-item .description,
-.content .formation .left-content .item .right-item .description,
-.content .result .left-content .item .right-item .description {
+.content .formation .left-content .item .right-item .description {
   color: #333;
   font-size: 14px;
   font-weight: 300;
@@ -11092,8 +11077,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .right-item .date-start,
 .content .stage .left-content .item .right-item .date-start,
-.content .formation .left-content .item .right-item .date-start,
-.content .result .left-content .item .right-item .date-start {
+.content .formation .left-content .item .right-item .date-start {
   color: #333;
   font-size: 12px;
   font-weight: 500;
@@ -11105,8 +11089,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item .right-item .date-start i,
 .content .stage .left-content .item .right-item .date-start i,
-.content .formation .left-content .item .right-item .date-start i,
-.content .result .left-content .item .right-item .date-start i {
+.content .formation .left-content .item .right-item .date-start i {
   font-size: 14px;
   color: #39F;
   margin-right: 5px;
@@ -11114,23 +11097,57 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .left-content .item:hover,
 .content .stage .left-content .item:hover,
-.content .formation .left-content .item:hover,
-.content .result .left-content .item:hover {
+.content .formation .left-content .item:hover {
   -webkit-transform: translateX(10px);
   transform: translateX(10px);
 }
 
+.content .home .left-content .no-item,
+.content .stage .left-content .no-item,
+.content .formation .left-content .no-item {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .home .left-content .no-item h1,
+.content .stage .left-content .no-item h1,
+.content .formation .left-content .no-item h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #39F;
+  margin-bottom: 25px;
+}
+
+.content .home .left-content .no-item p,
+.content .stage .left-content .no-item p,
+.content .formation .left-content .no-item p {
+  color: #333;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin: 0 0 15px;
+}
+
 .content .home .right-content,
 .content .stage .right-content,
-.content .formation .right-content,
-.content .result .right-content {
+.content .formation .right-content {
   padding: 80px 25px 25px;
 }
 
 .content .home .right-content .search,
 .content .stage .right-content .search,
-.content .formation .right-content .search,
-.content .result .right-content .search {
+.content .formation .right-content .search {
   position: -webkit-sticky;
   position: sticky;
   top: 105px;
@@ -11152,14 +11169,14 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: all ease 0.25s;
-  transition: all ease 0.25s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
 }
 
 .content .home .right-content .search h1,
 .content .stage .right-content .search h1,
-.content .formation .right-content .search h1,
-.content .result .right-content .search h1 {
+.content .formation .right-content .search h1 {
   font-size: 24px;
   font-weight: 600;
   color: #39F;
@@ -11168,23 +11185,20 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .right-content .search .input-search,
 .content .stage .right-content .search .input-search,
-.content .formation .right-content .search .input-search,
-.content .result .right-content .search .input-search {
+.content .formation .right-content .search .input-search {
   width: 400px;
 }
 
 .content .home .right-content .search .input-search input,
 .content .stage .right-content .search .input-search input,
-.content .formation .right-content .search .input-search input,
-.content .result .right-content .search .input-search input {
+.content .formation .right-content .search .input-search input {
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
 .content .home .right-content .search .input-search input:focus,
 .content .stage .right-content .search .input-search input:focus,
-.content .formation .right-content .search .input-search input:focus,
-.content .result .right-content .search .input-search input:focus {
+.content .formation .right-content .search .input-search input:focus {
   outline: none;
   border-color: #39F;
   -webkit-box-shadow: none !important;
@@ -11193,8 +11207,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .right-content .search .input-search .input-group-append button,
 .content .stage .right-content .search .input-search .input-group-append button,
-.content .formation .right-content .search .input-search .input-group-append button,
-.content .result .right-content .search .input-search .input-group-append button {
+.content .formation .right-content .search .input-search .input-group-append button {
   display: block;
   color: #FFF;
   background: #ced4da;
@@ -11210,17 +11223,14 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .stage .right-content .search .input-search .input-group-append button:hover,
 .content .stage .right-content .search .input-search .input-group-append button:focus,
 .content .formation .right-content .search .input-search .input-group-append button:hover,
-.content .formation .right-content .search .input-search .input-group-append button:focus,
-.content .result .right-content .search .input-search .input-group-append button:hover,
-.content .result .right-content .search .input-search .input-group-append button:focus {
+.content .formation .right-content .search .input-search .input-group-append button:focus {
   outline: none;
   background: #39F;
 }
 
 .content .home .right-content button.go-top,
 .content .stage .right-content button.go-top,
-.content .formation .right-content button.go-top,
-.content .result .right-content button.go-top {
+.content .formation .right-content button.go-top {
   position: fixed;
   display: none;
   z-index: 1000;
@@ -11237,8 +11247,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 
 .content .home .right-content button.go-top i,
 .content .stage .right-content button.go-top i,
-.content .formation .right-content button.go-top i,
-.content .result .right-content button.go-top i {
+.content .formation .right-content button.go-top i {
   color: #39F;
   font-size: 24px;
   -webkit-transition: all ease 0.3s;
@@ -11250,9 +11259,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .stage .right-content button.go-top:hover,
 .content .stage .right-content button.go-top:focus,
 .content .formation .right-content button.go-top:hover,
-.content .formation .right-content button.go-top:focus,
-.content .result .right-content button.go-top:hover,
-.content .result .right-content button.go-top:focus {
+.content .formation .right-content button.go-top:focus {
   outline: none;
   -webkit-animation: moveUp 1s infinite;
   animation: moveUp 1s infinite;
@@ -11321,6 +11328,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   margin: 25px auto;
   border-radius: 5px;
   background: #F8F8FA;
+  opacity: 0;
 }
 
 .content .post .item-open .top-post {
@@ -11478,12 +11486,64 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   padding: 100px 25px 25px;
 }
 
+.content .contact .notification {
+  position: absolute;
+  z-index: 100;
+  top: 105px;
+  right: -100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.content .contact .notification .notification-close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: none;
+}
+
+.content .contact .notification .notification-close i {
+  color: #FFF;
+  border-radius: 100%;
+  padding: 2px;
+  font-size: 14px;
+}
+
+.content .contact .notification p {
+  margin: 0;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.content .contact .notification p span {
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 .content .contact .contact-content {
   width: 40vw;
   height: auto;
   padding: 25px;
   background: #F8F8FA;
   border-radius: 5px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
 }
 
 .content .contact .contact-content .top-contact {
@@ -11595,6 +11655,9 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   padding: 25px;
   background: #F8F8FA;
   border-radius: 5px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
 }
 
 .content .login .login-content .top-login {
@@ -11680,16 +11743,11 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   padding: 125px 25px 25px;
 }
 
-.content .admin .admin-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.content .admin .admin-content .notification {
+.content .admin .notification {
   position: absolute;
-  top: 0px;
-  right: -200%;
+  z-index: 100;
+  top: 105px;
+  right: -100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11700,38 +11758,45 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px 50px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 50px;
   cursor: pointer;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 
-.content .admin .admin-content .notification .notification-close {
+.content .admin .notification .notification-close {
   position: absolute;
   top: 20px;
   right: 10px;
   display: none;
 }
 
-.content .admin .admin-content .notification .notification-close i {
+.content .admin .notification .notification-close i {
   color: #FFF;
   border-radius: 100%;
   padding: 2px;
   font-size: 14px;
 }
 
-.content .admin .admin-content .notification p {
+.content .admin .notification p {
   margin: 0;
   color: #FFF;
   font-size: 16px;
   font-weight: 300;
 }
 
-.content .admin .admin-content .notification p span {
+.content .admin .notification p span {
   text-transform: capitalize;
   font-weight: 600;
   letter-spacing: 0.5px;
+}
+
+.content .admin .admin-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 .content .admin .admin-content .tableau {
@@ -11851,6 +11916,10 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   width: 160px;
 }
 
+.content .admin .admin-content .tableau table tbody tr {
+  opacity: 0;
+}
+
 .content .admin .admin-content .tableau table tbody tr td {
   font-size: 14px;
   font-weight: 400;
@@ -11859,13 +11928,16 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   vertical-align: middle;
 }
 
+.content .admin .admin-content .tableau table tbody tr td:nth-of-type(2),
 .content .admin .admin-content .tableau table tbody tr td:nth-of-type(3) {
   text-transform: capitalize;
 }
 
 .content .admin .admin-content .popup_remove {
   position: fixed;
+  z-index: 100;
   display: none;
+  opacity: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -11973,6 +12045,9 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   padding: 25px;
   background: #F8F8FA;
   border-radius: 5px;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  opacity: 0;
 }
 
 .content .create .create-content .top-create,
@@ -12407,6 +12482,7 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
   margin: 0 auto;
   border-radius: 5px;
   background: #F8F8FA;
+  opacity: 0;
 }
 
 .content .preview .item-open .top-preview {
@@ -12578,5 +12654,635 @@ footer .footer-content ul li a {
   color: #39F;
   font-size: 15px;
   font-weight: 700;
+}
+
+/* ********** Stylisation de la Nav ********** */
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  nav .nav-content {
+    display: none;
+  }
+
+  nav .nav-responsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 80px;
+    background: #F8F8FA;
+  }
+
+  nav .nav-responsive .menu-burger {
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  nav .nav-responsive .menu-burger .bar-bottom,
+  nav .nav-responsive .menu-burger .bar-middle,
+  nav .nav-responsive .menu-burger .bar-top {
+    position: absolute;
+    background: #39F;
+    height: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  nav .nav-responsive .menu-burger .bar-top {
+    top: 0;
+    left: 0;
+  }
+
+  nav .nav-responsive .menu-burger .bar-middle {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  nav .nav-responsive .menu-burger .bar-bottom {
+    bottom: 0;
+    right: 0;
+  }
+
+  nav .nav-responsive .menu-burger.active .bar-top,
+  nav .nav-responsive .menu-burger.active .bar-bottom {
+    top: 50%;
+    left: 0;
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+
+  nav .nav-responsive .menu-burger.active .bar-middle {
+    top: 50%;
+    right: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+
+  nav .nav-responsive .menu-content {
+    position: relative;
+    top: 0;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background: #F8F8FA;
+    -webkit-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+  }
+
+  nav .nav-responsive .menu-content.active {
+    top: 80px;
+    display: block;
+  }
+
+  nav .nav-responsive .menu-content ul {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
+  nav .nav-responsive .menu-content ul li {
+    margin: 10px 0;
+  }
+
+  nav .nav-responsive .menu-content ul li a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  nav .nav-content {
+    display: none;
+  }
+
+  nav .nav-responsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 80px;
+    background: #F8F8FA;
+  }
+
+  nav .nav-responsive .menu-burger {
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  nav .nav-responsive .menu-burger .bar-bottom,
+  nav .nav-responsive .menu-burger .bar-middle,
+  nav .nav-responsive .menu-burger .bar-top {
+    position: absolute;
+    background: #39F;
+    height: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  nav .nav-responsive .menu-burger .bar-top {
+    top: 0;
+    left: 0;
+  }
+
+  nav .nav-responsive .menu-burger .bar-middle {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  nav .nav-responsive .menu-burger .bar-bottom {
+    bottom: 0;
+    right: 0;
+  }
+
+  nav .nav-responsive .menu-burger.active .bar-top,
+  nav .nav-responsive .menu-burger.active .bar-bottom {
+    top: 50%;
+    left: 0;
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+
+  nav .nav-responsive .menu-burger.active .bar-middle {
+    top: 50%;
+    right: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+
+  nav .nav-responsive .menu-content {
+    position: relative;
+    top: 0;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background: #F8F8FA;
+    -webkit-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+  }
+
+  nav .nav-responsive .menu-content.active {
+    top: 80px;
+    display: block;
+  }
+
+  nav .nav-responsive .menu-content ul {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
+  nav .nav-responsive .menu-content ul li {
+    margin: 10px 0;
+  }
+
+  nav .nav-responsive .menu-content ul li a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav .nav-responsive {
+    display: none;
+  }
+}
+
+/* ********** Stylisation des pages ********** */
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .home,
+  .stage,
+  .formation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .home .left-content,
+  .stage .left-content,
+  .formation .left-content {
+    padding: 0 25px !important;
+  }
+
+  .home .left-content .item,
+  .stage .left-content .item,
+  .formation .left-content .item {
+    width: 100% !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .home .left-content .item .left-item .image,
+  .stage .left-content .item .left-item .image,
+  .formation .left-content .item .left-item .image {
+    margin-bottom: 25px;
+  }
+
+  .home .left-content .item .right-item,
+  .stage .left-content .item .right-item,
+  .formation .left-content .item .right-item {
+    margin-left: 0 !important;
+  }
+
+  .home .right-content,
+  .stage .right-content,
+  .formation .right-content {
+    padding: 105px 25px 25px !important;
+  }
+
+  .home .right-content .search,
+  .stage .right-content .search,
+  .formation .right-content .search {
+    width: 100% !important;
+  }
+
+  .home .right-content .search h1,
+  .stage .right-content .search h1,
+  .formation .right-content .search h1 {
+    font-size: 20px !important;
+    text-align: center;
+  }
+
+  .home .right-content .search form,
+  .stage .right-content .search form,
+  .formation .right-content .search form {
+    width: 100%;
+  }
+
+  .home .right-content .search form .input-search,
+  .stage .right-content .search form .input-search,
+  .formation .right-content .search form .input-search {
+    width: auto !important;
+  }
+
+  .contact .contact-content,
+  .contact .login-content,
+  .contact .create-content,
+  .contact .edit-content,
+  .login .contact-content,
+  .login .login-content,
+  .login .create-content,
+  .login .edit-content,
+  .create .contact-content,
+  .create .login-content,
+  .create .create-content,
+  .create .edit-content,
+  .edit .contact-content,
+  .edit .login-content,
+  .edit .create-content,
+  .edit .edit-content {
+    width: 100% !important;
+  }
+
+  .contact .contact-content form,
+  .contact .login-content form,
+  .contact .create-content form,
+  .contact .edit-content form,
+  .login .contact-content form,
+  .login .login-content form,
+  .login .create-content form,
+  .login .edit-content form,
+  .create .contact-content form,
+  .create .login-content form,
+  .create .create-content form,
+  .create .edit-content form,
+  .edit .contact-content form,
+  .edit .login-content form,
+  .edit .create-content form,
+  .edit .edit-content form {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .contact .contact-content form .form-group,
+  .contact .login-content form .form-group,
+  .contact .create-content form .form-group,
+  .contact .edit-content form .form-group,
+  .login .contact-content form .form-group,
+  .login .login-content form .form-group,
+  .login .create-content form .form-group,
+  .login .edit-content form .form-group,
+  .create .contact-content form .form-group,
+  .create .login-content form .form-group,
+  .create .create-content form .form-group,
+  .create .edit-content form .form-group,
+  .edit .contact-content form .form-group,
+  .edit .login-content form .form-group,
+  .edit .create-content form .form-group,
+  .edit .edit-content form .form-group {
+    margin: 25px 0 !important;
+    width: 100% !important;
+  }
+
+  .admin .admin-content .tableau {
+    width: 100% !important;
+  }
+
+  .admin .admin-content .tableau .top-table {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-title {
+    margin-bottom: 15px;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-action form .input-search {
+    width: 100% !important;
+    margin: 15px !important;
+  }
+
+  .post,
+  .preview {
+    padding: 105px 25px 25px !important;
+    height: auto !important;
+  }
+
+  .post .item-open,
+  .preview .item-open {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .post .item-open .top-preview,
+  .preview .item-open .top-preview {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .post .item-open .top-preview .top-table-action,
+  .preview .item-open .top-preview .top-table-action {
+    margin-top: 15px;
+  }
+
+  .post .item-open .post-content,
+  .post .item-open .preview-content,
+  .preview .item-open .post-content,
+  .preview .item-open .preview-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .post .item-open .post-content .right-post,
+  .post .item-open .preview-content .right-post,
+  .preview .item-open .post-content .right-post,
+  .preview .item-open .preview-content .right-post {
+    margin: 25px 0 0 0 !important;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .home,
+  .stage,
+  .formation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .home .left-content,
+  .stage .left-content,
+  .formation .left-content {
+    padding: 0 25px !important;
+  }
+
+  .home .left-content .item,
+  .stage .left-content .item,
+  .formation .left-content .item {
+    width: 100% !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .home .left-content .item .left-item .image,
+  .stage .left-content .item .left-item .image,
+  .formation .left-content .item .left-item .image {
+    margin-bottom: 25px;
+  }
+
+  .home .left-content .item .right-item,
+  .stage .left-content .item .right-item,
+  .formation .left-content .item .right-item {
+    margin-left: 0 !important;
+  }
+
+  .home .right-content,
+  .stage .right-content,
+  .formation .right-content {
+    padding: 105px 25px 25px !important;
+  }
+
+  .home .right-content .search,
+  .stage .right-content .search,
+  .formation .right-content .search {
+    width: 100% !important;
+  }
+
+  .home .right-content .search h1,
+  .stage .right-content .search h1,
+  .formation .right-content .search h1 {
+    font-size: 20px !important;
+    text-align: center;
+  }
+
+  .home .right-content .search form,
+  .stage .right-content .search form,
+  .formation .right-content .search form {
+    width: 100%;
+  }
+
+  .home .right-content .search form .input-search,
+  .stage .right-content .search form .input-search,
+  .formation .right-content .search form .input-search {
+    width: auto !important;
+  }
+
+  .contact .contact-content,
+  .contact .login-content,
+  .contact .create-content,
+  .contact .edit-content,
+  .login .contact-content,
+  .login .login-content,
+  .login .create-content,
+  .login .edit-content,
+  .create .contact-content,
+  .create .login-content,
+  .create .create-content,
+  .create .edit-content,
+  .edit .contact-content,
+  .edit .login-content,
+  .edit .create-content,
+  .edit .edit-content {
+    width: 100% !important;
+  }
+
+  .contact .contact-content form,
+  .contact .login-content form,
+  .contact .create-content form,
+  .contact .edit-content form,
+  .login .contact-content form,
+  .login .login-content form,
+  .login .create-content form,
+  .login .edit-content form,
+  .create .contact-content form,
+  .create .login-content form,
+  .create .create-content form,
+  .create .edit-content form,
+  .edit .contact-content form,
+  .edit .login-content form,
+  .edit .create-content form,
+  .edit .edit-content form {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .contact .contact-content form .form-group,
+  .contact .login-content form .form-group,
+  .contact .create-content form .form-group,
+  .contact .edit-content form .form-group,
+  .login .contact-content form .form-group,
+  .login .login-content form .form-group,
+  .login .create-content form .form-group,
+  .login .edit-content form .form-group,
+  .create .contact-content form .form-group,
+  .create .login-content form .form-group,
+  .create .create-content form .form-group,
+  .create .edit-content form .form-group,
+  .edit .contact-content form .form-group,
+  .edit .login-content form .form-group,
+  .edit .create-content form .form-group,
+  .edit .edit-content form .form-group {
+    margin: 25px 0 !important;
+    width: 100% !important;
+  }
+
+  .admin .admin-content .tableau {
+    width: 100% !important;
+  }
+
+  .admin .admin-content .tableau .top-table {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-title {
+    margin-bottom: 15px;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-action form .input-search {
+    width: 100% !important;
+    margin: 15px !important;
+  }
+
+  .post,
+  .preview {
+    padding: 105px 25px 25px !important;
+    height: auto !important;
+  }
+
+  .post .item-open,
+  .preview .item-open {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .post .item-open .top-preview,
+  .preview .item-open .top-preview {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .post .item-open .top-preview .top-table-action,
+  .preview .item-open .top-preview .top-table-action {
+    margin-top: 15px;
+  }
+
+  .post .item-open .post-content,
+  .post .item-open .preview-content,
+  .preview .item-open .post-content,
+  .preview .item-open .preview-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .post .item-open .post-content .right-post,
+  .post .item-open .preview-content .right-post,
+  .preview .item-open .post-content .right-post,
+  .preview .item-open .preview-content .right-post {
+    margin: 25px 0 0 0 !important;
+  }
 }
 

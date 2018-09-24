@@ -9,6 +9,9 @@
 					<h1>{{$posts->titre}}</h1>
 				</div>
 				<div class="top-table-action">
+					<a href="/admin/edit/{{$posts->id}}" class="btn btn-grey btn-icon btn-edit" id="edit_post-{{$posts->id}}" data-toggle="tooltip" title="Modifier">
+						<span><i class="far fa-edit"></i></span>
+					</a>
 					<a href="/admin" class="btn btn-blue btn-normal btn-add">
 						<span><i class="fas fa-angle-left"></i></span>
 						Retour au dashboard
