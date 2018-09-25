@@ -25,11 +25,11 @@
 						<div class="dates">
 							<p class="date-start">
 								<i class="far fa-calendar-plus"></i>
-								Débute le : <strong>{{$posts->start}}</strong>
+								Débute le : <strong>{{date('d/m/Y', strtotime($posts->start))}}</strong>
 							</p> 
 							<p class="date-end">
 								<i class="far fa-calendar-times"></i>
-								Termine le : <strong>{{$posts->end}}</strong>
+								Termine le : <strong>{{date('d/m/Y', strtotime($posts->end))}}</strong>
 							</p> 
 						</div>
 						<div class="price-user">

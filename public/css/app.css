@@ -10998,8 +10998,8 @@ nav .nav-content .user-connected .dropdown a.link-logout:hover {
 .content .formation .left-content .item .left-item img {
   width: 250px;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .content .home .left-content .item .right-item,
@@ -12882,7 +12882,119 @@ footer .footer-content ul li a {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  nav .nav-content {
+    display: none;
+  }
+
+  nav .nav-responsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 80px;
+    background: #F8F8FA;
+  }
+
+  nav .nav-responsive .menu-burger {
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  nav .nav-responsive .menu-burger .bar-bottom,
+  nav .nav-responsive .menu-burger .bar-middle,
+  nav .nav-responsive .menu-burger .bar-top {
+    position: absolute;
+    background: #39F;
+    height: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  nav .nav-responsive .menu-burger .bar-top {
+    top: 0;
+    left: 0;
+  }
+
+  nav .nav-responsive .menu-burger .bar-middle {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  nav .nav-responsive .menu-burger .bar-bottom {
+    bottom: 0;
+    right: 0;
+  }
+
+  nav .nav-responsive .menu-burger.active .bar-top,
+  nav .nav-responsive .menu-burger.active .bar-bottom {
+    top: 50%;
+    left: 0;
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+
+  nav .nav-responsive .menu-burger.active .bar-middle {
+    top: 50%;
+    right: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+
+  nav .nav-responsive .menu-content {
+    position: relative;
+    top: 0;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background: #F8F8FA;
+    -webkit-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+  }
+
+  nav .nav-responsive .menu-content.active {
+    top: 80px;
+    display: block;
+  }
+
+  nav .nav-responsive .menu-content ul {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+
+  nav .nav-responsive .menu-content ul li {
+    margin: 10px 0;
+  }
+
+  nav .nav-responsive .menu-content ul li a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 1025px) {
   nav .nav-responsive {
     display: none;
   }
@@ -13089,6 +13201,204 @@ footer .footer-content ul li a {
 }
 
 @media screen and (min-width: 425px) and (max-width: 768px) {
+  .home,
+  .stage,
+  .formation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .home .left-content,
+  .stage .left-content,
+  .formation .left-content {
+    padding: 0 25px !important;
+  }
+
+  .home .left-content .item,
+  .stage .left-content .item,
+  .formation .left-content .item {
+    width: 100% !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .home .left-content .item .left-item .image,
+  .stage .left-content .item .left-item .image,
+  .formation .left-content .item .left-item .image {
+    margin-bottom: 25px;
+  }
+
+  .home .left-content .item .right-item,
+  .stage .left-content .item .right-item,
+  .formation .left-content .item .right-item {
+    margin-left: 0 !important;
+  }
+
+  .home .right-content,
+  .stage .right-content,
+  .formation .right-content {
+    padding: 105px 25px 25px !important;
+  }
+
+  .home .right-content .search,
+  .stage .right-content .search,
+  .formation .right-content .search {
+    width: 100% !important;
+  }
+
+  .home .right-content .search h1,
+  .stage .right-content .search h1,
+  .formation .right-content .search h1 {
+    font-size: 20px !important;
+    text-align: center;
+  }
+
+  .home .right-content .search form,
+  .stage .right-content .search form,
+  .formation .right-content .search form {
+    width: 100%;
+  }
+
+  .home .right-content .search form .input-search,
+  .stage .right-content .search form .input-search,
+  .formation .right-content .search form .input-search {
+    width: auto !important;
+  }
+
+  .contact .contact-content,
+  .contact .login-content,
+  .contact .create-content,
+  .contact .edit-content,
+  .login .contact-content,
+  .login .login-content,
+  .login .create-content,
+  .login .edit-content,
+  .create .contact-content,
+  .create .login-content,
+  .create .create-content,
+  .create .edit-content,
+  .edit .contact-content,
+  .edit .login-content,
+  .edit .create-content,
+  .edit .edit-content {
+    width: 100% !important;
+  }
+
+  .contact .contact-content form,
+  .contact .login-content form,
+  .contact .create-content form,
+  .contact .edit-content form,
+  .login .contact-content form,
+  .login .login-content form,
+  .login .create-content form,
+  .login .edit-content form,
+  .create .contact-content form,
+  .create .login-content form,
+  .create .create-content form,
+  .create .edit-content form,
+  .edit .contact-content form,
+  .edit .login-content form,
+  .edit .create-content form,
+  .edit .edit-content form {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .contact .contact-content form .form-group,
+  .contact .login-content form .form-group,
+  .contact .create-content form .form-group,
+  .contact .edit-content form .form-group,
+  .login .contact-content form .form-group,
+  .login .login-content form .form-group,
+  .login .create-content form .form-group,
+  .login .edit-content form .form-group,
+  .create .contact-content form .form-group,
+  .create .login-content form .form-group,
+  .create .create-content form .form-group,
+  .create .edit-content form .form-group,
+  .edit .contact-content form .form-group,
+  .edit .login-content form .form-group,
+  .edit .create-content form .form-group,
+  .edit .edit-content form .form-group {
+    margin: 25px 0 !important;
+    width: 100% !important;
+  }
+
+  .admin .admin-content .tableau {
+    width: 100% !important;
+  }
+
+  .admin .admin-content .tableau .top-table {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-title {
+    margin-bottom: 15px;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .admin .admin-content .tableau .top-table .top-table-action form .input-search {
+    width: 100% !important;
+    margin: 15px !important;
+  }
+
+  .post,
+  .preview {
+    padding: 105px 25px 25px !important;
+    height: auto !important;
+  }
+
+  .post .item-open,
+  .preview .item-open {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .post .item-open .top-preview,
+  .preview .item-open .top-preview {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .post .item-open .top-preview .top-table-action,
+  .preview .item-open .top-preview .top-table-action {
+    margin-top: 15px;
+  }
+
+  .post .item-open .post-content,
+  .post .item-open .preview-content,
+  .preview .item-open .post-content,
+  .preview .item-open .preview-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .post .item-open .post-content .right-post,
+  .post .item-open .preview-content .right-post,
+  .preview .item-open .post-content .right-post,
+  .preview .item-open .preview-content .right-post {
+    margin: 25px 0 0 0 !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .home,
   .stage,
   .formation {
